@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dot {
+  height: 5px;
+  width: 5px;
+    left: 300px;
+  top: 300px;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: relative;
+  animation-name: dot;
+  animation-duration: 5s;
+  transform: scale(40);
+}
+
+@keyframes dot {
+  0%  {
+  		background-color: black;
+  		transform: scale(1);
+        }
+  90%  {
+  		background-color: white;
+  		transform: scale(40);
+        }
+  100%  {
+  		background-color: red;
+  		transform: scale(40);
+        }
+}
+</style>
+</head>
+<body>
+
+<div><span class="dot"></span></div>
+
+
+
+</body>
+</html>

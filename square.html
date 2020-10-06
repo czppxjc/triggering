@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.square {
+  width: 5px;
+  height: 5px;
+  left: 300px;
+  top: 300px;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: relative;
+  animation-name: square;
+  animation-duration: 5s;
+  transform: scale(40);
+}
+@keyframes square {
+  0%  {
+  		background-color: black;
+  		transform: scale(1);
+        }
+  90%  {
+  		background-color: white;
+  		transform: scale(40);
+        }
+  100%  {
+  		background-color: red;
+  		transform: scale(40);
+        }
+}
+</style>
+</head>
+<body>
+<div class='square'></div>
+</body>
+</html>

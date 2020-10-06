@@ -1,0 +1,72 @@
+<style>
+	.pie-chart {
+		background:
+			radial-gradient(
+				circle closest-side,
+				transparent 66%,
+				white 0
+			),
+			conic-gradient(
+				#4e79a7 0,
+				#4e79a7 10%,
+				#f28e2c 0,
+				#f28e2c 20%,
+				#e15759 0,
+				#e15759 30%,
+				#76b7b2 0,
+				#76b7b2 40%,
+				#59a14f 0,
+				#59a14f 50%,
+				#4e79a7 0,
+				#4e79a7 60%,
+				#f28e2c 0,
+				#f28e2c 70%,
+				#e15759 0,
+				#e15759 80%,
+				#76b7b2 0,
+				#76b7b2 90%,
+				#59a14f 0,
+				#59a14f 100%
+		);
+		position: absolute;
+		width: 300px;
+        left: 150px;
+        top: 150px;
+		min-height: 300px;
+		margin: 0;
+	}
+
+
+ .dot {
+  height: 5px;
+  width: 5px;
+  background-color: red;
+  left:200px;
+  top:150px;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot;
+  animation-duration: 5s;
+}
+
+
+
+@keyframes dot {
+
+  0%  {
+
+  background-color: red;
+  transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+
+  100%  {
+
+  background-color: red;
+  transform: rotate(360deg) translateX(50px) rotate(-360deg);
+        }
+
+}
+
+
+</style>
+<div class="pie-chart"> <div class = "dot"> </div></div>

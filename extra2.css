@@ -1,0 +1,332 @@
+.premise {
+    padding-left: 20px;
+}
+
+.conclusion {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt {
+    font-style: italic;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  left: 125px;
+  top: 0px;
+  position: relative;
+}
+
+.container2 {
+  width: 300px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+
+.box1 {
+  width: 90px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2 {
+  width: 90px;
+  height: 90px;
+  left: 105px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3 {
+  width: 90px;
+  height: 90px;
+  left: 210px;
+  top: 0px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box4 {
+  width: 90px;
+  height: 90px;
+  left: 0px;
+  top: 105px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box5 {
+  width: 90px;
+  height: 90px;
+  left: 210px;
+  top: 105px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box6 {
+  width: 90px;
+  height: 90px;
+  left: 0px;
+  top: 210px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box7 {
+  width: 90px;
+  height: 90px;
+  left: 105px;
+  top: 210px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.box8 {
+  width: 90px;
+  height: 90px;
+  left: 210px;
+  top: 210px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.square12 {
+  width: 30px;
+  height: 30px;
+  left: 135px;
+  top: 30px;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+
+.square45 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
+.dot45 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
+.rectangle45 {
+  width: 60px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
+.square14 {
+  width: 30px;
+  height: 30px;
+  left: 30px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a14;
+  animation-duration: 3s;
+}
+
+
+.square23 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 30px;
+  background-color: red;
+  position: absolute;
+  animation-name: a23;
+  animation-duration: 3s;
+}
+
+
+.square24 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a24;
+  animation-duration: 3s;
+}
+
+.square18 {
+  width: 30px;
+  height: 30px;
+  left: 30px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a18;
+  animation-duration: 3s;
+}
+
+.square27 {
+  width: 30px;
+  height: 30px;
+  left: 135px;
+  top: 240px;
+  background-color: red;
+  position: absolute;
+  animation-name: a27;
+  animation-duration: 3s;
+}
+
+
+.square54 {
+  width: 30px;
+  height: 30px;
+  left: 30px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a54;
+  animation-duration: 3s;
+}
+
+.square68 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 240px;
+  background-color: red;
+  position: absolute;
+  animation-name: a68;
+  animation-duration: 3s;
+}
+
+
+.square75 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a75;
+  animation-duration: 3s;
+}
+
+
+
+@keyframes a12 {
+  0%   {background-color:red; left:30px; top:30px;}
+  100% {background-color:red; left:135px; top:30px;}
+}
+
+
+@keyframes a13 {
+  0%   {background-color:red; left:30px; top:30px;}
+  100% {background-color:red; left:240px; top:30px;}
+}
+
+@keyframes a14 {
+  0%   {background-color:red; left:30px; top:30px;}
+  100% {background-color:red; left:30px; top:135px;}
+}
+
+@keyframes a15 {
+  0%   {background-color:red; left:30px; top:30px;}
+  100% {background-color:red; left:240px; top:135px;}
+}
+
+
+@keyframes a23 {
+  0%   {background-color:red; left:135px; top:30px;}
+  100% {background-color:red; left:240px; top:30px;}
+}
+
+
+@keyframes a24 {
+  0%   {background-color:red; left:135px; top:30px;}
+  100% {background-color:red; left:30px; top:135px;}
+}
+
+@keyframes a47 {
+  0%   {background-color:red; left:30px; top:135px;}
+  100% {background-color:red; left:135px; top:240px;}
+}
+
+@keyframes a68 {
+  0%   {background-color:red; left:30px; top:240px;}
+  100% {background-color:red; left:240px; top:240px;}
+}
+
+@keyframes a75 {
+  0%   {background-color:red; left:135px; top:240px;}
+  100% {background-color:red; left:240px; top:135px;}
+}
+
+
+@keyframes a56 {
+  0%   {background-color:red; left:240px; top:135px;}
+  100% {background-color:red; left:30px; top:240px;}
+}
+
+@keyframes a54 {
+  0%   {background-color:red; left:240px; top:135px;}
+  100% {background-color:red; left:30px; top:135px;}
+}
+
+@keyframes a27 {
+  0%   {background-color:red; left:135px; top:30px;}
+  100% {background-color:red; left:135px; top:240px;}
+}
+
+@keyframes a72 {
+  0%   {background-color:red; left:135px; top:240px;}
+  100% {background-color:red; left:135px; top:30px;}
+}
+
+@keyframes a45 {
+  0%   {background-color:red; left:30px; top:135px;}
+  100% {background-color:red; left:240px; top:135px;}
+}
+
+
+@keyframes a63 {
+  0%   {background-color:red; left:30px; top:240px;}
+  100% {background-color:red; left:240px; top:30px;}
+}

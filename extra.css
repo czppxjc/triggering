@@ -1,0 +1,727 @@
+.premise {
+    padding-left: 20px;
+}
+
+.conclusion {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt {
+    font-style: italic;
+}
+
+.container {
+  width: 550px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+
+.rectangle1AB {
+  width: 10px;
+  height: 5px;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: AB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.rectangle1AnotB {
+  width: 10px;
+  height: 5px;
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: AnotB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+
+.rectangle1notAB {
+  width: 10px;
+  height: 5px;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: notAB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.rectangle1notAnotB1 {
+  width: 100px;
+  height: 50px;
+  left: 215px;
+  top: 120px;
+  background-color: red;
+  border-style: solid;
+  border-width: 10px;
+  position: absolute;
+  animation-name: notAnotB1;
+  animation-duration: 3s;
+  transform: scale(0.1);
+}
+
+.rectangle1BbeforeA {
+  width: 10px;
+  height: 5px;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: BbeforeA;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.rectangle1onlyB {
+  width: 100px;
+  height: 50px;
+  left: 215px;
+  top: 120px;
+  background-color: red;
+  border-style: solid;
+  border-width: 10px;
+  position: absolute;
+  animation-name: onlyB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.rectangle2AB {
+  width: 5px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: AB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.rectangle2AnotB {
+  width: 5px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: AnotB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.rectangle2notAB {
+  width: 5px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: notAB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.rectangle2notAnotB3 {
+  width: 50px;
+  height: 100px;
+  left: 245px;
+  top: 90px;
+  background-color: blue;
+  border-style: solid;
+  border-width: 10px;
+  position: absolute;
+  animation-name: notAnotB3;
+  animation-duration: 3s;
+  transform: rotate(45deg);
+}
+
+.rectangle2BbeforeA {
+  width: 5px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: BbeforeA;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.rectangle2onlyB {
+  width: 50px;
+  height: 100px;
+  left: 245px;
+  top: 90px;
+  background-color: red;
+  border-style: solid;
+  border-width: 10px;
+  position: absolute;
+  animation-name: onlyB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.circleAB {
+  height: 5px;
+  width: 5px;
+    left: 50%;
+  top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: AB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.circlenotAB {
+  height: 5px;
+  width: 5px;
+    left: 50%;
+  top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: notAB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.circleAnotB {
+  height: 5px;
+  width: 5px;
+    left: 50%;
+  top: 50%;
+  background-color: white;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: AnotB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+
+.circlenotAnotB2 {
+  height: 50px;
+  width: 50px;
+    left: 245px;
+  top: 120px;
+  background-color: black;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 10px;
+  position: absolute;
+  animation-name: notAnotB2;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+
+.circleBbeforeA {
+  height: 5px;
+  width: 5px;
+    left: 50%;
+  top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: BbeforeA;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.circleonlyB {
+  height: 50px;
+  width: 50px;
+    left: 245px;
+  top: 120px;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 10px;
+  position: absolute;
+  animation-name: onlyB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.oval1AB {
+  height: 5px;
+  width: 10px;
+    left: 50%;
+  top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: AB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+
+.oval1AnotB {
+  height: 5px;
+  width: 10px;
+    left: 50%;
+  top: 50%;
+  background-color: white;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: AnotB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+
+.oval1notAB {
+  height: 5px;
+  width: 10px;
+    left: 50%;
+  top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: notAB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.oval1notAnotB2 {
+  height: 50px;
+  width: 100px;
+    left: 215px;
+  top: 115px;
+  background-color: black;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 10px;
+  position: absolute;
+  animation-name: notAnotB2;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.oval1BbeforeA {
+  height: 5px;
+  width: 10px;
+    left: 50%;
+  top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: BbeforeA;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.oval1onlyB {
+  height: 50px;
+  width: 100px;
+    left: 215px;
+  top: 115px;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 10px;
+  position: absolute;
+  animation-name: onlyB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.oval2AB {
+  height: 10px;
+  width: 5px;
+  left: 50%;
+top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: AB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.oval2notAB {
+  height: 10px;
+  width: 5px;
+  left: 50%;
+top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: notAB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.oval2AnotB {
+  height: 10px;
+  width: 5px;
+  left: 50%;
+top: 50%;
+  background-color: white;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: AnotB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.oval2notAnotB3 {
+  height: 100px;
+  width: 50px;
+  left: 240px;
+top: 90px;
+  background-color: blue;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 10px;
+  position: absolute;
+  animation-name: notAnotB3;
+  animation-duration: 3s;
+  transform: rotate(45deg);
+}
+
+.oval2BbeforeA {
+  height: 10px;
+  width: 5px;
+  left: 50%;
+top: 50%;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: thin;
+  position: absolute;
+  animation-name: BbeforeA;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.oval2onlyB {
+  height: 100px;
+  width: 50px;
+  left: 240px;
+top: 90px;
+  background-color: red;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 10px;
+  position: absolute;
+  animation-name: onlyB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+
+
+.squareAB {
+  width: 10px;
+  height: 10px;
+  left: 50%;
+top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: AB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.squareAnotB {
+  width: 10px;
+  height: 10px;
+  left: 50%;
+top: 50%;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: AnotB;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.squarenotAB {
+  width: 10px;
+  height: 10px;
+  left: 50%;
+top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: notAB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+.squarenotAnotB1 {
+  width: 100px;
+  height: 100px;
+  left: 215px;
+  top: 90px;
+  background-color: red;
+  border-style: solid;
+  border-width: 10px;
+  position: absolute;
+  animation-name: notAnotB1;
+  animation-duration: 3s;
+  transform: scale(0.1);
+}
+
+.squareBbeforeA {
+  width: 10px;
+  height: 10px;
+  left: 50%;
+top: 50%;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: absolute;
+  animation-name: BbeforeA;
+  animation-duration: 3s;
+  transform: scale(10);
+}
+
+.squareonlyB {
+  width: 100px;
+  height: 100px;
+  left: 215px;
+top: 90px;
+  background-color: red;
+  border-style: solid;
+  border-width: 10px;
+  position: absolute;
+  animation-name: onlyB;
+  animation-duration: 3s;
+  transform: scale(1);
+}
+
+
+
+@keyframes AB {
+  0%  {
+    		background-color: white;
+    		transform: scale(1);
+          }
+     30%  {
+    		background-color: white;
+    		transform: scale(1);
+          }
+     80%  {
+    		background-color: white;
+    		transform: scale(10);
+          }
+     100%  {
+    		background-color: red;
+    		transform: scale(10);
+          }
+}
+
+@keyframes AnotB {
+  0%  {
+  		background-color: white;
+  		transform: scale(1);
+        }
+   30%  {
+  		background-color: white;
+  		transform: scale(1);
+        }
+   80%  {
+  		background-color: white;
+  		transform: scale(10);
+        }
+   100%  {
+  		background-color: white;
+  		transform: scale(10);
+        }
+}
+
+
+
+@keyframes notAB {
+  0%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    30%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    80%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    100%  {
+   		background-color: red;
+   		transform: scale(1);
+         }
+}
+
+@keyframes onlyB {
+  0%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    30%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    80%  {
+   		background-color: red;
+   		transform: scale(1);
+         }
+    100%  {
+   		background-color: red;
+   		transform: scale(1);
+         }
+}
+
+
+@keyframes notAnotB1 {
+  0%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    30%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    80%  {
+   		background-color: white;
+   		transform: scale(0.1);
+         }
+    100%  {
+   		background-color: red;
+         }
+}
+
+@keyframes notAnotB2 {
+  0%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    30%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    80%  {
+   		background-color: white;
+      left: 25%;
+      top:25%;
+   		transform: scale(1);
+         }
+    100%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+}
+
+@keyframes notAnotB3 {
+  0%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    30%  {
+   		background-color: white;
+   		transform: scale(1);
+         }
+    80%  {
+   		background-color: white;
+   		transform: rotate(45);
+         }
+    100%  {
+   		background-color: blue;
+         }
+}
+
+
+@keyframes BbeforeA {
+  0%  {
+  		background-color: white;
+  		transform: scale(1);
+        }
+   30%  {
+  		background-color: white;
+  		transform: scale(1);
+        }
+   80%  {
+  		background-color: red;
+  		transform: scale(1);
+        }
+   100%  {
+  		background-color: red;
+  		transform: scale(10);
+        }
+
+}

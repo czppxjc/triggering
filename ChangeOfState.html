@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box1 {
+  width: 200px;
+  height: 200px;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2 {
+  width: 200px;
+  height: 200px;
+  left: 250px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3 {
+  width: 200px;
+  height: 200px;
+  left: 500px;
+  top: 0px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box4 {
+  width: 200px;
+  height: 200px;
+  left: 0px;
+  top: 250px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box6 {
+  width: 200px;
+  height: 200px;
+  left: 0px;
+  top: 500px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box7 {
+  width: 200px;
+  height: 200px;
+  left: 250px;
+  top: 500px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box5 {
+  width: 200px;
+  height: 200px;
+  left: 500px;
+  top: 250px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box8 {
+  width: 200px;
+  height: 200px;
+  left: 500px;
+  top: 500px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.object_slide {
+  width: 100px;
+  height: 100px;
+  left: 550px;
+  top: 300px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide;
+  animation-duration: 3s;
+}
+
+@keyframes slide {
+  0%   {background-color:red; left:50px; top:300px;}
+  100% {background-color:red; left:550px; top:300px;}
+}
+
+.object_drop {
+  width: 100px;
+  height: 100px;
+  left: 300px;
+  top: 550px;
+  background-color: red;
+  position: absolute;
+  animation-name: drop;
+  animation-duration: 3s;
+}
+
+@keyframes drop {
+  0%   {background-color:red; left:300px; top:50px;}
+  100% {background-color:red; left:300px; top:550px;}
+}
+
+.object_rise {
+  width: 100px;
+  height: 100px;
+  left: 300px;
+  top: 50px;
+  background-color: red;
+  position: absolute;
+  animation-name: rise;
+  animation-duration: 3s;
+}
+
+@keyframes rise {
+  0%   {background-color:red; left:300px; top:550px;}
+  100% {background-color:red; left:300px; top:50px;}
+}
+
+
+.object_takeoff {
+  width: 100px;
+  height: 100px;
+  left: 550px;
+  top: 50px;
+  background-color: red;
+  position: absolute;
+  animation-name: takeoff;
+  animation-duration: 3s;
+}
+
+@keyframes takeoff {
+  0%   {background-color:red; left:50px; top:550px;}
+  100% {background-color:red; left:550px; top:50px;}
+}
+
+
+h1 {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class='box1'> <h1>1</h1> </div>
+<div class='box2'> <h1>2</h1> </div>
+<div class='box3'> <h1>3</h1> </div>
+<div class='box4'><h1>4</h1> </div>
+<div class='box5'><h1>5</h1> </div>
+<div class='box6'><h1>6</h1> </div>
+<div class='box7'><h1>7</h1> </div>
+<div class='box8'><h1>8</h1> </div>
+<div class='object_slide'></div>
+<div class='object_drop'></div>
+<div class='object_rise'></div>
+<div class='object_takeoff'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
