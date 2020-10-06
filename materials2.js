@@ -66,8 +66,23 @@ var test = [
   + "<div class='box7'></div>"
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
-  + "<div class='square95'></div>",
+  + "<div class='dot97'></div>",
   id: "testing.1",
+  nickname: "dot97",
+  shape: "circle"
+  },
+
+  { subject: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='square95'></div>",
+  id: "testing.2",
   nickname: "square95",
   shape: "square"
   },
@@ -82,7 +97,7 @@ var test = [
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
   + "<div class='square45'></div>",
-  id: "testing.1",
+  id: "testing.3",
   nickname: "square45",
   shape: "square"
   },
@@ -97,7 +112,7 @@ var test = [
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
   + "<div class='square23'></div>",
-  id: "testing.2",
+  id: "testing.4",
   nickname: "square23",
   shape: "square"
   },
@@ -112,7 +127,7 @@ var test = [
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
   + "<div class='square54'></div>",
-  id: "testing.3",
+  id: "testing.5",
   nickname: "square54",
   shape: "square"
   },
@@ -127,7 +142,7 @@ var test = [
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
   + "<div class='square27'></div>",
-  id: "testing.4",
+  id: "testing.6",
   nickname: "square27",
   shape: "square"
   },

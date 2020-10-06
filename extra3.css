@@ -44,9 +44,9 @@
 				#e15759 30%,
 				#59a14f 0,
 				#59a14f 40%,
-                #edc949 0,
+        #edc949 0,
 				#edc949 50%,
-                #4e79a7 0,
+        #4e79a7 0,
 				#4e79a7 60%,
 				#f28e2c 0,
 				#f28e2c 70%,
@@ -63,24 +63,176 @@
 		min-height: 300px;
 	}
 
-.dot {
-  height: 10px;
-  width: 10px;
+.dot-red-green {
+    height: 10px;
+    width: 10px;
     left: 150px;
-  top: 150px;
-  background-color: black;
-  border-radius: 50%;
-  position: relative;
-  animation-name: dot;
-  animation-duration: 2s;
-  transform: rotate(180deg) translateX(50px) rotate(180deg);
+    top: 150px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    animation-name: dot-red-green;
+    animation-duration: 2s;
+    transform: rotate(215deg) translateX(50px) rotate(215deg);
+  }
+
+  .dot-red-red {
+      height: 10px;
+      width: 10px;
+      left: 150px;
+      top: 150px;
+      background-color: black;
+      border-radius: 50%;
+      position: relative;
+      animation-name: dot-red-red;
+      animation-duration: 2s;
+      transform: rotate(180deg) translateX(50px) rotate(180deg);
+    }
+
+    .square-red-red {
+        height: 10px;
+        width: 10px;
+        left: 150px;
+        top: 150px;
+        background-color: blue;
+        position: relative;
+        animation-name: square-red-red;
+        animation-duration: 2s;
+        transform: rotate(180deg) translateX(50px) rotate(180deg);
+      }
+
+@keyframes dot-red-green {
+  0%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  20%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  100%  {
+  		transform: rotate(215deg) translateX(50px) rotate(-215deg);
+        }
 }
 
-@keyframes dot {
+@keyframes dot-red-red {
   0%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  20%  {
   		transform: rotate(0deg) translateX(50px) rotate(0deg);
         }
   100%  {
   		transform: rotate(180deg) translateX(50px) rotate(-180deg);
+        }
+}
+
+@keyframes square-red-red {
+  0%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  20%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  100%  {
+  		transform: rotate(180deg) translateX(50px) rotate(-180deg);
+        }
+}
+
+
+.dot-red-red2 {
+  height: 10px;
+  width: 10px;
+  left: 150px;
+  top: 150px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  animation-name: dot-red-red2;
+  animation-duration: 2s;
+  transform: rotate(360deg) translateX(50px) rotate(360deg);
+}
+
+@keyframes dot-red-red2 {
+  0%  {
+  		transform: rotate(180deg) translateX(50px) rotate(180deg);
+        }
+  20%  {
+  		transform: rotate(180deg) translateX(50px) rotate(180deg);
+        }
+  100%  {
+  		transform: rotate(360deg) translateX(50px) rotate(-360deg);
+        }
+}
+
+.dot-green-red {
+  height: 10px;
+  width: 10px;
+  left: 150px;
+  top: 150px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  animation-name: dot-green-red;
+  animation-duration: 2s;
+  transform: rotate(180deg) translateX(50px) rotate(180deg);
+}
+
+@keyframes dot-green-red {
+  0%  {
+  		transform: rotate(35deg) translateX(50px) rotate(35deg);
+        }
+  20%  {
+  		transform: rotate(35deg) translateX(50px) rotate(35deg);
+        }
+  100%  {
+  		transform: rotate(180deg) translateX(50px) rotate(-180deg);
+        }
+}
+
+.dot-red-red-rev {
+  height: 10px;
+  width: 10px;
+  left: 150px;
+  top: 150px;
+  background-color: blue;
+  border-radius: 50%;
+  position: relative;
+  animation-name: dot-red-red-rev;
+  animation-duration: 2s;
+  transform: rotate(180deg) translateX(50px) rotate(180deg);
+}
+
+@keyframes dot-red-red-rev {
+  0%  {
+  		transform: rotate(360deg) translateX(50px) rotate(360deg);
+        }
+  20%  {
+  		transform: rotate(360deg) translateX(50px) rotate(360deg);
+        }
+  100%  {
+  		transform: rotate(180deg) translateX(50px) rotate(-180deg);
+        }
+}
+
+.square-red-red-360 {
+  height: 10px;
+  width: 10px;
+  left: 150px;
+  top: 150px;
+  background-color: black;
+  position: relative;
+  animation-name: square-red-red-360;
+  animation-duration: 2s;
+  transform: rotate(360deg) translateX(50px) rotate(360deg);
+}
+
+@keyframes square-red-red-360 {
+  0%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  20%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  100%  {
+  		transform: rotate(360deg) translateX(50px) rotate(-360deg);
         }
 }
