@@ -1,0 +1,86 @@
+.premise {
+    padding-left: 20px;
+}
+
+.conclusion {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt {
+    font-style: italic;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  left: 125px;
+  top: 0px;
+  position: relative;
+}
+
+.container2 {
+  width: 300px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+
+.pie-chart {
+		background:
+			radial-gradient(
+				circle closest-side,
+				transparent 66%,
+				white 0
+			),
+			conic-gradient(
+				#4e79a7 0,
+				#4e79a7 10%,
+				#f28e2c 0,
+				#f28e2c 20%,
+				#e15759 0,
+				#e15759 30%,
+				#59a14f 0,
+				#59a14f 40%,
+                #edc949 0,
+				#edc949 50%,
+                #4e79a7 0,
+				#4e79a7 60%,
+				#f28e2c 0,
+				#f28e2c 70%,
+				#e15759 0,
+				#e15759 80%,
+				#59a14f 0,
+				#59a14f 90%,
+				#edc949 0,
+				#edc949 100%
+		);
+		position: relative;
+		width: 300px;
+        border: solid;
+		min-height: 300px;
+	}
+
+.dot {
+  height: 10px;
+  width: 10px;
+    left: 150px;
+  top: 150px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  animation-name: dot;
+  animation-duration: 2s;
+  transform: rotate(180deg) translateX(50px) rotate(180deg);
+}
+
+@keyframes dot {
+  0%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  100%  {
+  		transform: rotate(180deg) translateX(50px) rotate(-180deg);
+        }
+}

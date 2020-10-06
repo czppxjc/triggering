@@ -111,6 +111,51 @@
   position: absolute;
 }
 
+.box9 {
+  width: 90px;
+  height: 90px;
+  left: 105px;
+  top: 105px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.square95 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a95;
+  animation-duration: 3s;
+}
+
+.dot95 {
+  width: 30px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a95;
+  animation-duration: 3s;
+}
+
+.rectangle95 {
+  width: 50px;
+  height: 30px;
+  left: 240px;
+  top: 135px;
+  background-color: red;
+  position: absolute;
+  animation-name: a95;
+  animation-duration: 3s;
+}
+
+
 .square12 {
   width: 30px;
   height: 30px;
@@ -322,6 +367,11 @@
 
 @keyframes a45 {
   0%   {background-color:red; left:30px; top:135px;}
+  100% {background-color:red; left:240px; top:135px;}
+}
+
+@keyframes a95 {
+  0%   {background-color:red; left:135px; top:135px;}
   100% {background-color:red; left:240px; top:135px;}
 }
 
