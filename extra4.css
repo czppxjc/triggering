@@ -1,0 +1,233 @@
+.premise {
+    padding-left: 20px;
+}
+
+.conclusion {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt {
+    font-style: italic;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+.container2 {
+  width: 300px;
+  height: 300px;
+  left: 125px;
+  top: 0px;
+  position: relative;
+}
+
+
+.box1 {
+  width: 125px;
+  height: 125px;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2 {
+  width: 125px;
+  height: 125px;
+  left: 175px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3 {
+  width: 125px;
+  height: 125px;
+  left: 0px;
+  top: 175px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box4 {
+  width: 125px;
+  height: 125px;
+  left: 175px;
+  top: 175px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+.dot12 {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 25px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+.rectangle12 {
+  width: 75px;
+  height: 50px;
+  left: 200px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+
+.square12 {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+.square21 {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
+  animation-name: a21;
+  animation-duration: 3s;
+}
+
+.square13 {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+  animation-name: a13;
+  animation-duration: 3s;
+}
+
+.square31 {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
+  animation-name: a31;
+  animation-duration: 3s;
+}
+
+.square34 {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+  animation-name: a34;
+  animation-duration: 3s;
+}
+
+.square43 {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+  animation-name: a43;
+  animation-duration: 3s;
+}
+
+.square24 {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+  animation-name: a24;
+  animation-duration: 3s;
+}
+
+.square42 {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
+  animation-name: a42;
+  animation-duration: 3s;
+}
+
+
+@keyframes a12 {
+  0%   {background-color:red; left:25px; top:25px;}
+  30%   {background-color:red; left:25px; top:25px;}
+  100% {background-color:red; left:200px; top:25px;}
+}
+
+@keyframes a21 {
+  0%   {background-color:red; left:200px; top:25px;}
+  30%   {background-color:red; left:200px; top:25px;}
+  100% {background-color:red; left:25px; top:25px;}
+}
+
+@keyframes a13 {
+  0%   {background-color:red; left:25px; top:25px;}
+  30%   {background-color:red; left:25px; top:25px;}
+  100% {background-color:red; left:25px; top:200px;}
+}
+
+
+@keyframes a31 {
+  0%   {background-color:red; left:25px; top:200px;}
+  30%   {background-color:red; left:25px; top:200px;}
+  100% {background-color:red; left:25px; top:25px;}
+}
+
+@keyframes a24 {
+  0%   {background-color:red; left:200px; top:25px;}
+  30%   {background-color:red; left:200px; top:25px;}
+  100% {background-color:red; left:200px; top:200px;}
+}
+
+@keyframes a42 {
+  0%   {background-color:red; left:200px; top:200px;}
+  30%   {background-color:red; left:200px; top:200px;}
+  100% {background-color:red; left:200px; top:25px;}
+}
+
+@keyframes a34 {
+  0%   {background-color:red; left:25px; top:200px;}
+  30%   {background-color:red; left:25px; top:200px;}
+  100% {background-color:red; left:200px; top:200px;}
+}
+
+@keyframes a43 {
+  0%   {background-color:red; left:200px; top:200px;}
+  30%   {background-color:red; left:200px; top:200px;}
+  100% {background-color:red; left:25px; top:200px;}
+}
