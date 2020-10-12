@@ -1,0 +1,245 @@
+.premise {
+    padding-left: 20px;
+}
+
+.conclusion {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt {
+    font-style: italic;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+.container2 {
+  width: 300px;
+  height: 300px;
+  left: 125px;
+  top: 0px;
+  position: relative;
+}
+
+
+.box1 {
+  width: 80px;
+  height: 80px;
+  left: 0px;
+  top: 100px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2 {
+  width: 80px;
+  height: 80px;
+  left: 110px;
+  top: 100px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3 {
+  width: 80px;
+  height: 80px;
+  left: 210px;
+  top: 100px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+.box1a {
+  width: 80px;
+  height: 80px;
+  left: 0px;
+  top: 100px;
+  background-color: blue;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2a {
+  width: 80px;
+  height: 80px;
+  left: 110px;
+  top: 100px;
+  background-color: blue;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3a {
+  width: 80px;
+  height: 80px;
+  left: 210px;
+  top: 100px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+
+.dot12 {
+  width: 60px;
+  height: 60px;
+  left: 120px;
+  top: 110px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+.rectangle12 {
+  width: 60px;
+  height: 40px;
+  left: 120px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+
+.square12 {
+  width: 60px;
+  height: 60px;
+  left: 120px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+.square21 {
+  width: 60px;
+  height: 60px;
+  left: 10px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a21;
+  animation-duration: 3s;
+}
+
+.square13 {
+  width: 60px;
+  height: 60px;
+  left: 220px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a13;
+  animation-duration: 3s;
+}
+
+.square31 {
+  width: 60px;
+  height: 60px;
+  left: 10px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a31;
+  animation-duration: 3s;
+}
+
+
+.square23 {
+  width: 60px;
+  height: 60px;
+  left: 220px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a23;
+  animation-duration: 3s;
+}
+
+.dot23 {
+  width: 60px;
+  height: 60px;
+  left: 220px;
+  top: 110px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a23;
+  animation-duration: 3s;
+}
+
+.rectangle23 {
+  width: 60px;
+  height: 40px;
+  left: 220px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a23;
+  animation-duration: 3s;
+}
+
+.square32 {
+  width: 60px;
+  height: 60px;
+  left: 120px;
+  top: 110px;
+  background-color: red;
+  position: absolute;
+  animation-name: a32;
+  animation-duration: 3s;
+}
+
+
+@keyframes a12 {
+  0%   {background-color:red; left:10px; top:110px;}
+  30%   {background-color:red; left:10px; top:110px;}
+  100% {background-color:red; left:120px; top:110px;}
+}
+
+@keyframes a21 {
+  0%   {background-color:red; left:120px; top:110px;}
+  30%   {background-color:red; left:120px; top:110px;}
+  100% {background-color:red; left:10px; top:110px;}
+}
+
+@keyframes a13 {
+  0%   {background-color:red; left:10px; top:110px;}
+  30%   {background-color:red; left:10px; top:110px;}
+  100% {background-color:red; left:220px; top:110px;}
+}
+
+
+@keyframes a31 {
+  0%   {background-color:red; left:220px; top:110px;}
+  30%   {background-color:red; left:220px; top:110px;}
+  100%  {background-color:red; left:10px; top:110px;}
+}
+
+@keyframes a23 {
+  0%   {background-color:red; left:120px; top:110px;}
+  30%   {background-color:red; left:120px; top:110px;}
+  100%  {background-color:red; left:220px; top:110px;}
+}
+
+@keyframes a32 {
+  0%   {background-color:red; left:220px; top:110px;}
+  30%   {background-color:red; left:220px; top:110px;}
+  100% {background-color:red; left:120px; top:110px;}
+}

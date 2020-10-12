@@ -90,6 +90,28 @@
 }
 
 
+.box1a {
+  width: 125px;
+  height: 125px;
+  left: 0px;
+  top: 0px;
+  background-color: blue;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2a {
+  width: 125px;
+  height: 125px;
+  left: 175px;
+  top: 0px;
+  background-color: blue;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
 .dot12 {
   width: 75px;
   height: 75px;

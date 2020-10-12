@@ -44,9 +44,9 @@ var teaching = function(stimulus){
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>Would you say the " + stimulus2.shape + " just wugged?</p>",
+    prompt: "<p style='text-align:center'>The " + stimulus2.shape + " just just wugged.</p>",
     stimulus: stimulus2.stim,
-    choices: ["No, it did not wug.", "I am not sure.", "Yes, it wugged."],
+    choices: ["completely false", "neither", "completely true"],
     data: stimulus2.data,
     prompt_delay: 3000,
     button_delay: 4000,
