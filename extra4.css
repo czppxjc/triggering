@@ -69,6 +69,26 @@
   position: absolute;
 }
 
+.box3a {
+  width: 125px;
+  height: 125px;
+  left: 0px;
+  top: 175px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.box4a {
+  width: 125px;
+  height: 125px;
+  left: 175px;
+  top: 175px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
 
 .dot12 {
   width: 75px;
