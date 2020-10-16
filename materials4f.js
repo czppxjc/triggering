@@ -5,9 +5,9 @@
 var teach = [
 
 
-  { subject: "<div class='box1'></div>"
+  { subject: "<div class='box1a'></div>"
   + "<div class='box2'></div>"
-  + "<div class='box3a'></div>"
+  + "<div class='box3'></div>"
   + "<div class='box4'></div>"
   + "<div class='square31'></div>",
   id: "teaching.1",
@@ -16,8 +16,8 @@ var teach = [
   },
 
 
-  { subject: "<div class='box1a'></div>"
-  + "<div class='box2'></div>"
+  { subject: "<div class='box1'></div>"
+  + "<div class='box2a'></div>"
   + "<div class='box3'></div>"
   + "<div class='box4'></div>"
   + "<div class='dot12'></div>",
@@ -28,8 +28,8 @@ var teach = [
 
   { subject: "<div class='box1'></div>"
   + "<div class='box2'></div>"
-  + "<div class='box3'></div>"
-  + "<div class='box4a'></div>"
+  + "<div class='box3a'></div>"
+  + "<div class='box4'></div>"
   + "<div class='square43'></div>",
   id: "teaching.3",
   nickname: "sq43",
@@ -37,9 +37,9 @@ var teach = [
   },
 
   { subject: "<div class='box1'></div>"
-  + "<div class='box2a'></div>"
+  + "<div class='box2'></div>"
   + "<div class='box3'></div>"
-  + "<div class='box4'></div>"
+  + "<div class='box4a'></div>"
   + "<div class='square24'></div>",
   id: "teaching.4",
   nickname: "sq24",
@@ -53,10 +53,10 @@ var teach = [
 var test = [
 
 
-  { subject: "<div class='box1'></div>"
+  { subject: "<div class='box1a'></div>"
   + "<div class='box2'></div>"
   + "<div class='box3'></div>"
-  + "<div class='box4a'></div>"
+  + "<div class='box4'></div>"
   + "<div class='square12'></div>",
   id: "testing.1",
   nickname: "sq12",
@@ -75,8 +75,8 @@ var test = [
 
 
   { subject: "<div class='box1'></div>"
-  + "<div class='box2'></div>"
-  + "<div class='box3a'></div>"
+  + "<div class='box2a'></div>"
+  + "<div class='box3'></div>"
   + "<div class='box4'></div>"
   + "<div class='square34'></div>",
   id: "testing.3",
