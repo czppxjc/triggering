@@ -27,6 +27,14 @@
   position: relative;
 }
 
+.container3 {
+  width: 300px;
+  height: 300px;
+  left: 50px;
+  top: 0px;
+  position: relative;
+}
+
 
 .box1 {
   width: 125px;
@@ -124,6 +132,16 @@
   animation-duration: 3s;
 }
 
+.dot12na {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 25px;
+  border-radius: 50%;
+  background-color: red;
+    position: absolute;
+}
+
 .rectangle12 {
   width: 75px;
   height: 50px;
@@ -133,6 +151,15 @@
   position: absolute;
   animation-name: a12;
   animation-duration: 3s;
+}
+
+.rectangle12na {
+  width: 75px;
+  height: 50px;
+  left: 200px;
+  top: 25px;
+  background-color: red;
+    position: absolute;
 }
 
 
@@ -147,6 +174,15 @@
   animation-duration: 3s;
 }
 
+.square12na {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 25px;
+  background-color: red;
+    position: absolute;
+}
+
 .square21 {
   width: 75px;
   height: 75px;
@@ -156,6 +192,15 @@
   position: absolute;
   animation-name: a21;
   animation-duration: 3s;
+}
+
+.square21na {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
 }
 
 .square13 {
@@ -169,6 +214,15 @@
   animation-duration: 3s;
 }
 
+.square13na {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+}
+
 .square31 {
   width: 75px;
   height: 75px;
@@ -178,6 +232,15 @@
   position: absolute;
   animation-name: a31;
   animation-duration: 3s;
+}
+
+.square31na {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
 }
 
 .square34 {
@@ -191,6 +254,15 @@
   animation-duration: 3s;
 }
 
+.square34na {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+}
+
 .square43 {
   width: 75px;
   height: 75px;
@@ -201,6 +273,16 @@
   animation-name: a43;
   animation-duration: 3s;
 }
+
+.square43na {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+}
+
 
 .square24 {
   width: 75px;
@@ -213,6 +295,15 @@
   animation-duration: 3s;
 }
 
+.square24na {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 200px;
+  background-color: red;
+  position: absolute;
+}
+
 .square42 {
   width: 75px;
   height: 75px;
@@ -222,6 +313,15 @@
   position: absolute;
   animation-name: a42;
   animation-duration: 3s;
+}
+
+.square42na {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 25px;
+  background-color: red;
+  position: absolute;
 }
 
 
