@@ -228,5 +228,49 @@ var test = [
               condtition: "AB"
               },
 
+              { subject: "<div class='container3'><div class='palette'>"
+              +  "<div class='color1'></div>"
+              +  "<div class='color2'></div>"
+              +  "<div class='color3'></div>"
+              +  "<div class='color4'></div>"
+              +  "<div class='color5'></div>"
+              +  "<div class='color6_red'></div>"
+              +  "<div class='color7'></div>"
+              +  "<div class='color8'></div></div>"
+              +  "<div class='dot43'></div></div>",
+              id: "testing.10",
+              shape: "dot",
+              condtition: "notAnotB"
+              },
+
+              { subject: "<div class='container3'><div class='palette'>"
+              +  "<div class='color1'></div>"
+              +  "<div class='color2'></div>"
+              +  "<div class='color3'></div>"
+              +  "<div class='color4'></div>"
+              +  "<div class='color5'></div>"
+              +  "<div class='color6_red'></div>"
+              +  "<div class='color7'></div>"
+              +  "<div class='color8'></div></div>"
+              +  "<div class='dot21'></div></div>",
+              id: "testing.11",
+              shape: "dot",
+              condtition: "notAnotB"
+              },
+
+              { subject: "<div class='container3'><div class='palette'>"
+              +  "<div class='color1_red'></div>"
+              +  "<div class='color2'></div>"
+              +  "<div class='color3'></div>"
+              +  "<div class='color4'></div>"
+              +  "<div class='color5'></div>"
+              +  "<div class='color6'></div>"
+              +  "<div class='color7'></div>"
+              +  "<div class='color8'></div></div>"
+              +  "<div class='dot76'></div></div>",
+              id: "testing.12",
+              shape: "dot",
+              condtition: "notAnotB"
+              },
 
 ];

@@ -65,9 +65,8 @@ var teachMaker = function(material) {
     id: material.id,
     type: "teaching",
     shape: material.shape,
-    color: material.color,
-    nickname: material.nickname
-  };
+    color: material.color
+    };
 
   return {stim: stimulus,
           data: data};
@@ -84,7 +83,7 @@ var testMaker = function(material) {
     type: "teaching",
     shape: material.shape,
     color: material.color,
-    nickname: material.nickname
+    condition: material.condition
   };
 
   return {stim: stimulus2,

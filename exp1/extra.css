@@ -250,7 +250,7 @@ top: 0px;
   position: absolute;
   animation-name: dot76;
   animation-duration: 3s;
-  transform: rotate(245deg) translateX(70px) rotate(70deg);
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
 }
 
 .dot78 {
@@ -305,6 +305,33 @@ top: 0px;
   animation-duration: 3s;
   transform: rotate(20deg) translateX(70px) rotate(70deg);
 }
+
+
+.dot21 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot21;
+  animation-duration: 3s;
+  transform: rotate(-25deg) translateX(70px) rotate(70deg);
+}
+
+@keyframes dot21 {
+  0%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(-25deg) translateX(70px) rotate(70deg);
+        }
+}
+
 
 @keyframes dot12 {
   0%  {
