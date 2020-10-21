@@ -1,0 +1,37 @@
+var demographics_block = {
+  type: "survey-dropdown",
+  preamble: "<h1>Demographic questionnaire</h1>\n\n<p>Please answer the following demographic questions.  Your payment will not be\n  affected by your answers.</p>",
+  questions: [
+    { prompt: "What is your college-level background in logic?",
+      options: [ "----",
+                 "None",
+                 "1 undergraduate-level course",
+                 "2 or more undergraduate-level courses",
+                 "1 graduate-level course",
+                 "2 or more graduate-level courses"],
+      labels: [ "NA", "none", "1ug", "2+ug", "1g", "2+ug" ]},
+    { prompt: "What is your college-level background in natural language semantics and pragmatics?",
+      options: [ "---",
+                 "None",
+                 "1 undergraduate-level course",
+                 "2 or more undergraduate-level courses",
+                 "1 graduate-level course",
+                 "2 or more graduate-level courses"],
+      labels: [ "NA", "none", "1ug", "2+ug", "1g", "2+g" ]},
+    { prompt: "What is your gender?",
+      options: [ "----", "Male", "Female", "Other" ],
+      labels: [ "NA", "male", "female", "other"] },
+    { prompt: "When were you born?",
+      options: [ "----",
+                 "After 2000",
+                 "Between 1990 and 2000",
+                 "Between 1980 and 1990",
+                 "Between 1970 and 1980",
+                 "Between 1960 and 1970",
+                 "Between 1950 and 1960",
+                 "Before 1950" ],
+      labels: [ "NA", "-20", "12-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75+" ]
+    }
+  ],
+  data: { questionId: "demo" }
+};
