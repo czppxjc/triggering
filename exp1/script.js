@@ -21,6 +21,24 @@ var instructions_block = {
     data: { questionId: "break" }
   };
 
+  var prolificID = {
+    type: 'survey-text',
+    questions: [
+      {prompt: "Please enter your Prolific ID below.", name: 'Comments', rows: 1, columns: 30, font_size: 18}
+    ],
+   data: { questionId: "ProlificID" }
+  };
+
+  var self_report = {
+    type: 'survey-multi-choice',
+      questions: [
+      {prompt: "<p style='text-align:center'>What do you think wugging was about?</p>",
+      options: ["wugging had to do with the direction of the movement/rotation direction", "wugging had to do with the size of the shape", "wugging had to do with the colors"],
+      horizontal: false}],
+  //    validation: "request",
+   data: { questionId: "self_report" }
+  };
+
 
 
 // set up consent form
@@ -33,9 +51,10 @@ var teaching = function(stimulus){
   return{
     type: 'html-keyboard-response',
     stimulus: stimulus.stim,
-    prompt: "<p style='text-align:center'> Press any key to move on! </p>"
-  //  choices: [""],
-  //  trial_duration: 4000,
+  //  prompt: "<p style='text-align:center'> Press any key to move on! </p>"
+    choices: [""],
+      post_trial_gap: 500,
+    trial_duration: 3500
   };
 };
 
@@ -128,8 +147,11 @@ stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
 
 var timeline = new Array;
 
+timeline.push(self_report);
 //timeline.push(consent_block);
 timeline.push(instructions_block);
+
+timeline.push(prolificID);
 
 for (var i in stimuli_set) {
   timeline.push(stimuli_set[i]);
@@ -158,9 +180,9 @@ timeline.push(demographics_block);
 jsPsych.init({
   timeline: timeline,
   show_progress_bar: true,
-//  on_finish: function(data){ SaveData("package-deals-2-new",
-                    //                  theSubject,
-                    //                  jsPsych.data.get().csv);
-                    //         $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below into mTurk</strong>.  Your payment will be processed <strong>within 24 hours</strong>.</p></center><div class='jspsych-submit-code'>" + theSubject + "</div>"); }
-  on_finish: function(data){ jsPsych.data.displayData("json"); }
+  on_finish: function(data){ SaveData("triggering",
+                                      theSubject,
+                                      jsPsych.data.get().csv);
+                             $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below into mTurk</strong>.  Your payment will be processed <strong>within 24 hours</strong>.</p></center><div class='jspsych-submit-code'>" + theSubject + "</div>"); }
+//  on_finish: function(data){ jsPsych.data.displayData("json"); }
 });
