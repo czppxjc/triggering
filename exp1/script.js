@@ -16,7 +16,7 @@ var instructions_block = {
 
   var break_block = {
     type: "html-button-response",
-    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>",
+    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>! Watch carefully and answer the question.</p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -51,7 +51,7 @@ var teaching = function(stimulus){
   return{
     type: 'html-keyboard-response',
     stimulus: stimulus.stim,
-  //  prompt: "<p style='text-align:center'> Press any key to move on! </p>"
+//    prompt: "<p style='text-align:center'> Press any key to move on! </p>",
     choices: [""],
       post_trial_gap: 1000,
     trial_duration: 3500
@@ -149,9 +149,12 @@ var timeline = new Array;
 
 
 //timeline.push(consent_block);
-timeline.push(instructions_block);
 
 timeline.push(prolificID);
+
+timeline.push(instructions_block);
+
+
 
 for (var i in stimuli_set) {
   timeline.push(stimuli_set[i]);
@@ -180,9 +183,9 @@ timeline.push(demographics_block);
 jsPsych.init({
   timeline: timeline,
   show_progress_bar: true,
-//  on_finish: function(data){ SaveData("triggering",
-                             //          theSubject,
-                             //          jsPsych.data.get().csv);
-                             // $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below into mTurk</strong>.  Your payment will be processed <strong>within 24 hours</strong>.</p></center><div class='jspsych-submit-code'>" + theSubject + "</div>"); }
-  on_finish: function(data){ jsPsych.data.displayData("json"); }
+  on_finish: function(data){ SaveData("triggering",
+                                      theSubject,
+                                      jsPsych.data.get().csv);
+                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below into Prolific or copy the link below</strong>.</p></center>" + theSubject + "</div>"); }
+//  on_finish: function(data){ jsPsych.data.displayData("json"); }
 });

@@ -2,7 +2,7 @@ var instructions_text = new Array;
 
 instructions_text.push(
   "<h1>Instructions</h1><p>In this experiment we will teach you a new word, <i>wug</i>. "
-  + " Let us show you examples of how it can be used!</p>");
+  + " Let us show you examples of how it can be used (just watch carefully)!</p>");
 
 //instructions_text.push(
 //  "<h2>Example 1</h2><p>Assume the following <strong>boldface</strong> sentence is true:</p><p><strong>Dana has a son and a daughter.</strong></p><p><i>Question:</i></p><p>Does it follow that <i>Dana has two kids</i>?</p><p><i>Answer:</i></p><p>Yes. (Because, when the sentence in <strong>boldface</strong> is assumed to be true, the conclusion has to be true as well.)</p><p>Click below for another example.</p>");
