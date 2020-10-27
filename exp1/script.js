@@ -16,7 +16,7 @@ var instructions_block = {
 
   var break_block = {
     type: "html-button-response",
-    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>! Watch carefully and answer the question.</p>",
+    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>! You will see animations and will be asked to make a decision.</p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -137,11 +137,11 @@ stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
 
 // setting first items
 
-//var stimuli_set_first = new Array;
+var stimuli_set_first = new Array;
 
-//for (var i in test_first) {
-//  stimuli_set_first.push(testing(testMaker(test_first[i])));
-//}
+for (var i in test_first) {
+  stimuli_set_first.push(testing(testMaker(test_first[i])));
+}
 
 
 
@@ -162,9 +162,9 @@ for (var i in stimuli_set) {
 
 timeline.push(break_block);
 
-//for (var i in stimuli_set_first) {
-//  timeline.push(stimuli_set_first[i]);
-//}
+for (var i in stimuli_set_first) {
+  timeline.push(stimuli_set_first[i]);
+}
 
 
 for (var i in stimuli_set2) {
@@ -186,6 +186,6 @@ jsPsych.init({
   on_finish: function(data){ SaveData("triggering",
                                       theSubject,
                                       jsPsych.data.get().csv);
-                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below into Prolific or copy the link below</strong>.</p></center>" + theSubject + "</div>"); }
+                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on the Prolific site or copy the link.</strong></p></center><center><p> https: bla bla.</p></center></p></center><center><p> 237goiwrebjais.</p></center>"); }
 //  on_finish: function(data){ jsPsych.data.displayData("json"); }
 });

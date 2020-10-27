@@ -92,6 +92,40 @@ var teach = [
 
 ];
 
+var test_first = [
+
+  { subject: "<div class='container3'><div class='palette'>"
+  +  "<div class='color1'></div>"
+  +  "<div class='color2'></div>"
+  +  "<div class='color3'></div>"
+  +  "<div class='color4'></div>"
+  +  "<div class='color5_red'></div>"
+  +  "<div class='color6'></div>"
+  +  "<div class='color7'></div>"
+  +  "<div class='color8'></div></div>"
+  +  "<div class='dot56'></div></div>",
+  id: "testing.1",
+  shape: "dot",
+  condition: "AB"
+  },
+
+  { subject: "<div class='container3'><div class='palette'>"
+  +  "<div class='color1_red'></div>"
+  +  "<div class='color2'></div>"
+  +  "<div class='color3'></div>"
+  +  "<div class='color4'></div>"
+  +  "<div class='color5'></div>"
+  +  "<div class='color6'></div>"
+  +  "<div class='color7'></div>"
+  +  "<div class='color8'></div></div>"
+  +  "<div class='dot21'></div></div>",
+  id: "testing.2",
+  shape: "dot",
+  condition: "notAnotB"
+  },
+
+
+];
 // A clockwise, B red-grey
 var test = [
 
@@ -106,7 +140,7 @@ var test = [
   +  "<div class='color7_red'></div>"
   +  "<div class='color8'></div></div>"
   +  "<div class='dot76'></div></div>",
-  id: "testing.1",
+  id: "testing.3",
   shape: "dot",
   condition: "notAB"
   },
@@ -121,7 +155,7 @@ var test = [
   +  "<div class='color7'></div>"
   +  "<div class='color8'></div></div>"
   +  "<div class='dot32'></div></div>",
-  id: "testing.2",
+  id: "testing.4",
   shape: "dot",
   condition: "notAB"
   },
@@ -137,7 +171,7 @@ var test = [
     +  "<div class='color7'></div>"
     +  "<div class='color8'></div></div>"
     +  "<div class='dot54'></div></div>",
-    id: "testing.3",
+    id: "testing.5",
     shape: "dot",
     condition: "notAB"
     },
@@ -154,7 +188,7 @@ var test = [
       +  "<div class='color7'></div>"
       +  "<div class='color8'></div></div>"
       +  "<div class='dot56'></div></div>",
-      id: "testing.4",
+      id: "testing.6",
       shape: "dot",
       condition: "AnotB_grey"
       },
@@ -170,7 +204,7 @@ var test = [
         +  "<div class='color7_red'></div>"
         +  "<div class='color8'></div></div>"
         +  "<div class='dot45'></div></div>",
-        id: "testing.5",
+        id: "testing.7",
         shape: "dot",
         condition: "AnotB_grey"
         },
@@ -187,7 +221,7 @@ var test = [
           +  "<div class='color7'></div>"
           +  "<div class='color8'></div></div>"
           +  "<div class='dot78'></div></div>",
-          id: "testing.6",
+          id: "testing.8",
           shape: "dot",
           condition: "AnotB_grey"
           },
@@ -202,7 +236,7 @@ var test = [
           +  "<div class='color7'></div>"
           +  "<div class='color8'></div></div>"
           +  "<div class='dot56'></div></div>",
-          id: "testing.7",
+          id: "testing.9",
           shape: "dot",
           condition: "AnotB_red"
           },
@@ -218,7 +252,7 @@ var test = [
             +  "<div class='color7'></div>"
             +  "<div class='color8'></div></div>"
             +  "<div class='dot12'></div></div>",
-            id: "testing.8",
+            id: "testing.10",
             shape: "dot",
             condition: "AnotB_red"
             },
@@ -235,7 +269,7 @@ var test = [
               +  "<div class='color7_red'></div>"
               +  "<div class='color8'></div></div>"
               +  "<div class='dot67'></div></div>",
-              id: "testing.9",
+              id: "testing.11",
               shape: "dot",
               condition: "AnotB_red"
               },
@@ -251,7 +285,7 @@ var test = [
             +  "<div class='color7'></div>"
             +  "<div class='color8'></div></div>"
             +  "<div class='dot23'></div></div>",
-            id: "testing.10",
+            id: "testing.12",
             shape: "dot",
             condition: "AB"
             },
@@ -260,34 +294,21 @@ var test = [
 
               { subject: "<div class='container3'><div class='palette'>"
               +  "<div class='color1'></div>"
-              +  "<div class='color2_red'></div>"
+              +  "<div class='color2'></div>"
               +  "<div class='color3'></div>"
-              +  "<div class='color4'></div>"
+              +  "<div class='color4_red'></div>"
               +  "<div class='color5'></div>"
               +  "<div class='color6'></div>"
               +  "<div class='color7'></div>"
               +  "<div class='color8'></div></div>"
-              +  "<div class='dot23'></div></div>",
-              id: "testing.11",
+              +  "<div class='dot45'></div></div>",
+              id: "testing.13",
               shape: "dot",
               condition: "AB"
               },
 
 
-              { subject: "<div class='container3'><div class='palette'>"
-              +  "<div class='color1'></div>"
-              +  "<div class='color2'></div>"
-              +  "<div class='color3'></div>"
-              +  "<div class='color4'></div>"
-              +  "<div class='color5_red'></div>"
-              +  "<div class='color6'></div>"
-              +  "<div class='color7'></div>"
-              +  "<div class='color8'></div></div>"
-              +  "<div class='dot56'></div></div>",
-              id: "testing.12",
-              shape: "dot",
-              condtition: "AB"
-              },
+
 
               { subject: "<div class='container3'><div class='palette'>"
               +  "<div class='color1'></div>"
@@ -299,25 +320,12 @@ var test = [
               +  "<div class='color7'></div>"
               +  "<div class='color8'></div></div>"
               +  "<div class='dot43'></div></div>",
-              id: "testing.13",
-              shape: "dot",
-              condtition: "notAnotB"
-              },
-
-              { subject: "<div class='container3'><div class='palette'>"
-              +  "<div class='color1_red'></div>"
-              +  "<div class='color2'></div>"
-              +  "<div class='color3'></div>"
-              +  "<div class='color4'></div>"
-              +  "<div class='color5'></div>"
-              +  "<div class='color6'></div>"
-              +  "<div class='color7'></div>"
-              +  "<div class='color8'></div></div>"
-              +  "<div class='dot21'></div></div>",
               id: "testing.14",
               shape: "dot",
-              condtition: "notAnotB"
+              condition: "notAnotB"
               },
+
+
 
               { subject: "<div class='container3'><div class='palette'>"
               +  "<div class='color1'></div>"
@@ -331,7 +339,7 @@ var test = [
               +  "<div class='dot76'></div></div>",
               id: "testing.15",
               shape: "dot",
-              condtition: "notAnotB"
+              condition: "notAnotB"
               },
 
 ];
