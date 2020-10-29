@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+.box4 {
+  width: 100px;
+  height: 100px;
+  left: 0px;
+  top: 250px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+
+
+.box5 {
+  width: 100px;
+  height: 100px;
+  left: 500px;
+  top: 250px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.object_slide {
+  width: 50px;
+  height: 50px;
+  left: 525px;
+  top: 275px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide;
+  animation-duration: 3s;
+}
+
+@keyframes slide {
+  0%   {background-color:red; left:25px; top:275px;}
+   30%   {background-color:red; left:25px; top:275px;}
+  100% {background-color:red; left:525px; top:275px;}
+}
+
+
+.dot {
+  width: 50px;
+  height: 50px;
+  left: 265px;
+  top: 265px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  animation-name: wug;
+  animation-duration: 4s;
+  transform: rotate(0deg) translateX(250px) rotate(180deg);
+}
+
+@keyframes wug {
+  0%  {
+  		transform: rotate(-180deg) translateX(250px) rotate(0deg);
+        }
+   30%  {
+  		transform: rotate(-180deg) translateX(250px) rotate(0deg);
+        }
+  100%  {
+  		transform: rotate(0deg) translateX(250px) rotate(180deg);
+        }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class='box4'></div>
+<div class='box5'></div>
+<div class='dot'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
