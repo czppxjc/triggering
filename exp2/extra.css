@@ -1,0 +1,920 @@
+.premise {
+    padding-left: 20px;
+}
+
+.conclusion {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt {
+    font-style: italic;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+.container2 {
+  width: 300px;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+.container3 {
+  width: 200px;
+  height: 200px;
+  left: 50px;
+  top: 50px;
+  position: relative;
+}
+
+.container4 {
+  width: 300px;
+  height: 300px;
+  left: 50px;
+  top: 50px;
+  position: relative;
+}
+
+
+.palette {
+  --g:10px; /* The gap between shapes*/
+  --s:85px; /* the size*/
+left: 0px;
+top: 0px;
+  height: 200px;
+  width: 200px;
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+.palette > * {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border:var(--s) solid var(--c, grey);
+  border-radius:50%;
+  clip-path:polygon(
+    calc(50% + var(--g)/2) 50%,
+    calc(50% + var(--g)/2) 0%,
+    100% 0%,
+    100% calc(0% - var(--g)/2),
+    50% calc(50% - var(--g)/2));
+}
+.color1 {
+  transform:rotate(45deg); /* 360/8 */
+  --c:grey;
+}
+.color2 {
+  transform:rotate(90deg);
+  --c:grey;
+}
+.color3 {
+  transform:rotate(135deg);
+  --c:grey;
+}
+.color4 {
+  transform:rotate(180deg);
+  --c:grey;
+}
+.color7 {
+  transform:rotate(-45deg); /* 360/8 */
+  --c:grey;
+}
+.color6 {
+  transform:rotate(-90deg);
+  --c:grey;
+}
+.color5 {
+  transform:rotate(-135deg);
+  --c:grey;
+}
+
+.color1_red {
+  transform:rotate(45deg); /* 360/8 */
+  --c:red;
+}
+.color2_red {
+  transform:rotate(90deg);
+  --c:red;
+}
+.color3_red {
+  transform:rotate(135deg);
+  --c:red;
+}
+.color4_red {
+  transform:rotate(180deg);
+  --c:red;
+}
+.color7_red {
+  transform:rotate(-45deg); /* 360/8 */
+  --c:red;
+}
+.color6_red {
+  transform:rotate(-90deg);
+  --c:red;
+}
+.color5_red {
+  transform:rotate(-135deg);
+  --c:red;
+}
+
+.center {
+  height: 20px;
+  width: 20px;
+  left: 90px;
+  top: 90px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+
+.dot23 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot23;
+  animation-duration: 3s;
+  transform: rotate(70deg) translateX(70px) rotate(70deg);
+}
+
+.dot23_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot23;
+  animation-duration: 3s;
+  transform: rotate(70deg) translateX(70px) rotate(70deg);
+}
+
+.dot23_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot23;
+  animation-duration: 3s;
+  transform: rotate(70deg) translateX(70px) rotate(70deg);
+}
+
+.dot32 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot32;
+  animation-duration: 3s;
+  transform: rotate(20deg) translateX(70px) rotate(70deg);
+}
+
+.dot32_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot32;
+  animation-duration: 3s;
+  transform: rotate(20deg) translateX(70px) rotate(70deg);
+}
+
+.dot32_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot32;
+  animation-duration: 3s;
+  transform: rotate(20deg) translateX(70px) rotate(70deg);
+}
+
+.dot43 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot43;
+  animation-duration: 3s;
+  transform: rotate(70deg) translateX(70px) rotate(70deg);
+}
+
+.dot43_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot43;
+  animation-duration: 3s;
+  transform: rotate(70deg) translateX(70px) rotate(70deg);
+}
+
+
+.dot43_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot43;
+  animation-duration: 3s;
+  transform: rotate(70deg) translateX(70px) rotate(70deg);
+}
+
+
+
+.dot34 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot34;
+  animation-duration: 3s;
+  transform: rotate(115deg) translateX(70px) rotate(70deg);
+}
+
+.dot34_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot34;
+  animation-duration: 3s;
+  transform: rotate(115deg) translateX(70px) rotate(70deg);
+}
+
+.dot34_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot34;
+  animation-duration: 3s;
+  transform: rotate(115deg) translateX(70px) rotate(70deg);
+}
+
+
+.dot45 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot45;
+  animation-duration: 3s;
+  transform: rotate(160deg) translateX(70px) rotate(70deg);
+}
+
+.dot45_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot45;
+  animation-duration: 3s;
+  transform: rotate(160deg) translateX(70px) rotate(70deg);
+}
+
+.dot45_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot45;
+  animation-duration: 3s;
+  transform: rotate(160deg) translateX(70px) rotate(70deg);
+}
+
+.dot54 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot54;
+  animation-duration: 3s;
+  transform: rotate(115deg) translateX(70px) rotate(70deg);
+}
+
+.dot54_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot54;
+  animation-duration: 3s;
+  transform: rotate(115deg) translateX(70px) rotate(70deg);
+}
+
+.dot54_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot54;
+  animation-duration: 3s;
+  transform: rotate(115deg) translateX(70px) rotate(70deg);
+}
+
+.dot56 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot56;
+  animation-duration: 3s;
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
+}
+
+.dot56_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot56;
+  animation-duration: 3s;
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
+}
+
+.dot56_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot56;
+  animation-duration: 3s;
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
+}
+
+.dot65 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot65;
+  animation-duration: 3s;
+  transform: rotate(160deg) translateX(70px) rotate(70deg);
+}
+
+.dot65_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot65;
+  animation-duration: 3s;
+  transform: rotate(160deg) translateX(70px) rotate(70deg);
+}
+
+.dot65_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot65;
+  animation-duration: 3s;
+  transform: rotate(160deg) translateX(70px) rotate(70deg);
+}
+
+
+.dot67 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot67;
+  animation-duration: 3s;
+  transform: rotate(245deg) translateX(70px) rotate(70deg);
+}
+
+.dot67_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot67;
+  animation-duration: 3s;
+  transform: rotate(245deg) translateX(70px) rotate(70deg);
+}
+
+.dot67_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot67;
+  animation-duration: 3s;
+  transform: rotate(245deg) translateX(70px) rotate(70deg);
+}
+
+.dot76 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot76;
+  animation-duration: 3s;
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
+}
+
+.dot76_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot76;
+  animation-duration: 3s;
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
+}
+
+.dot76_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot76;
+  animation-duration: 3s;
+  transform: rotate(205deg) translateX(70px) rotate(70deg);
+}
+
+.dot78 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot78;
+  animation-duration: 3s;
+  transform: rotate(285deg) translateX(70px) rotate(70deg);
+}
+
+.dot78_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot78;
+  animation-duration: 3s;
+  transform: rotate(285deg) translateX(70px) rotate(70deg);
+}
+
+.dot78_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot78;
+  animation-duration: 3s;
+  transform: rotate(285deg) translateX(70px) rotate(70deg);
+}
+
+.dot87 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot87;
+  animation-duration: 3s;
+  transform: rotate(245deg) translateX(70px) rotate(70deg);
+}
+
+.dot87_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot87;
+  animation-duration: 3s;
+  transform: rotate(245deg) translateX(70px) rotate(70deg);
+}
+
+.dot87_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot87;
+  animation-duration: 3s;
+  transform: rotate(245deg) translateX(70px) rotate(70deg);
+}
+
+.dot81 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot81;
+  animation-duration: 3s;
+  transform: rotate(335deg) translateX(70px) rotate(70deg);
+}
+
+.dot81_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot81;
+  animation-duration: 3s;
+  transform: rotate(335deg) translateX(70px) rotate(70deg);
+}
+
+.dot81_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot81;
+  animation-duration: 3s;
+  transform: rotate(335deg) translateX(70px) rotate(70deg);
+}
+
+
+.dot12 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot12;
+  animation-duration: 3s;
+  transform: rotate(20deg) translateX(70px) rotate(70deg);
+}
+
+.dot12_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot12;
+  animation-duration: 3s;
+  transform: rotate(20deg) translateX(70px) rotate(70deg);
+}
+
+.dot12_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot12;
+  animation-duration: 3s;
+  transform: rotate(20deg) translateX(70px) rotate(70deg);
+}
+
+
+.dot21 {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot21;
+  animation-duration: 3s;
+  transform: rotate(-25deg) translateX(70px) rotate(70deg);
+}
+
+.dot21_yellow {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot21;
+  animation-duration: 3s;
+  transform: rotate(-25deg) translateX(70px) rotate(70deg);
+}
+
+.dot21_green {
+  height: 10px;
+  width: 10px;
+  left: 100px;
+  top: 100px;
+  background-color: springgreen;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: dot21;
+  animation-duration: 3s;
+  transform: rotate(-25deg) translateX(70px) rotate(70deg);
+}
+
+@keyframes dot21 {
+  0%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(-25deg) translateX(70px) rotate(70deg);
+        }
+}
+
+
+@keyframes dot12 {
+  0%  {
+  		transform: rotate(-25deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(-25deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot23 {
+  0%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(70deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot32 {
+  0%  {
+  		transform: rotate(70deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(70deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(20deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot34 {
+  0%  {
+  		transform: rotate(70deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(70deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(115deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot43 {
+  0%  {
+  		transform: rotate(115deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(115deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(70deg) translateX(70px) rotate(70deg);
+        }
+}
+
+
+
+@keyframes dot45 {
+  0%  {
+  		transform: rotate(115deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(115deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(160deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot54 {
+  0%  {
+  		transform: rotate(160deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(160deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(115deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot56 {
+  0%  {
+  		transform: rotate(160deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(160deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(205deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot65 {
+  0%  {
+  		transform: rotate(205deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(205deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(160deg) translateX(70px) rotate(70deg);
+        }
+}
+
+
+
+
+@keyframes dot67 {
+  0%  {
+  		transform: rotate(205deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(205deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(245deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot76 {
+  0%  {
+  		transform: rotate(245deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(245deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(205deg) translateX(70px) rotate(70deg);
+        }
+}
+
+
+@keyframes dot78 {
+  0%  {
+  		transform: rotate(245deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(245deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(285deg) translateX(70px) rotate(70deg);
+        }
+}
+
+
+@keyframes dot87 {
+  0%  {
+  		transform: rotate(285deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(285deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(245deg) translateX(70px) rotate(70deg);
+        }
+}
+
+@keyframes dot81 {
+  0%  {
+  		transform: rotate(285deg) translateX(70px) rotate(70deg);
+        }
+  30%  {
+  		transform: rotate(285deg) translateX(70px) rotate(70deg);
+        }
+  100%  {
+  		transform: rotate(335deg) translateX(70px) rotate(70deg);
+        }
+}

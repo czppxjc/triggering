@@ -1,0 +1,124 @@
+<style>
+.palette {
+  --g:10px; /* The gap between shapes*/
+  --s:90px; /* the size*/
+left: 100px;
+top: 100px;
+  height: 200px;
+  width: 200px;
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  border: solid;
+}
+.palette > * {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border:var(--s) solid var(--c, grey);
+  border-radius:50%;
+  clip-path:polygon(
+    calc(50% + var(--g)/2) 50%,
+    calc(50% + var(--g)/2) 0%,
+    100% 0%,
+    100% calc(0% - var(--g)/2),
+    50% calc(50% - var(--g)/2));
+}
+.color1 {
+  transform:rotate(45deg); /* 360/8 */
+  --c:grey;
+}
+.color2 {
+  transform:rotate(90deg);
+  --c:grey;
+}
+.color3 {
+  transform:rotate(135deg);
+  --c:grey;
+}
+.color4 {
+  transform:rotate(180deg);
+  --c:grey;
+}
+.color7 {
+  transform:rotate(-45deg); /* 360/8 */
+  --c:grey;
+}
+.color6 {
+  transform:rotate(-90deg);
+  --c:grey;
+}
+.color5 {
+  transform:rotate(-135deg);
+  --c:grey;
+}
+
+.color1_red {
+  transform:rotate(45deg); /* 360/8 */
+  --c:red;
+}
+.color2_red {
+  transform:rotate(90deg);
+  --c:red;
+}
+.color3_red {
+  transform:rotate(135deg);
+  --c:red;
+}
+.color4_red {
+  transform:rotate(180deg);
+  --c:red;
+}
+.color7_red {
+  transform:rotate(-45deg); /* 360/8 */
+  --c:red;
+}
+.color6_red {
+  transform:rotate(-90deg);
+  --c:red;
+}
+.color5_red {
+  transform:rotate(-135deg);
+  --c:red;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  left: 200px;
+  top: -10px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  animation-name: dot;
+  animation-duration: 2s;
+  transform: rotate(360deg) translateX(50px) rotate(215deg);
+}
+
+@keyframes dot {
+  0%  {
+  		transform: rotate(0deg) translateX(50px) rotate(0deg);
+        }
+  30%  {
+  		transform: rotate(120deg) translateX(50px) rotate(0deg);
+        }
+  100%  {
+  		transform: rotate(320deg) translateX(50px) rotate(215deg);
+        }
+}
+
+</style>
+
+<div class="palette">
+  <div class="color1"></div>
+  <div class="color2"></div>
+  <div class="color3"></div>
+  <div class="color4"></div>
+  <div class="color5"></div>
+  <div class="color6"></div>
+  <div class="color7"></div>
+  <div class="color8"></div>
+</div>
+  <div class="dot"></div>
