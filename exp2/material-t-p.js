@@ -17,8 +17,8 @@ var teach = [
   +  "<div class='center'></div>"
   +  "<div class='dot12_green'></div></div>",
   id: "teaching.1",
-  shape: "dot",
-  color: "green",
+  shape: "green circle",
+  adjective: "small",
   phrase: "wugged."
   },
 
@@ -34,8 +34,8 @@ var teach = [
   +  "<div class='center'></div>"
   +  "<div class='dot23'></div></div>",
   id: "teaching.2",
-  shape: "dot",
-  color: "black",
+  shape: "black circle",
+  adjective: "small",
   phrase: "wugged."
   },
 
@@ -51,8 +51,8 @@ var teach = [
   +  "<div class='center'></div>"
   +  "<div class='dot34_yellow'></div></div>",
   id: "teaching.3",
-  shape: "dot",
-  color: "yellow",
+  shape: "yellow cirlce",
+  adjective: "small",
   phrase: "wugged."
   },
 
@@ -68,8 +68,8 @@ var teach = [
   +  "<div class='center'></div>"
   +  "<div class='dot43_green'></div></div>",
   id: "teaching.4",
-  color: "green",
-  shape: "dot",
+  adjective: "small",
+  shape: "green circle",
   phrase: "did not wug."
   },
 
@@ -85,8 +85,8 @@ var teach = [
   +  "<div class='center'></div>"
   +  "<div class='dot65'></div></div>",
   id: "teaching.5",
-  color: "black",
-  shape: "dot",
+  adjective: "small",
+  shape: "black circle",
   phrase: "did not wug."
   },
 
@@ -103,8 +103,8 @@ var teach = [
   +  "<div class='center'></div>"
   +  "<div class='dot76_yellow'></div></div>",
   id: "teaching.6",
-  color: "yellow",
-  shape: "dot",
+  adjective: "small",
+  shape: "yellow circle",
   phrase: "did not wug."
   },
 
@@ -124,8 +124,8 @@ var test_first = [
   +  "<div class='center'></div>"
   +  "<div class='dot56_green'></div></div>",
   id: "testing.1",
-  color: "green",
-  shape: "dot",
+  adjective: "small",
+  shape: "green circle",
   phrase: "wugged.",
   condition: "AB"
   },
@@ -142,8 +142,8 @@ var test_first = [
   +  "<div class='center'></div>"
   +  "<div class='dot67_yellow'></div></div>",
   id: "testing.2",
-  color: "yellow",
-  shape: "dot",
+  adjective: "small",
+  shape: "yellow cirlce",
   phrase: "did not wug.",
   condition: "ABneg"
   },
@@ -160,8 +160,8 @@ var test_first = [
   +  "<div class='center'></div>"
   +  "<div class='dot54_green'></div></div>",
   id: "testing.3",
-  shape: "dot",
-  color: "green",
+  shape: "green circle",
+  adjective: "small",
   phrase: "wugged.",
   condition: "notAB"
   },
@@ -178,8 +178,8 @@ var test_first = [
   +  "<div class='center'></div>"
   +  "<div class='dot43'></div></div>",
   id: "testing.4",
-  color: "black",
-  shape: "dot",
+  adjective: "small",
+  shape: "red circle",
   condition: "notABneg",
   phrase: "did not wug."
   },
@@ -203,8 +203,8 @@ var test = [
   +  "<div class='center'></div>"
   +  "<div class='dot76'></div></div>",
   id: "testing.5",
-  color: "black",
-  shape: "dot",
+  adjective: "small",
+  shape: "black circle",
   condition: "notAB",
   phrase: "wugged."
   },
@@ -221,8 +221,8 @@ var test = [
   +  "<div class='center'></div>"
   +  "<div class='dot32_yellow'></div></div>",
   id: "testing.6",
-  shape: "dot",
-  color: "yellow",
+  shape: "yellow circle",
+  adjective: "small",
   condition: "notAB",
   phrase: "wugged."
   },
@@ -242,8 +242,8 @@ var test = [
     +  "<div class='center'></div>"
     +  "<div class='dot65_yellow'></div></div>",
     id: "testing.7",
-    shape: "dot",
-    color: "yellow",
+    shape: "yellow circle",
+    adjective: "small",
     condition: "notABneg",
     phrase: "did not wug."
     },
@@ -261,8 +261,8 @@ var test = [
       +  "<div class='center'></div>"
       +  "<div class='dot32_green'></div></div>",
       id: "testing.8",
-      shape: "dot",
-      color: "green",
+      shape: "green circle",
+      adjective: "small",
       phrase: "did not wug.",
       condition: "notABneg"
       },
@@ -282,8 +282,8 @@ var test = [
       +  "<div class='dot56'></div></div>",
       id: "testing.9",
       phrase: "wugged.",
-      color: "black",
-      shape: "dot",
+      adjective: "small",
+      shape: "black circle",
       condition: "AnotB_grey"
       },
 
@@ -301,8 +301,8 @@ var test = [
         +  "<div class='dot45_yellow'></div></div>",
         id: "testing.10",
         phrase: "wugged.",
-        shape: "dot",
-        color: "yellow",
+        shape: "yellow circle",
+        adjective: "small",
         condition: "AnotB_grey"
         },
 
@@ -320,9 +320,9 @@ var test = [
           +  "<div class='center'></div>"
           +  "<div class='dot78_green'></div></div>",
           id: "testing.11",
-          shape: "dot",
+          shape: "green circle",
           phrase: "wugged.",
-          color: "green",
+          adjective: "small",
           condition: "AnotB_grey"
           },
 
@@ -339,8 +339,8 @@ var test = [
           +  "<div class='dot67'></div></div>",
           id: "testing.12",
           phrase: "did not wug.",
-          color: "black",
-          shape: "dot",
+          adjective: "small",
+          shape: "black circle",
           condition: "AnotB_greyneg"
           },
 
@@ -358,8 +358,8 @@ var test = [
             +  "<div class='dot12_yellow'></div></div>",
             id: "testing.13",
             phrase: "did not wug.",
-            shape: "dot",
-            color: "yellow",
+            shape: "yellow circle",
+            adjective: "small",
             condition: "AnotB_greyneg"
             },
 
@@ -377,9 +377,9 @@ var test = [
               +  "<div class='center'></div>"
               +  "<div class='dot23_green'></div></div>",
               id: "testing.14",
-              shape: "dot",
+              shape: "green circle",
               phrase: "did not wug.",
-              color: "green",
+              adjective: "small",
               condition: "AnotB_greyneg"
               },
 
@@ -395,8 +395,8 @@ var test = [
           +  "<div class='center'></div>"
           +  "<div class='dot56'></div></div>",
           id: "testing.15",
-          shape: "dot",
-          color: "black",
+          shape: "black circle",
+          adjective: "small",
           phrase: "wugged.",
           condition: "AnotB_red"
           },
@@ -414,8 +414,8 @@ var test = [
             +  "<div class='center'></div>"
             +  "<div class='dot12_yellow'></div></div>",
             id: "testing.16",
-            shape: "dot",
-            color: "yellow",
+            shape: "yellow circle",
+            adjective: "small",
             phrase: "wugged.",
             condition: "AnotB_red"
             },
@@ -434,8 +434,8 @@ var test = [
               +  "<div class='center'></div>"
               +  "<div class='dot67_green'></div></div>",
               id: "testing.17",
-              shape: "dot",
-              color: "green",
+              shape: "green circle",
+              adjective: "small",
               phrase: "wugged.",
               condition: "AnotB_red"
               },
@@ -452,8 +452,8 @@ var test = [
               +  "<div class='center'></div>"
               +  "<div class='dot67'></div></div>",
               id: "testing.18",
-              shape: "dot",
-              color: "black",
+              shape: "black circle",
+              adjective: "small",
               phrase: "did not wug.",
               condition: "AnotB_redneg"
               },
@@ -471,8 +471,8 @@ var test = [
                 +  "<div class='center'></div>"
                 +  "<div class='dot23_yellow'></div></div>",
                 id: "testing.19",
-                shape: "dot",
-                color: "yellow",
+                shape: "yellow circle",
+                adjective: "small",
                 phrase: "did not wug.",
                 condition: "AnotB_redneg"
                 },
@@ -491,8 +491,8 @@ var test = [
                   +  "<div class='center'></div>"
                   +  "<div class='dot45_green'></div></div>",
                   id: "testing.20",
-                  shape: "dot",
-                  color: "green",
+                  shape: "green circle",
+                  adjective: "small",
                   phrase: "did not wug.",
                   condition: "AnotB_redneg"
                   },
@@ -508,11 +508,11 @@ var test = [
             +  "<div class='color7'></div>"
             +  "<div class='color8'></div></div>"
             +  "<div class='center'></div>"
-            +  "<div class='dot21'></div></div>",
+            +  "<div class='dot23'></div></div>",
             id: "testing.21",
             phrase: "wugged.",
-            color: "black",
-            shape: "dot",
+            adjective: "small",
+            shape: "black circle",
             condition: "AB"
             },
 
@@ -531,8 +531,8 @@ var test = [
               +  "<div class='dot45_yellow'></div></div>",
               id: "testing.22",
               phrase: "wugged.",
-              color: "yellow",
-              shape: "dot",
+              adjective: "small",
+              shape: "yellow circle",
               condition: "AB"
               },
 
@@ -548,8 +548,8 @@ var test = [
               +  "<div class='center'></div>"
               +  "<div class='dot78_green'></div></div>",
               id: "testing.23",
-              shape: "dot",
-              color: "green",
+              shape: "green circle",
+              adjective: "small",
               phrase: "did not wug.",
               condition: "ABneg"
               },
@@ -569,8 +569,8 @@ var test = [
                 +  "<div class='dot67'></div></div>",
                 id: "testing.24",
                 phrase: "did not wug.",
-                color: "black",
-                shape: "dot",
+                adjective: "small",
+                shape: "black circle",
                 condition: "ABneg"
                 },
 
@@ -590,8 +590,8 @@ var test = [
               +  "<div class='dot43_green'></div></div>",
               id: "testing.25",
               phrase: "wugged.",
-              color: "green",
-              shape: "dot",
+              adjective: "small",
+              shape: "green circle",
               condition: "notAnotB"
               },
 
@@ -610,8 +610,8 @@ var test = [
               +  "<div class='dot76'></div></div>",
               id: "testing.26",
               phrase: "wugged.",
-              color: "black",
-              shape: "dot",
+              adjective: "small",
+              shape: "black circle",
               condition: "notAnotB"
               },
 
@@ -628,9 +628,9 @@ var test = [
                             +  "<div class='center'></div>"
                             +  "<div class='dot32_yellow'></div></div>",
                             id: "testing.27",
-                            color: "yellow",
+                            adjective: "small",
                             phrase: "did not wug.",
-                            shape: "dot",
+                            shape: "yellow circle",
                             condition: "notAnotBneg"
                             },
 
@@ -649,8 +649,8 @@ var test = [
                             +  "<div class='dot54_green'></div></div>",
                             id: "testing.28",
                             phrase: "did not wug.",
-                            color: "green",
-                            shape: "dot",
+                            adjective: "small",
+                            shape: "green circle",
                             condition: "notAnotBneg"
                             },
 
@@ -666,8 +666,8 @@ var test = [
                             +  "<div class='center'></div>"
                             +  "<div class='dot21'></div></div>",
                             id: "testing.29",
-                            color: "black",
-                            shape: "dot",
+                            adjective: "small",
+                            shape: "black circle",
                             phrase: "wugged.",
                             condition: "notAnotB"
                             },
@@ -686,8 +686,8 @@ var test = [
                             +  "<div class='center'></div>"
                             +  "<div class='dot43_green'></div></div>",
                             id: "testing.30",
-                            shape: "dot",
-                            color: "green",
+                            shape: "green circle",
+                            adjective: "small",
                             phrase: "did not wug.",
                             condition: "notAnotBneg"
                             },

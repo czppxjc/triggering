@@ -3,7 +3,7 @@ var theSubject = jsPsych.randomization.randomID(10);
 
 // and add it to the data being saved
 jsPsych.data.addProperties({ subjectId: theSubject });
-jsPsych.data.addProperties({ condition: condition });
+jsPsych.data.addProperties({ group: group });
 
 // set up instructions, reading "instructions_text" from instructions.js
 var instructions_block = {
@@ -65,7 +65,7 @@ var instructions_block = {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>The " + stimulus2.color + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>"
+    prompt: "<p style='text-align:center'>The " + stimulus2.adjective + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>"
     + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
     choices: ["false", "true"],
@@ -104,7 +104,7 @@ var testMaker = function(material) {
   var stimulus2 = "<div  class = 'container4'> " + material.subject + " </div>"
 
   var shape = " " + material.shape + " "
-  var color = " " + material.color + " "
+  var adjective = " " + material.adjective + " "
   var phrase = " " + material.phrase + " "
   var condition = " " + material.condition + " "
 
@@ -112,7 +112,7 @@ var testMaker = function(material) {
     id: material.id,
     type: "testing",
     shape: material.shape,
-    color: material.color,
+    color: material.adjectivd,
     condition: material.condition
   };
 
@@ -120,7 +120,7 @@ var testMaker = function(material) {
           phrase: phrase,
           shape: shape,
           condition: condition,
-          color: color,
+          adjective: adjective,
           data: data};
 };
 

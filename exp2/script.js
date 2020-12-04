@@ -3,7 +3,7 @@ var theSubject = jsPsych.randomization.randomID(10);
 
 // and add it to the data being saved
 jsPsych.data.addProperties({ subjectId: theSubject });
-jsPsych.data.addProperties({ condition: condition });
+jsPsych.data.addProperties({ group: group });
 
 // set up instructions, reading "instructions_text" from instructions.js
 var instructions_block = {
@@ -51,7 +51,7 @@ var teaching = function(stimulus){
   return{
     type: 'html-button-delay-response',
     stimulus: stimulus.stim,
-  prompt: "<p style='text-align:center'>The " + stimulus.color + " " + stimulus.shape + " " + stimulus.phrase + "</p>",
+  prompt: "<p style='text-align:center'>The " + stimulus.adjective + " " + stimulus.shape + " " + stimulus.phrase + "</p>",
     choices: ["Next"],
       post_trial_gap: 500,
       prompt_delay: 3000,
@@ -65,7 +65,7 @@ var teaching = function(stimulus){
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>The " + stimulus2.color + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>"
+    prompt: "<p style='text-align:center'>The " + stimulus2.adjective + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>"
     + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
     choices: ["false", "true"],
@@ -84,19 +84,19 @@ var teachMaker = function(material) {
 
   var phrase = " " + material.phrase + " "
   var shape = " " + material.shape + " "
-  var color = " " + material.color + " "
+  var adjective = " " + material.adjective + " "
 
   var data = {
     id: material.id,
     type: "teaching",
     shape: material.shape,
-    color: material.color
+    adjective: material.adjective
     };
 
   return {stim: stimulus,
           phrase: phrase,
           shape: shape,
-          color: color,
+          adjective: adjective,
           data: data};
 };
 
@@ -104,7 +104,7 @@ var testMaker = function(material) {
   var stimulus2 = "<div  class = 'container2'> " + material.subject + " </div>"
 
   var shape = " " + material.shape + " "
-  var color = " " + material.color + " "
+  var adjective = " " + material.adjective + " "
   var phrase = " " + material.phrase + " "
   var condition = " " + material.condition + " "
 
@@ -112,7 +112,7 @@ var testMaker = function(material) {
     id: material.id,
     type: "testing",
     shape: material.shape,
-    color: material.color,
+    adjective: material.adjective,
     condition: material.condition
   };
 
@@ -120,7 +120,7 @@ var testMaker = function(material) {
           phrase: phrase,
           shape: shape,
           condition: condition,
-          color: color,
+          adjective: adjective,
           data: data};
 };
 
