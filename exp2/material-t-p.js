@@ -179,7 +179,7 @@ var test_first = [
   +  "<div class='dot43'></div></div>",
   id: "testing.4",
   adjective: "small",
-  shape: "red circle",
+  shape: "black circle",
   condition: "notABneg",
   phrase: "did not wug."
   },

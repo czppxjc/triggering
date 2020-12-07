@@ -65,8 +65,8 @@ var teaching = function(stimulus){
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>The " + stimulus2.adjective + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>"
-    + "<p> condition:" + stimulus2.condition + " </p> ",
+    prompt: "<p style='text-align:center'>The " + stimulus2.adjective + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>",
+  //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
     choices: ["false", "true"],
     data: stimulus2.data,

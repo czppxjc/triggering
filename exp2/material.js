@@ -429,7 +429,7 @@ var test = [
           +  "<div class='center'></div>"
           +  "<div class='dot56'></div></div>",
           id: "testing.17",
-          shape: "red circle",
+          shape: "black circle",
           adjective: "small",
           phrase: "wugged.",
           condition: "AnotB_red"
@@ -604,7 +604,7 @@ var test = [
                 id: "testing.26",
                 phrase: "did not wug.",
                 adjective: "small",
-                shape: "red circle",
+                shape: "black circle",
                 condition: "ABneg"
                 },
 

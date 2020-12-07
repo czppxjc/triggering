@@ -206,7 +206,7 @@ var test = [
       id: "testing.11",
       phrase: "moved clockwise from red to grey.",
       adjective: "small",
-      shape: "red circle",
+      shape: "black circle",
       condition: "AnotB_grey"
       },
 
@@ -263,7 +263,7 @@ var test = [
           id: "testing.14",
           phrase: "did not move clockwise from red to grey.",
           adjective: "small",
-          shape: "red circle",
+          shape: "black circle",
           condition: "AnotB_greyneg"
           },
 
@@ -375,7 +375,7 @@ var test = [
               +  "<div class='center'></div>"
               +  "<div class='dot67'></div></div>",
               id: "testing.20",
-              shape: "red circle",
+              shape: "black circle",
               adjective: "small",
               phrase: "did not move clockwise from red to grey.",
               condition: "AnotB_redneg"
@@ -493,7 +493,7 @@ var test = [
                 id: "testing.26",
                 phrase: "did not move clockwise from red to grey.",
                 adjective: "small",
-                shape: "red circle",
+                shape: "black circle",
                 condition: "ABneg"
                 },
 
@@ -533,7 +533,7 @@ var test = [
               +  "<div class='dot76'></div></div>",
               id: "testing.28",
               phrase: "moved clockwise from red to grey.",
-              shape: "red circle",
+              shape: "black circle",
               adjective: "small",
               condition: "notAnotB"
               },
