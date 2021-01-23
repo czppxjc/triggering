@@ -1,0 +1,279 @@
+
+.container {
+  width: 200px;
+  height: 200px;
+  left: 165px;
+  top: 0px;
+  position: relative;
+}
+
+.container2 {
+  width: 200px;
+  height: 200px;
+  left: 0px;
+  top: 0px;
+  position: relative;
+}
+
+
+.box1 {
+  width: 60px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2 {
+  width: 60px;
+  height: 60px;
+  left: 70px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3 {
+  width: 60px;
+  height: 60px;
+  left: 140px;
+  top: 0px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box4 {
+  width: 60px;
+  height: 60px;
+  left: 0px;
+  top: 70px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box5 {
+  width: 60px;
+  height: 60px;
+  left: 70px;
+  top: 70px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.box6 {
+  width: 60px;
+  height: 60px;
+  left: 140px;
+  top: 70px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box7 {
+  width: 60px;
+  height: 60px;
+  left: 0px;
+  top: 140px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.box8 {
+  width: 60px;
+  height: 60px;
+  left: 70px;
+  top: 140px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box9 {
+  width: 60px;
+  height: 60px;
+  left: 140px;
+  top: 140px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+
+.dot78 {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 155px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a78;
+  animation-duration: 3s;
+}
+
+.square78 {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 155px;
+  background-color: red;
+  position: absolute;
+  animation-name: a78;
+  animation-duration: 3s;
+}
+
+.square74 {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  background-color: red;
+  position: absolute;
+  animation-name: a78;
+  animation-duration: 3s;
+}
+
+
+
+
+.square12 {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 15px;
+  background-color: red;
+  position: absolute;
+  animation-name: a12;
+  animation-duration: 3s;
+}
+
+
+.square45 {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 85px;
+  background-color: red;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
+.dot45 {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 85px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
+
+
+
+.square14 {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  background-color: red;
+  position: absolute;
+  animation-name: a14;
+  animation-duration: 3s;
+}
+
+
+.square23 {
+  width: 30px;
+  height: 30px;
+  left: 155px;
+  top: 15px;
+  background-color: red;
+  position: absolute;
+  animation-name: a23;
+  animation-duration: 3s;
+}
+
+
+
+
+
+.square54 {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  background-color: red;
+  position: absolute;
+  animation-name: a54;
+  animation-duration: 3s;
+}
+
+
+
+
+
+
+@keyframes a12 {
+  0%   {background-color:red; left:15px; top:15px;}
+  30%   {background-color:red; left:15px; top:15px;}
+  100% {background-color:red; left:85px; top:15px;}
+}
+
+@keyframes a14 {
+  0%   {background-color:red; left:15px; top:15px;}
+  30%   {background-color:red; left:15px; top:15px;}
+  100% {background-color:red; left:15px; top:85px;}
+}
+
+@keyframes a78 {
+  0%   {background-color:red; left:15px; top:155px;}
+  30%   {background-color:red; left:15px; top:155px;}
+  100% {background-color:red; left:85px; top:155px;}
+}
+
+
+@keyframes a74 {
+  0%   {background-color:red; left:15px; top:155px;}
+  30%   {background-color:red; left:15px; top:155px;}
+  100% {background-color:red; left:15px; top:85px;}
+}
+
+
+@keyframes a23 {
+  0%   {background-color:red; left:85px; top:15px;}
+  30%   {background-color:red; left:85px; top:15px;}
+  100% {background-color:red; left:155px; top:15px;}
+}
+
+
+
+
+@keyframes a54 {
+  0%   {background-color:red; left:85px; top:85px;}
+  30%   {background-color:red; left:85px; top:85px;}
+  100% {background-color:red; left:15px; top:85px;}
+}
+
+
+@keyframes a45 {
+  0%   {background-color:red; left:30px; top:155px;}
+  30%   {background-color:red; left:30px; top:155px;}
+  100% {background-color:red; left:85px; top:85px;}
+}
