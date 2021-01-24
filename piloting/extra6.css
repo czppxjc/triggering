@@ -1,0 +1,307 @@
+
+.container {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container2 {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.box1 {
+  width: 50px;
+  height: 50px;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+
+.box2 {
+  width: 50px;
+  height: 50px;
+  left: 60px;
+  top: 0px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.box3 {
+  width: 50px;
+  height: 50px;
+  left: 120px;
+  top: 0px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box4 {
+  width: 50px;
+  height: 50px;
+  left: 180px;
+  top: 0px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.box5 {
+  width: 50px;
+  height: 50px;
+  left: 0px;
+  top: 60px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box6 {
+  width: 50px;
+  height: 50px;
+  left: 60px;
+  top: 60px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box7 {
+  width: 50px;
+  height: 50px;
+  left: 120px;
+  top: 60px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.box8 {
+  width: 50px;
+  height: 50px;
+  left: 180px;
+  top: 60px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.box9 {
+  width: 50px;
+  height: 50px;
+  left: 0px;
+  top: 120px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+.box10 {
+  width: 50px;
+  height: 50px;
+  left: 60px;
+  top: 120px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.box11 {
+  width: 50px;
+  height: 50px;
+  left: 120px;
+  top: 120px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box12 {
+  width: 50px;
+  height: 50px;
+  left: 180px;
+  top: 120px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box13 {
+  width: 50px;
+  height: 50px;
+  left: 0px;
+  top: 180px;
+  opacity: 0.5;
+  background-color: blue;
+  position: absolute;
+}
+
+.box14 {
+  width: 50px;
+  height: 50px;
+  left: 60px;
+  top: 180px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box15 {
+  width: 50px;
+  height: 50px;
+  left: 120px;
+  top: 180px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+.box16 {
+  width: 50px;
+  height: 50px;
+  left: 180px;
+  top: 180px;
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.slide78 {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 72.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide78;
+  animation-duration: 3s;
+}
+
+
+.slide1011 {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1011;
+  animation-duration: 3s;
+}
+
+
+
+.slide1314 {
+  width: 25px;
+  height: 25px;
+  left: 72.5px;
+  top: 192.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1314;
+  animation-duration: 3s;
+}
+
+.slide711 {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide711;
+  animation-duration: 3s;
+}
+
+.slide1112 {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 132.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1112;
+  animation-duration: 3s;
+}
+
+.slide1516 {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 192.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1516;
+  animation-duration: 3s;
+}
+
+.slide106 {
+  width: 25px;
+  height: 25px;
+  left: 72.5px;
+  top: 72.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide106;
+  animation-duration: 3s;
+}
+
+
+@keyframes slide78 {
+  0%   {background-color:red; left:132.5px; top:72.5px;}
+  30%   {background-color:red; left:132.5px; top:72.5px;}
+  100% {background-color:red; left:192.5px; top:72.5px;}
+}
+
+@keyframes slide1011 {
+  0%   {background-color:red; left:72.5px; top:132.5px;}
+  30%   {background-color:red; left:72.5px; top:132.5px;}
+  100% {background-color:red; left:132.5px; top:132.5px;}
+}
+
+@keyframes slide1314 {
+  0%   {background-color:red; left:12.5px; top:192.5px;}
+  30%   {background-color:red; left:12.5px; top:192.5px;}
+  100% {background-color:red; left:72.5px; top:192.5px;}
+}
+
+
+
+@keyframes slide711 {
+  0%   {background-color:red; left:132.5px; top:72.5px;}
+  30%   {background-color:red; left:132.5px; top:72.5px;}
+  100% {background-color:red; left:132.5px; top:132.5px;}
+}
+
+
+@keyframes slide1112 {
+  0%   {background-color:red; left:132.5px; top:132.5px;}
+  30%   {background-color:red; left:132.5px; top:132.5px;}
+  100% {background-color:red; left:192.5px; top:132.5px;}
+}
+
+@keyframes slide1516 {
+  0%   {background-color:red; left:132.5px; top:192.5px;}
+  30%   {background-color:red; left:132.5px; top:192.5px;}
+  100% {background-color:red; left:192.5px; top:192.5px;}
+}
+
+@keyframes slide106 {
+  0%   {background-color:red; left:72.5px; top:132.5px;}
+  30%   {background-color:red; left:72.5px; top:132.5px;}
+  100% {background-color:red; left:72.5px; top:72.5px;}
+}

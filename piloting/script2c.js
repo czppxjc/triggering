@@ -58,7 +58,9 @@ var testing = function(stimulus2) {
 
 var teachMaker = function(material) {
   var stimulus = "<p style='text-align:center'>The " + material.shape + " is going to wug:</p>"
-              + "<div  class = 'container' align ='center'> " + material.subject + " </div>"
+              + "<div  class = 'container3'><div  class = 'container2a'> " + material.subject + " </div>"
+              + "<div  class = 'container2b'> " + material.subject2 + " </div>"
+              + "<div  class = 'container2c'> " + material.subject3 + " </div></div>"
 
   var data = {
     id: material.id,
