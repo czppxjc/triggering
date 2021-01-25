@@ -23,8 +23,9 @@ var teach = [
   + "<div class='box16'></div>"
   + "<div class='slide78'></div>",
   id: "teaching.1",
-  nickname: "slide78",
-  shape: "square"
+  adjective: "red",
+  shape: "square",
+  phrase: "wugged."
   },
 
 
@@ -44,10 +45,11 @@ var teach = [
   + "<div class='box14'></div>"
   + "<div class='box15'></div>"
   + "<div class='box16'></div>"
-  + "<div class='slide1011'></div>",
+  + "<div class='slide1011_blue'></div>",
   id: "teaching.2",
-  nickname: "slide1011",
-  shape: "square"
+  adjective: "blue",
+  shape: "square",
+  phrase: "wugged."
   },
 
   { subject: "<div class='box1'></div>"
@@ -66,11 +68,37 @@ var teach = [
   + "<div class='box14'></div>"
   + "<div class='box15'></div>"
   + "<div class='box16'></div>"
-  + "<div class='slide1314'></div>",
+  + "<div class='dot1314'></div>",
   id: "teaching.3",
-  nickname: "slide1314",
-  shape: "square"
+  adjective: "red",
+  shape: "cirlce",
+  phrase: "wugged."
   },
+
+  { subject: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='box10'></div>"
+  + "<div class='box11'></div>"
+  + "<div class='box12'></div>"
+  + "<div class='box13'></div>"
+  + "<div class='box14'></div>"
+  + "<div class='box15'></div>"
+  + "<div class='box16'></div>"
+  + "<div class='dot78_blue'></div>",
+  id: "teaching.4",
+  adjective: "blue",
+  shape: "cirlce",
+  phrase: "wugged."
+  },
+
+
 
 
 
@@ -96,10 +124,12 @@ var test = [
   + "<div class='box14'></div>"
   + "<div class='box15'></div>"
   + "<div class='box16'></div>"
-  + "<div class='slide711'></div>",
+  + "<div class='dot711'></div>",
   id: "testing.1",
-  nickname: "slide711",
-  shape: "square"
+  adjective: "red",
+  shape: "cirlce",
+  phrase: "wugged.",
+  condition: "notAB"
   },
 
   { subject: "<div class='box1'></div>"
@@ -118,10 +148,12 @@ var test = [
   + "<div class='box14'></div>"
   + "<div class='box15'></div>"
   + "<div class='box16'></div>"
-  + "<div class='slide1112'></div>",
+  + "<div class='slide1112_blue'></div>",
   id: "testing.2",
-  nickname: "slide1112",
-  shape: "square"
+  adjective: "blue",
+  shape: "square",
+  phrase: "wugged.",
+  condition: "notAB_neg"
   },
 
   { subject: "<div class='box1'></div>"
@@ -142,8 +174,10 @@ var test = [
   + "<div class='box16'></div>"
   + "<div class='slide1516'></div>",
   id: "testing.3",
-  nickname: "slide1516",
-  shape: "square"
+  adjective: "red",
+  shape: "square",
+  phrase: "wugged.",
+  condition: "notAB"
   },
 
   { subject: "<div class='box1'></div>"
@@ -163,9 +197,11 @@ var test = [
   + "<div class='box15'></div>"
   + "<div class='box16'></div>"
   + "<div class='slide106'></div>",
-  id: "testing.1",
-  nickname: "slide106",
-  shape: "square"
+  id: "testing.4",
+  adjective: "red",
+  shape: "square",
+  phrase: "did not wug.",
+  condition: "notAB"
   },
 
   { subject: "<div class='box1'></div>"
@@ -184,11 +220,38 @@ var test = [
   + "<div class='box14'></div>"
   + "<div class='box15'></div>"
   + "<div class='box16'></div>"
-  + "<div class='slide1314'></div>",
-  id: "testing.4",
-  nickname: "slide1314",
-  shape: "square"
+  + "<div class='slide1314_blue'></div>",
+  id: "testing.5",
+  adjective: "blue",
+  shape: "square",
+  phrase: "did not wug.",
+  condition: "notAB"
   },
+
+  { subject: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='box10'></div>"
+  + "<div class='box11'></div>"
+  + "<div class='box12'></div>"
+  + "<div class='box13'></div>"
+  + "<div class='box14'></div>"
+  + "<div class='box15'></div>"
+  + "<div class='box16'></div>"
+  + "<div class='dot1516'></div>",
+  id: "testing.6",
+  adjective: "red",
+  shape: "circle",
+  phrase: "did not wug.",
+  condition: "notAB"
+  },
+
 
 
 

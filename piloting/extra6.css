@@ -192,6 +192,43 @@
 }
 
 
+
+.slide78_blue {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 72.5px;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide78;
+  animation-duration: 3s;
+}
+
+
+.dot78 {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 72.5px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: slide78;
+  animation-duration: 3s;
+}
+
+.dot78_blue {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 72.5px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide78;
+  animation-duration: 3s;
+}
+
 .slide1011 {
   width: 25px;
   height: 25px;
@@ -203,6 +240,42 @@
   animation-duration: 3s;
 }
 
+.slide1011_blue {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide1011;
+  animation-duration: 3s;
+}
+
+.dot1011_blue {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide1011;
+  animation-duration: 3s;
+}
+
+.dot1011 {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1011;
+  animation-duration: 3s;
+}
+
+
 
 
 .slide1314 {
@@ -211,6 +284,41 @@
   left: 72.5px;
   top: 192.5px;
   background-color: red;
+  position: absolute;
+  animation-name: slide1314;
+  animation-duration: 3s;
+}
+
+.slide1314_blue {
+  width: 25px;
+  height: 25px;
+  left: 72.5px;
+  top: 192.5px;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide1314;
+  animation-duration: 3s;
+}
+
+.dot1314 {
+  width: 25px;
+  height: 25px;
+  left: 72.5px;
+  top: 192.5px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1314;
+  animation-duration: 3s;
+}
+
+.dot1314_blue {
+  width: 25px;
+  height: 25px;
+  left: 72.5px;
+  top: 192.5px;
+  border-radius: 50%;
+  background-color: blue;
   position: absolute;
   animation-name: slide1314;
   animation-duration: 3s;
@@ -227,12 +335,61 @@
   animation-duration: 3s;
 }
 
+
+.dot711 {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  border-radius: 50%;
+  top: 132.5px;
+  background-color: red;
+  position: absolute;
+  animation-name: slide711;
+  animation-duration: 3s;
+}
+
+
+.slide711_blue {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide711;
+  animation-duration: 3s;
+}
+
+
+.dot711_blue {
+  width: 25px;
+  height: 25px;
+  left: 132.5px;
+  top: 132.5px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide711;
+  animation-duration: 3s;
+}
+
 .slide1112 {
   width: 25px;
   height: 25px;
   left: 192.5px;
   top: 132.5px;
   background-color: red;
+  position: absolute;
+  animation-name: slide1112;
+  animation-duration: 3s;
+}
+
+.slide1112_blue {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 132.5px;
+  background-color: blue;
   position: absolute;
   animation-name: slide1112;
   animation-duration: 3s;
@@ -249,6 +406,20 @@
   animation-duration: 3s;
 }
 
+.dot1516 {
+  width: 25px;
+  height: 25px;
+  left: 192.5px;
+  top: 192.5px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: slide1516;
+  animation-duration: 3s;
+}
+
+
+
 .slide106 {
   width: 25px;
   height: 25px;
@@ -261,47 +432,60 @@
 }
 
 
+.slide106_blue {
+  width: 25px;
+  height: 25px;
+  left: 72.5px;
+  top: 72.5px;
+  background-color: blue;
+  position: absolute;
+  animation-name: slide106;
+  animation-duration: 3s;
+}
+
+
+
 @keyframes slide78 {
-  0%   {background-color:red; left:132.5px; top:72.5px;}
-  30%   {background-color:red; left:132.5px; top:72.5px;}
-  100% {background-color:red; left:192.5px; top:72.5px;}
+  0%   {left:132.5px; top:72.5px;}
+  30%   {left:132.5px; top:72.5px;}
+  100% {left:192.5px; top:72.5px;}
 }
 
 @keyframes slide1011 {
-  0%   {background-color:red; left:72.5px; top:132.5px;}
-  30%   {background-color:red; left:72.5px; top:132.5px;}
-  100% {background-color:red; left:132.5px; top:132.5px;}
+  0%   {left:72.5px; top:132.5px;}
+  30%   {left:72.5px; top:132.5px;}
+  100% {left:132.5px; top:132.5px;}
 }
 
 @keyframes slide1314 {
-  0%   {background-color:red; left:12.5px; top:192.5px;}
-  30%   {background-color:red; left:12.5px; top:192.5px;}
-  100% {background-color:red; left:72.5px; top:192.5px;}
+  0%   {left:12.5px; top:192.5px;}
+  30%   {left:12.5px; top:192.5px;}
+  100% {left:72.5px; top:192.5px;}
 }
 
 
 
 @keyframes slide711 {
-  0%   {background-color:red; left:132.5px; top:72.5px;}
-  30%   {background-color:red; left:132.5px; top:72.5px;}
-  100% {background-color:red; left:132.5px; top:132.5px;}
+  0%   {left:132.5px; top:72.5px;}
+  30%   {left:132.5px; top:72.5px;}
+  100% {left:132.5px; top:132.5px;}
 }
 
 
 @keyframes slide1112 {
-  0%   {background-color:red; left:132.5px; top:132.5px;}
-  30%   {background-color:red; left:132.5px; top:132.5px;}
-  100% {background-color:red; left:192.5px; top:132.5px;}
+  0%   {left:132.5px; top:132.5px;}
+  30%   {left:132.5px; top:132.5px;}
+  100% {left:192.5px; top:132.5px;}
 }
 
 @keyframes slide1516 {
-  0%   {background-color:red; left:132.5px; top:192.5px;}
-  30%   {background-color:red; left:132.5px; top:192.5px;}
-  100% {background-color:red; left:192.5px; top:192.5px;}
+  0%   {left:132.5px; top:192.5px;}
+  30%   {left:132.5px; top:192.5px;}
+  100% {left:192.5px; top:192.5px;}
 }
 
 @keyframes slide106 {
-  0%   {background-color:red; left:72.5px; top:132.5px;}
-  30%   {background-color:red; left:72.5px; top:132.5px;}
-  100% {background-color:red; left:72.5px; top:72.5px;}
+  0%   {left:72.5px; top:132.5px;}
+  30%   {left:72.5px; top:132.5px;}
+  100% {left:72.5px; top:72.5px;}
 }

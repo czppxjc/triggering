@@ -14,7 +14,7 @@ var teach = [
   + "<div class='box7'></div>"
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
-  + "<div class='square78'></div>",
+  + "<div class='dot78_blue'></div>",
   subject2: "<div class='box1'></div>"
   + "<div class='box2'></div>"
   + "<div class='box3'></div>"
@@ -24,7 +24,7 @@ var teach = [
   + "<div class='box7'></div>"
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
-  + "<div class='square78'></div>",
+  + "<div class='dot45'></div>",
   subject3: "<div class='box1'></div>"
   + "<div class='box2'></div>"
   + "<div class='box3'></div>"
@@ -34,10 +34,11 @@ var teach = [
   + "<div class='box7'></div>"
   + "<div class='box8'></div>"
   + "<div class='box9'></div>"
-  + "<div class='square78'></div>",
+  + "<div class='square12'></div>",
   id: "teaching.1",
-  nickname: "square78",
-  shape: "square"
+  adjective: "blue",
+  shape: "circle",
+  phrase: "wugged."
   },
 
 
@@ -48,6 +49,82 @@ var teach = [
 
 
 var test = [
+
+  { subject: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='dot78_blue'></div>",
+  subject2: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='square45_blue'></div>",
+  subject3: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='square12'></div>",
+  id: "teaching.1",
+  adjective: "blue",
+  shape: "square",
+  phrase: "wugged.",
+  condition: "AB"
+  },
+
+
+  { subject: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='dot78_blue'></div>",
+  subject2: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='square45_blue'></div>",
+  subject3: "<div class='box1'></div>"
+  + "<div class='box2'></div>"
+  + "<div class='box3'></div>"
+  + "<div class='box4'></div>"
+  + "<div class='box5'></div>"
+  + "<div class='box6'></div>"
+  + "<div class='box7'></div>"
+  + "<div class='box8'></div>"
+  + "<div class='box9'></div>"
+  + "<div class='square12'></div>",
+  id: "teaching.1",
+  adjective: "red",
+  shape: "square",
+  phrase: "did not wug.",
+  condition: "notAB_neg"
+  },
+
 
 
 

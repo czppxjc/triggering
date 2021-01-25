@@ -146,12 +146,35 @@
   animation-duration: 3s;
 }
 
+.dot78_blue {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 155px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  animation-name: a78;
+  animation-duration: 3s;
+}
+
 .square78 {
   width: 30px;
   height: 30px;
   left: 85px;
   top: 155px;
   background-color: red;
+  position: absolute;
+  animation-name: a78;
+  animation-duration: 3s;
+}
+
+.square78_blue {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 155px;
+  background-color: blue;
   position: absolute;
   animation-name: a78;
   animation-duration: 3s;
@@ -164,7 +187,31 @@
   top: 85px;
   background-color: red;
   position: absolute;
-  animation-name: a78;
+  animation-name: a74;
+  animation-duration: 3s;
+}
+
+.dot74 {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a74;
+  animation-duration: 3s;
+}
+
+.dot74_blue {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  animation-name: a74;
   animation-duration: 3s;
 }
 
@@ -194,6 +241,17 @@
   animation-duration: 3s;
 }
 
+.square45_blue {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 85px;
+  background-color: blue;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
 .dot45 {
   width: 30px;
   height: 30px;
@@ -201,6 +259,18 @@
   top: 85px;
   border-radius: 50%;
   background-color: red;
+  position: absolute;
+  animation-name: a45;
+  animation-duration: 3s;
+}
+
+.dot45_blue {
+  width: 30px;
+  height: 30px;
+  left: 85px;
+  top: 85px;
+  border-radius: 50%;
+  background-color: blue;
   position: absolute;
   animation-name: a45;
   animation-duration: 3s;
@@ -221,12 +291,36 @@
 }
 
 
+.square14_blue {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  background-color: blue;
+  position: absolute;
+  animation-name: a14;
+  animation-duration: 3s;
+}
+
+
+
 .square23 {
   width: 30px;
   height: 30px;
   left: 155px;
   top: 15px;
   background-color: red;
+  position: absolute;
+  animation-name: a23;
+  animation-duration: 3s;
+}
+
+.square23_blue {
+  width: 30px;
+  height: 30px;
+  left: 155px;
+  top: 15px;
+  background-color: blue;
   position: absolute;
   animation-name: a23;
   animation-duration: 3s;
@@ -247,55 +341,67 @@
   animation-duration: 3s;
 }
 
+.dot54 {
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 85px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  animation-name: a54;
+  animation-duration: 3s;
+}
+
 
 
 
 
 
 @keyframes a12 {
-  0%   {background-color:red; left:15px; top:15px;}
-  30%   {background-color:red; left:15px; top:15px;}
-  100% {background-color:red; left:85px; top:15px;}
+  0%   {left:15px; top:15px;}
+  30%   {left:15px; top:15px;}
+  100% {left:85px; top:15px;}
 }
 
 @keyframes a14 {
-  0%   {background-color:red; left:15px; top:15px;}
-  30%   {background-color:red; left:15px; top:15px;}
-  100% {background-color:red; left:15px; top:85px;}
+  0%   {left:15px; top:15px;}
+  30%   {left:15px; top:15px;}
+  100% {left:15px; top:85px;}
 }
 
 @keyframes a78 {
-  0%   {background-color:red; left:15px; top:155px;}
-  30%   {background-color:red; left:15px; top:155px;}
-  100% {background-color:red; left:85px; top:155px;}
+  0%   {left:15px; top:155px;}
+  30%   {left:15px; top:155px;}
+  100% {left:85px; top:155px;}
 }
 
 
 @keyframes a74 {
-  0%   {background-color:red; left:15px; top:155px;}
-  30%   {background-color:red; left:15px; top:155px;}
-  100% {background-color:red; left:15px; top:85px;}
+  0%   {left:15px; top:155px;}
+  30%   {left:15px; top:155px;}
+  100% {left:15px; top:85px;}
 }
 
 
 @keyframes a23 {
-  0%   {background-color:red; left:85px; top:15px;}
-  30%   {background-color:red; left:85px; top:15px;}
-  100% {background-color:red; left:155px; top:15px;}
+  0%   {left:85px; top:15px;}
+  30%   {left:85px; top:15px;}
+  100% {left:155px; top:15px;}
 }
 
 
 
 
 @keyframes a54 {
-  0%   {background-color:red; left:85px; top:85px;}
-  30%   {background-color:red; left:85px; top:85px;}
-  100% {background-color:red; left:15px; top:85px;}
+  0%   {left:85px; top:85px;}
+  30%   {left:85px; top:85px;}
+  100% {left:15px; top:85px;}
 }
 
 
 @keyframes a45 {
-  0%   {background-color:red; left:15px; top:85px;}
-  30%   {background-color:red; left:15px; top:85px;}
-  100% {background-color:red; left:85px; top:85px;}
+  0%   {left:15px; top:85px;}
+  30%   {left:15px; top:85px;}
+  100% {left:85px; top:85px;}
 }

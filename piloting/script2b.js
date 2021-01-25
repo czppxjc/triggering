@@ -31,11 +31,14 @@ var instructions_block = {
 
 var teaching = function(stimulus){
   return{
-    type: 'html-keyboard-response',
+    type: 'html-button-delay-response',
     stimulus: stimulus.stim,
-    prompt: "<p style='text-align:center'> Press any key to move on </p>"
-  //  choices: [""],
-  //  trial_duration: 4000,
+  prompt: "<p style='text-align:center'>The " + stimulus.adjective + " " + stimulus.shape + " " + stimulus.phrase + "</p>",
+    choices: ["Next"],
+      post_trial_gap: 500,
+      prompt_delay: 3000,
+      button_delay: 4000,
+//    trial_duration: 3500
   };
 };
 
@@ -44,12 +47,14 @@ var teaching = function(stimulus){
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>The " + stimulus2.shape + " just wugged.</p>",
+    prompt: "<p style='text-align:center'>The " + stimulus2.adjective + " " + stimulus2.shape + " " + stimulus2.phrase + "</p>",
+  //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
-    choices: ["completely false", "neither", "completely true"],
+    choices: ["false", "true"],
     data: stimulus2.data,
-    prompt_delay: 4000,
-    button_delay: 5000
+    prompt_delay: 3000,
+    button_delay: 4000,
+    post_trial_gap: 500
   };
 };
 
@@ -57,17 +62,23 @@ var testing = function(stimulus2) {
 
 
 var teachMaker = function(material) {
-  var stimulus = "<p style='text-align:center'>The " + material.shape + " is going to wug:</p>"
-              + "<div  class = 'container' align ='center'> " + material.subject + " </div>"
+  var stimulus = "<div  class = 'container'> " + material.subject + " </div>"
+
+  var phrase = " " + material.phrase + " "
+  var shape = " " + material.shape + " "
+  var adjective = " " + material.adjective + " "
 
   var data = {
     id: material.id,
     type: "teaching",
     shape: material.shape,
-    nickname: material.nickname
-  };
+    adjective: material.adjective
+    };
 
   return {stim: stimulus,
+          phrase: phrase,
+          shape: shape,
+          adjective: adjective,
           data: data};
 };
 
@@ -75,18 +86,26 @@ var testMaker = function(material) {
   var stimulus2 = "<div  class = 'container'> " + material.subject + " </div>"
 
   var shape = " " + material.shape + " "
+  var adjective = " " + material.adjective + " "
+  var phrase = " " + material.phrase + " "
+  var condition = " " + material.condition + " "
 
   var data = {
     id: material.id,
-    type: "teaching",
+    type: "testing",
     shape: material.shape,
-    nickname: material.nickname
+    adjective: material.adjective,
+    condition: material.condition
   };
 
   return {stim: stimulus2,
+          phrase: phrase,
           shape: shape,
+          condition: condition,
+          adjective: adjective,
           data: data};
 };
+
 
 
 
