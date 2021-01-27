@@ -51,10 +51,10 @@ var teaching = function(stimulus){
   return{
     type: 'html-button-delay-response',
     stimulus: stimulus.stim,
-  prompt: "<p style='text-align:center'>The " + stimulus.shape + " " + stimulus.phrase + "</p>",
-    choices: ["Show again"],
-  //    post_trial_gap: 500,
-      prompt_delay: 2000,
+  prompt: "<p style='text-align:center'>Move the curser on the object to see an instance of wugging!</p>",
+    choices: ["Show me another case!"],
+      post_trial_gap: 500,
+  //    prompt_delay: 2000,
       button_delay: 3000,
 //    trial_duration: 3500
   };
@@ -101,7 +101,7 @@ var teachMaker = function(material) {
 };
 
 var testMaker = function(material) {
-  var stimulus2 = "<div  class = 'container2'> " + material.subject + " </div>"
+  var stimulus2 = "<div  class = 'container'> " + material.subject + " </div>"
 
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "
@@ -133,7 +133,7 @@ for (var i in teach) {
   stimuli_set.push(teaching(teachMaker(teach[i])));
 }
 
-stimuli_set = jsPsych.randomization.repeat(stimuli_set, 5);
+stimuli_set = jsPsych.randomization.repeat(stimuli_set, 1);
 
 
 //testing stimuli

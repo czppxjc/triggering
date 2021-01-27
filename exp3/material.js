@@ -5,15 +5,22 @@
 var teach = [
 
 
-  { subject: "<div class='dot'><div class='square'></div>"
+  { subject: "<div class='ball'><div class='redline'></div>"
 + "<div class='dot2'></div></div>",
   id: "teaching.1",
-  shape: "circle",
+  //shape: "circle",
   //adjective: "small",
-  phrase: "wugged."
+  //phrase: "wugged."
   },
 
 
+  { subject: "<div class='ball'><div class='redline'></div>"
++ "<div class='dot1'></div></div>",
+  id: "teaching.2",
+  //shape: "circle",
+  //adjective: "small",
+  //phrase: "wugged."
+  },
 
 
 
@@ -22,12 +29,20 @@ var teach = [
 var test = [
 
 
-  { subject: "<div class='dot'><div class='square'></div>"
-+ "<div class='dot2'></div></div>",
+  { subject: "<div class='ball'><div class='redline'></div>"
++ "<div class='dot2_test'></div></div>",
   id: "teaching.1",
   shape: "circle",
   // adjective: "small",
   phrase: "wugged."
+  },
+
+  { subject: "<div class='ball'><div class='redline'></div>"
++ "<div class='dot1_test'></div></div>",
+  id: "teaching.1",
+  shape: "circle",
+  // adjective: "small",
+  phrase: "did not wug."
   },
 
 
