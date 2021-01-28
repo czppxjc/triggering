@@ -56,9 +56,7 @@ var teaching = function(stimulus){
       post_trial_gap: 500,
       prompt_delay: 2000,
       button_delay: 3000,
-      trigger_name: ["trigger"]
 //    trial_duration: 3500
-  //    stimulus_delay: 1000
   };
 };
 
