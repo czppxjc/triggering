@@ -5,8 +5,7 @@
 var teach = [
 
 
-  { subject: "<div class='ball'><div class='redline'></div>"
-+ "<div class='dot2'></div></div>",
+  { subject: "<div id='dot2_test'></div>",
   id: "teaching.1",
   //shape: "circle",
   //adjective: "small",
@@ -14,13 +13,12 @@ var teach = [
   },
 
 
-  { subject: "<div class='ball'><div class='redline'></div>"
-+ "<div class='dot1'></div></div>",
-  id: "teaching.2",
+  //{ subject: "<div class='dot1_test'></div>",
+  //id: "teaching.2",
   //shape: "circle",
   //adjective: "small",
   //phrase: "wugged."
-  },
+  //},
 
 
 

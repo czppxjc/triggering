@@ -54,9 +54,11 @@ var teaching = function(stimulus){
   prompt: "<p style='text-align:center'>Move the curser on the object to see an instance of wugging!</p>",
     choices: ["Show me another case!"],
       post_trial_gap: 500,
-  //    prompt_delay: 2000,
+      prompt_delay: 2000,
       button_delay: 3000,
+      trigger_name: ["trigger"]
 //    trial_duration: 3500
+  //    stimulus_delay: 1000
   };
 };
 
@@ -80,7 +82,20 @@ var testing = function(stimulus2) {
 
 
 var teachMaker = function(material) {
-  var stimulus = "<div  class = 'container'> " + material.subject + " </div>"
+  var stimulus = "<div class='container'><div class='ball'><div class='redline'></div>"
+  + " " + material.subject + " </div></div></div>"
+  + "<button id='second-parent'>Click me !</button>"
+
+var trigger =  function(){
+	('#second-parent').click(function(){
+		e1 = $('#dot2_test');
+        e1.addClass('animate');
+        e1.one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+        function (e) {
+            e1.removeClass('animate');
+        });
+	});
+};
 
   var phrase = " " + material.phrase + " "
   var shape = " " + material.shape + " "
@@ -101,7 +116,8 @@ var teachMaker = function(material) {
 };
 
 var testMaker = function(material) {
-  var stimulus2 = "<div  class = 'container'> " + material.subject + " </div>"
+  var stimulus2 = "<div class='container'><div class='ball'><div class='redline'></div>"
+  + " " + material.subject + " </div></div></div>"
 
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "
