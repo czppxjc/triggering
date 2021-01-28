@@ -66,16 +66,47 @@
   display: inline-block;
   position: relative;
   left: 30px;
-  top: 60px;
+  top: 90px;
   }
-  .animate {
-  animation: animation2 3s;
+
+.animate {
+  -webkit-animation: animation2 2s;
+  -ms-animation: animation 2s;
+  -o-animation: animation2 2s;
+  -moz-animation: animation2 2s;
+  animation: animation2 2s;
   }
+
+
+
 @keyframes animation2 {
     0%   {left:30px; top:90px;}
     50%   {left:30px; top:90px;}
     100% {left:30px; top:60px;} }
 
+@-webkit-keyframes animation2 {
+    0%   {left:30px; top:90px;}
+    50%   {left:30px; top:90px;}
+    100% {left:30px; top:60px;}
+  }
+
+@-moz-keyframes animation2 {
+      0%   {left:30px; top:90px;}
+      50%   {left:30px; top:90px;}
+      100% {left:30px; top:60px;}
+    }
+
+@-ms-keyframes animation2 {
+        0%   {left:30px; top:90px;}
+        50%   {left:30px; top:90px;}
+        100% {left:30px; top:60px;}
+      }
+
+@-o-keyframes animation2 {
+          0%   {left:30px; top:90px;}
+          50%   {left:30px; top:90px;}
+          100% {left:30px; top:60px;}
+        }
 
 
 @keyframes animation {

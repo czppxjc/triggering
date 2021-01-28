@@ -47,18 +47,21 @@ var instructions_block = {
 //  data: { questionId: "consent" }
 //};
 
-var teaching = function(stimulus){
-  return{
+var teaching = function(stimulus) {
+  return {
     type: 'html-button-delay-response',
+    prompt: "<p style='text-align:center'>The " +  stimulus.shape + " " + stimulus.phrase + "</p>",
+  //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus.stim,
-  prompt: "<p style='text-align:center'>Move the curser on the object to see an instance of wugging!</p>",
-    choices: ["Show me another case!"],
-      post_trial_gap: 500,
-      prompt_delay: 2000,
-      button_delay: 3000,
-//    trial_duration: 3500
+    choices: ["Next"],
+    data: stimulus.data,
+//    prompt_delay: 3000,
+  //  button_delay: 4000,
+    post_trial_gap: 500,
+    trigger_choices: ["Click here for animation"]
   };
 };
+
 
 
 
@@ -77,26 +80,24 @@ var testing = function(stimulus2) {
 };
 
 
+function DoAnimation(){
+var targetElement = document.getElementById("dot2_test");
+targetElement.classList.remove('animate');
+void targetElement.offsetWidth;
+targetElement.classList.add('animate');
 
+
+};
 
 var teachMaker = function(material) {
   var stimulus = "<div class='container'><div class='ball'><div class='redline'></div>"
   + " " + material.subject + " </div></div></div>"
-  + "<button id='second-parent'>Click me !</button>"
+  + "<button onclick = 'DoAnimation();'>Go</button>"
 
-var trigger =  function(){
-	('#second-parent').click(function(){
-		e1 = $('#dot2_test');
-        e1.addClass('animate');
-        e1.one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
-        function (e) {
-            e1.removeClass('animate');
-        });
-	});
-};
 
   var phrase = " " + material.phrase + " "
   var shape = " " + material.shape + " "
+  var subject = " " + material.subject + " "
   //var adjective = " " + material.adjective + " "
 
   var data = {
@@ -109,13 +110,18 @@ var trigger =  function(){
   return {stim: stimulus,
           phrase: phrase,
           shape: shape,
+          subject: subject,
         //  adjective: adjective,
           data: data};
 };
 
+
+
+
 var testMaker = function(material) {
   var stimulus2 = "<div class='container'><div class='ball'><div class='redline'></div>"
   + " " + material.subject + " </div></div></div>"
+
 
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "

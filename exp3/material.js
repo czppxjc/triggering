@@ -7,9 +7,9 @@ var teach = [
 
   { subject: "<div id='dot2_test'></div>",
   id: "teaching.1",
-  //shape: "circle",
+  shape: "circle",
   //adjective: "small",
-  //phrase: "wugged."
+  phrase: "wugged."
   },
 
 
