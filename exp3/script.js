@@ -81,23 +81,33 @@ var testing = function(stimulus2) {
 
 
 function DoAnimation(){
-var targetElement = document.getElementById("dot2_test");
-targetElement.classList.remove('animate');
+
+  if (document.getElementsByClassName("dot2_test")[0] !== undefined)
+  {
+var targetElement = document.getElementsByClassName("dot2_test")[0];
+
+targetElement.classList.remove("animate");
 void targetElement.offsetWidth;
-targetElement.classList.add('animate');
+targetElement.classList.add("animate");
+}
+else {
+  var targetElement2 = document.getElementsByClassName("dot1_test")[0];
 
-
+  targetElement2.classList.remove("animate2");
+  void targetElement2.offsetWidth;
+  targetElement2.classList.add("animate2");
+}
 };
 
 var teachMaker = function(material) {
   var stimulus = "<div class='container'><div class='ball'><div class='redline'></div>"
-  + " " + material.subject + " </div></div></div>"
-  + "<button onclick = 'DoAnimation();'>Go</button>"
+  + " " + material.subject +  "</div></div></div>"
+  + "<button onclick = 'DoAnimation();'>Show me!</button>"
 
+  var target = " " + material.subject + " "
 
   var phrase = " " + material.phrase + " "
   var shape = " " + material.shape + " "
-  var subject = " " + material.subject + " "
   //var adjective = " " + material.adjective + " "
 
   var data = {
@@ -110,7 +120,7 @@ var teachMaker = function(material) {
   return {stim: stimulus,
           phrase: phrase,
           shape: shape,
-          subject: subject,
+          target: target,
         //  adjective: adjective,
           data: data};
 };

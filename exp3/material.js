@@ -5,20 +5,20 @@
 var teach = [
 
 
-  { subject: "<div id='dot2_test'></div>",
+  { subject: "<div class='dot2_test'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "green circle",
   //adjective: "small",
-  phrase: "wugged."
+  phrase: "wugs."
   },
 
 
-  //{ subject: "<div class='dot1_test'></div>",
-  //id: "teaching.2",
-  //shape: "circle",
+  { subject: "<div class='dot1_test'></div>",
+  id: "teaching.2",
+  shape: "green circle",
   //adjective: "small",
-  //phrase: "wugged."
-  //},
+  phrase: "wugs."
+  },
 
 
 

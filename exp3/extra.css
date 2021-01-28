@@ -44,72 +44,48 @@
   -webkit-transition: all 2s ease;
 }
 
-.dot1 {
-  height: 20px;
-  width: 20px;
+.dot1_test {
+  height: 0px;
+  width: 0px;
     left: 10px;
   top: 130px;
   background-color: LawnGreen;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  -webkit-transition: all 2s ease;
 }
 
 
-
-#dot2_test {
-  height: 20px;
-  width: 20px;
+.dot2_test {
+  height: 0px;
+  width: 0px;
   background-color: LawnGreen;
   border-radius: 50%;
   display: inline-block;
   position: relative;
   left: 30px;
-  top: 90px;
+  top: 60px;
   }
 
+
 .animate {
-  -webkit-animation: animation2 2s;
-  -ms-animation: animation 2s;
-  -o-animation: animation2 2s;
-  -moz-animation: animation2 2s;
   animation: animation2 2s;
   }
+
+  .animate2 {
+    animation: animation 2s;
+    }
 
 
 
 @keyframes animation2 {
-    0%   {left:30px; top:90px;}
-    50%   {left:30px; top:90px;}
-    100% {left:30px; top:60px;} }
-
-@-webkit-keyframes animation2 {
-    0%   {left:30px; top:90px;}
-    50%   {left:30px; top:90px;}
-    100% {left:30px; top:60px;}
-  }
-
-@-moz-keyframes animation2 {
-      0%   {left:30px; top:90px;}
-      50%   {left:30px; top:90px;}
-      100% {left:30px; top:60px;}
-    }
-
-@-ms-keyframes animation2 {
-        0%   {left:30px; top:90px;}
-        50%   {left:30px; top:90px;}
-        100% {left:30px; top:60px;}
-      }
-
-@-o-keyframes animation2 {
-          0%   {left:30px; top:90px;}
-          50%   {left:30px; top:90px;}
-          100% {left:30px; top:60px;}
-        }
-
+    0%   {left:30px; top:90px; width: 20px; height:20px;}
+    50%   {left:30px; top:90px;; width: 20px; height:20px;}
+    99% {left:30px; top:60px; width: 20px; height:20px;}
+  100% {left:30px; top:60px; width: 0px; height:0px;} }
 
 @keyframes animation {
-  0%   {left:30px; top:130px;}
-  50%   {left:30px; top:130px;}
-  100% {left:30px; top:80px;}}
+  0%   {left:10px; top:90px; width: 20px; height:20px;}
+  50%   {left:10px; top:90px; width: 20px; height:20px;}
+  99% {left:10px; top:130px; width: 20px; height:20px;}
+100% {left:10px; top:130px; width: 0px; height:0px;}}
