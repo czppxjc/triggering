@@ -32,23 +32,12 @@
   position: relative;
 }
 
-.dot2 {
-  height: 20px;
-  width: 20px;
-  left: 30px;
-  top: 130px;
-  background-color: LawnGreen;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  -webkit-transition: all 2s ease;
-}
 
-.dot1_test {
+.dot1_wug1 {
   height: 0px;
   width: 0px;
-    left: 10px;
-  top: 130px;
+  left: 10px;
+  top: 90px;
   background-color: LawnGreen;
   border-radius: 50%;
   display: inline-block;
@@ -56,7 +45,7 @@
 }
 
 
-.dot2_test {
+.dot2_wug2 {
   height: 0px;
   width: 0px;
   background-color: LawnGreen;
@@ -67,25 +56,137 @@
   top: 60px;
   }
 
-
-.animate {
-  animation: animation2 2s;
-  }
-
-  .animate2 {
-    animation: animation 2s;
+  .dot3_wug3 {
+    height: 0px;
+    width: 0px;
+    background-color: LawnGreen;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: -20px;
+    top: 40px;
     }
 
+    .dot1_up1 {
+      height: 0px;
+      width: 0px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      left: -50px;
+      top: 150px;
+      }
+
+      .dot2_up2 {
+        height: 0px;
+        width: 0px;
+        background-color: LawnGreen;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        left: 50px;
+        top: 100px;
+        }
+
+        .dot1_down1 {
+          height: 0px;
+          width: 0px;
+          background-color: LawnGreen;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          left: -20px;
+          top: 60px;
+          }
+
+          .dot2_down2 {
+            height: 0px;
+            width: 0px;
+            background-color: LawnGreen;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            left: 20px;
+            top: 90px;
+            }
 
 
-@keyframes animation2 {
-    0%   {left:30px; top:90px; width: 20px; height:20px;}
-    50%   {left:30px; top:90px;; width: 20px; height:20px;}
-    99% {left:30px; top:60px; width: 20px; height:20px;}
-  100% {left:30px; top:60px; width: 0px; height:0px;} }
+.up2 {
+  animation: up2 2s;
+  }
 
-@keyframes animation {
-  0%   {left:10px; top:90px; width: 20px; height:20px;}
-  50%   {left:10px; top:90px; width: 20px; height:20px;}
-  99% {left:10px; top:130px; width: 20px; height:20px;}
-100% {left:10px; top:130px; width: 0px; height:0px;}}
+  .up1 {
+    animation: up1 2s;
+    }
+
+    .down2 {
+      animation: down2 2s;
+      }
+
+      .down1 {
+        animation: down1 2s;
+        }
+
+        .wug1 {
+          animation: wug1 2s;
+          }
+
+          .wug2 {
+            animation: wug2 2s;
+            }
+
+            .wug3 {
+              animation: wug3 2s;
+              }
+
+@keyframes up2 {
+        0%  {width: 20px; height:20px;}
+        30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+        99.5% {transform: translate(0px, -75px); width: 20px; height:20px;}
+      100% {transform: translate(0px, -75px); width: 0px; height:0px;} }
+
+
+@keyframes up1 {
+    0%  {width: 20px; height:20px;}
+    30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+    99.5% {transform: translate(0px, -100px); width: 20px; height:20px;}
+  100% {transform: translate(0px, -100px); width: 0px; height:0px;} }
+
+  @keyframes down2 {
+          0%  {width: 20px; height:20px;}
+          30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+          99.5% {transform: translate(0px, 70px); width: 20px; height:20px;}
+        100% {transform: translate(0px, 70px); width: 0px; height:0px;} }
+
+
+  @keyframes down1 {
+      0%  {width: 20px; height:20px;}
+      30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+      99.5% {transform: translate(0px, 30px); width: 20px; height:20px;}
+    100% {transform: translate(0px, 30px); width: 0px; height:0px;} }
+
+
+
+
+@keyframes wug1 {
+  0%   {top:130px; width: 20px; height:20px;}
+  50%   {top:130px; width: 20px; height:20px;}
+  88%   {top:90px;; width: 20px; height:20px;}
+  99.5% {top:90px; width: 20px; height:20px;}
+100% {top:90px; width: 0px; height:0px;}}
+
+
+@keyframes wug3 {
+  0%   {top:130px; width: 20px; height:20px;}
+  50%   {top:130px; width: 20px; height:20px;}
+  88%   {top:40px;; width: 20px; height:20px;}
+  99.5% {top:40px; width: 20px; height:20px;}
+100% {top:40px; width: 0px; height:0px;}}
+
+@keyframes wug2 {
+  0%   {top:130px; width: 20px; height:20px;}
+  50%   {top:130px; width: 20px; height:20px;}
+  88%   {top:60px;; width: 20px; height:20px;}
+  99.5% {top:60px; width: 20px; height:20px;}
+100% {top:60px; width: 0px; height:0px;}}

@@ -5,7 +5,7 @@
 var teach = [
 
 
-  { subject: "<div class='dot2_test'></div>",
+  { subject: "<div class='dot1_wug1'></div>",
   id: "teaching.1",
   shape: "green circle",
   //adjective: "small",
@@ -13,8 +13,15 @@ var teach = [
   },
 
 
-  { subject: "<div class='dot1_test'></div>",
+  { subject: "<div class='dot2_wug2'></div>",
   id: "teaching.2",
+  shape: "green circle",
+  //adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='dot3_wug3'></div>",
+  id: "teaching.3",
   shape: "green circle",
   //adjective: "small",
   phrase: "wugs."
@@ -27,20 +34,46 @@ var teach = [
 var test = [
 
 
-  { subject: "<div class='ball'><div class='redline'></div>"
-+ "<div class='dot2_test'></div></div>",
+  { subject: "<div class='dot2_wug2'></div>",
   id: "teaching.1",
   shape: "circle",
   // adjective: "small",
-  phrase: "wugged."
+  phrase: "wugs."
   },
 
-  { subject: "<div class='ball'><div class='redline'></div>"
-+ "<div class='dot1_test'></div></div>",
+  { subject: "<div class='dot3_wug3'></div>",
   id: "teaching.1",
   shape: "circle",
   // adjective: "small",
-  phrase: "did not wug."
+  phrase: "does not wug."
+  },
+
+  { subject: "<div class='dot1_up1'></div>",
+  id: "teaching.1",
+  shape: "circle",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='dot2_up2'></div>",
+  id: "teaching.1",
+  shape: "circle",
+  // adjective: "small",
+  phrase: "does not wug."
+  },
+
+  { subject: "<div class='dot1_down1'></div>",
+  id: "teaching.1",
+  shape: "circle",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='dot2_down2'></div>",
+  id: "teaching.1",
+  shape: "circle",
+  // adjective: "small",
+  phrase: "does not wug."
   },
 
 

@@ -56,9 +56,8 @@ var teaching = function(stimulus) {
     choices: ["Next"],
     data: stimulus.data,
 //    prompt_delay: 3000,
-  //  button_delay: 4000,
-    post_trial_gap: 500,
-    trigger_choices: ["Click here for animation"]
+    button_delay: 2000,
+    post_trial_gap: 500
   };
 };
 
@@ -71,33 +70,80 @@ var testing = function(stimulus2) {
     prompt: "<p style='text-align:center'>The " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
   //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
-    choices: ["false", "true"],
+    choices: ["False", "True"],
     data: stimulus2.data,
-    prompt_delay: 3000,
-    button_delay: 4000,
+  //  prompt_delay: 3000,
+    button_delay: 2000,
     post_trial_gap: 500
   };
 };
 
 
+// define animation button
+
 function DoAnimation(){
 
-  if (document.getElementsByClassName("dot2_test")[0] !== undefined)
+  if (document.getElementsByClassName("dot1_wug1")[0] !== undefined)
   {
-var targetElement = document.getElementsByClassName("dot2_test")[0];
+    var targetElement1 = document.getElementsByClassName("dot1_wug1")[0];
 
-targetElement.classList.remove("animate");
-void targetElement.offsetWidth;
-targetElement.classList.add("animate");
+    targetElement1.classList.remove("wug1");
+    void targetElement1.offsetWidth;
+    targetElement1.classList.add("wug1");
 }
-else {
-  var targetElement2 = document.getElementsByClassName("dot1_test")[0];
+else if (document.getElementsByClassName("dot2_wug2")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot2_wug2")[0];
 
-  targetElement2.classList.remove("animate2");
-  void targetElement2.offsetWidth;
-  targetElement2.classList.add("animate2");
+  targetElement.classList.remove("wug2");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("wug2");
+}
+
+else if (document.getElementsByClassName("dot3_wug3")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot3_wug3")[0];
+
+  targetElement.classList.remove("wug3");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("wug3");
+}
+
+else if (document.getElementsByClassName("dot1_up1")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot1_up1")[0];
+
+  targetElement.classList.remove("up1");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up1");
+}
+
+else if (document.getElementsByClassName("dot2_up2")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot2_up2")[0];
+
+  targetElement.classList.remove("up2");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up2");
+}
+
+else if (document.getElementsByClassName("dot1_down1")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot1_down1")[0];
+
+  targetElement.classList.remove("down1");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("down1");
+}
+
+else {
+
+  var targetElement = document.getElementsByClassName("dot2_down2")[0];
+
+  targetElement.classList.remove("down2");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("down2");
+
 }
 };
+
+
+// defining teaching and testing
 
 var teachMaker = function(material) {
   var stimulus = "<div class='container'><div class='ball'><div class='redline'></div>"
@@ -131,7 +177,7 @@ var teachMaker = function(material) {
 var testMaker = function(material) {
   var stimulus2 = "<div class='container'><div class='ball'><div class='redline'></div>"
   + " " + material.subject + " </div></div></div>"
-
+  + "<button onclick = 'DoAnimation();'>Show me!</button>"
 
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "
