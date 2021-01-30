@@ -5,7 +5,7 @@
 var teach = [
 
 
-  // { subject: "<div class='wug1_up1'></div>",
+  //  { subject: "<div class='wug1_up1'></div>",
   // id: "teaching.1",
   // shape: "green circle",
   // //adjective: "small",
@@ -27,7 +27,7 @@ var teach = [
   // //adjective: "small",
   // phrase: "wugs."
   // },
-  //
+
   // { subject: "<div class='wug3_up1'></div>",
   // id: "teaching.3",
   // shape: "green circle",

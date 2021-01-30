@@ -92,7 +92,8 @@ function DoAnimation(){
 //     targetElement1.classList.add("up1");
 // }
 // else
- if (document.getElementsByClassName("wug2_up1")[0] !== undefined) {
+ if (document.getElementsByClassName("wug2_up1")[0] !== undefined &&
+document.getElementsByClassName("wug1_up1")[0] == undefined) {
   var targetElement = document.getElementsByClassName("wug2_up1")[0];
 
   targetElement.classList.remove("up1");
@@ -102,15 +103,33 @@ function DoAnimation(){
 
 else if (document.getElementsByClassName("wug2_up1")[0] !== undefined &&
 document.getElementsByClassName("wug1_up1")[0] !== undefined) {
-  //var elements = document.getElementsByClassName("wug2_up1");
-  var elements = document.querySelectorAll(".wug1_up1,.wug2_up1");
 
+  var elements = document.querySelectorAll(".wug2_up1");
+  var elements2 = document.querySelectorAll(".wug1_up1");
 
-  for (var i=0; i < elements.length; i++) {
-      elements[i].classList.remove("up1");
-      void elements[i].offsetWidth;
-      elements[i].classList.add("up1");
-    }
+  var array = Array.from(elements);
+var array2 = Array.from(elements2);
+
+array.forEach(function(x) {
+      x.classList.remove("up1");
+      void x.offsetWidth;
+       x.classList.add("up1");
+});
+
+array2.forEach(function(x) {
+      x.classList.remove("up2");
+      void x.offsetWidth;
+       x.classList.add("up2");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1_up1")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug1_up1")[0];
+
+  targetElement.classList.remove("up1");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up1");
 }
 
 else if (document.getElementsByClassName("wug3_up1")[0] !== undefined) {
