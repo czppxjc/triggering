@@ -5,7 +5,15 @@
 var teach = [
 
 
-  { subject: "<div class='dot1_wug1'></div>",
+  // { subject: "<div class='wug1_up1'></div>",
+  // id: "teaching.1",
+  // shape: "green circle",
+  // //adjective: "small",
+  // phrase: "wugs."
+  // },
+
+  { subject: "<div class='wug2_up1'></div>"
+  +"<div class='wug1_up1'></div>",
   id: "teaching.1",
   shape: "green circle",
   //adjective: "small",
@@ -13,19 +21,19 @@ var teach = [
   },
 
 
-  { subject: "<div class='dot2_wug2'></div>",
-  id: "teaching.2",
-  shape: "green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
-
-  { subject: "<div class='dot3_wug3'></div>",
-  id: "teaching.3",
-  shape: "green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
+  // { subject: "<div class='wug2_up1'></div>",
+  // id: "teaching.2",
+  // shape: "green circle",
+  // //adjective: "small",
+  // phrase: "wugs."
+  // },
+  //
+  // { subject: "<div class='wug3_up1'></div>",
+  // id: "teaching.3",
+  // shape: "green circle",
+  // //adjective: "small",
+  // phrase: "wugs."
+  // },
 
 
 

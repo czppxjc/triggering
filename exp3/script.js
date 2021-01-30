@@ -83,28 +83,42 @@ var testing = function(stimulus2) {
 
 function DoAnimation(){
 
-  if (document.getElementsByClassName("dot1_wug1")[0] !== undefined)
-  {
-    var targetElement1 = document.getElementsByClassName("dot1_wug1")[0];
+//   if (document.getElementsByClassName("wug1_up1")[0] !== undefined)
+//   {
+//     var targetElement1 = document.getElementsByClassName("wug1_up1")[0];
+//
+//     targetElement1.classList.remove("up1");
+//     void targetElement1.offsetWidth;
+//     targetElement1.classList.add("up1");
+// }
+// else
+ if (document.getElementsByClassName("wug2_up1")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug2_up1")[0];
 
-    targetElement1.classList.remove("wug1");
-    void targetElement1.offsetWidth;
-    targetElement1.classList.add("wug1");
-}
-else if (document.getElementsByClassName("dot2_wug2")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("dot2_wug2")[0];
-
-  targetElement.classList.remove("wug2");
+  targetElement.classList.remove("up1");
   void targetElement.offsetWidth;
-  targetElement.classList.add("wug2");
+  targetElement.classList.add("up1");
 }
 
-else if (document.getElementsByClassName("dot3_wug3")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("dot3_wug3")[0];
+else if (document.getElementsByClassName("wug2_up1")[0] !== undefined &&
+document.getElementsByClassName("wug1_up1")[0] !== undefined) {
+  //var elements = document.getElementsByClassName("wug2_up1");
+  var elements = document.querySelectorAll(".wug1_up1,.wug2_up1");
 
-  targetElement.classList.remove("wug3");
+
+  for (var i=0; i < elements.length; i++) {
+      elements[i].classList.remove("up1");
+      void elements[i].offsetWidth;
+      elements[i].classList.add("up1");
+    }
+}
+
+else if (document.getElementsByClassName("wug3_up1")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug3_up1")[0];
+
+  targetElement.classList.remove("up1");
   void targetElement.offsetWidth;
-  targetElement.classList.add("wug3");
+  targetElement.classList.add("up1");
 }
 
 else if (document.getElementsByClassName("dot1_up1")[0] !== undefined) {

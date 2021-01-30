@@ -33,11 +33,11 @@
 }
 
 
-.dot1_wug1 {
+.wug1_up1 {
   height: 0px;
   width: 0px;
   left: 10px;
-  top: 90px;
+  top: 130px;
   background-color: LawnGreen;
   border-radius: 50%;
   display: inline-block;
@@ -45,7 +45,7 @@
 }
 
 
-.dot2_wug2 {
+.wug2_up1 {
   height: 0px;
   width: 0px;
   background-color: LawnGreen;
@@ -53,10 +53,10 @@
   display: inline-block;
   position: relative;
   left: 30px;
-  top: 60px;
+  top: 130px;
   }
 
-  .dot3_wug3 {
+  .wug3_up1 {
     height: 0px;
     width: 0px;
     background-color: LawnGreen;
@@ -64,7 +64,7 @@
     display: inline-block;
     position: relative;
     left: -20px;
-    top: 40px;
+    top: 130px;
     }
 
     .dot1_up1 {
@@ -165,28 +165,3 @@
       30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
       99.5% {transform: translate(0px, 30px); width: 20px; height:20px;}
     100% {transform: translate(0px, 30px); width: 0px; height:0px;} }
-
-
-
-
-@keyframes wug1 {
-  0%   {top:130px; width: 20px; height:20px;}
-  50%   {top:130px; width: 20px; height:20px;}
-  88%   {top:90px;; width: 20px; height:20px;}
-  99.5% {top:90px; width: 20px; height:20px;}
-100% {top:90px; width: 0px; height:0px;}}
-
-
-@keyframes wug3 {
-  0%   {top:130px; width: 20px; height:20px;}
-  50%   {top:130px; width: 20px; height:20px;}
-  88%   {top:40px;; width: 20px; height:20px;}
-  99.5% {top:40px; width: 20px; height:20px;}
-100% {top:40px; width: 0px; height:0px;}}
-
-@keyframes wug2 {
-  0%   {top:130px; width: 20px; height:20px;}
-  50%   {top:130px; width: 20px; height:20px;}
-  88%   {top:60px;; width: 20px; height:20px;}
-  99.5% {top:60px; width: 20px; height:20px;}
-100% {top:60px; width: 0px; height:0px;}}
