@@ -5,35 +5,63 @@
 var teach = [
 
 
-  //  { subject: "<div class='wug1_up1'></div>",
-  // id: "teaching.1",
-  // shape: "green circle",
-  // //adjective: "small",
-  // phrase: "wugs."
-  // },
+    { subject: "<div class='wug1'></div>",
+   id: "teaching.1",
+   shape: "The green circle",
+   //adjective: "small",
+   phrase: "wugs."
+  },
 
-  { subject: "<div class='wug2_up1'></div>"
-  +"<div class='wug1_up1'></div>",
+  { subject: "<div class='wug2'></div>",
   id: "teaching.1",
-  shape: "green circle",
+  shape: "The green circle",
   //adjective: "small",
   phrase: "wugs."
   },
 
 
-  // { subject: "<div class='wug2_up1'></div>",
-  // id: "teaching.2",
-  // shape: "green circle",
-  // //adjective: "small",
-  // phrase: "wugs."
-  // },
+  { subject: "<div class='wug3'></div>",
+  id: "teaching.2",
+  shape: "The green circle",
+  //adjective: "small",
+  phrase: "wugs."
+  },
 
-  // { subject: "<div class='wug3_up1'></div>",
-  // id: "teaching.3",
-  // shape: "green circle",
-  // //adjective: "small",
-  // phrase: "wugs."
-  // },
+  { subject: "<div class='wug4'></div>",
+  id: "teaching.3",
+  shape: "The green circle",
+  //adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='wug1b'></div>",
+ id: "teaching.1",
+ shape: "The green circle",
+ //adjective: "small",
+ phrase: "does not wug."
+},
+
+{ subject: "<div class='wug2b'></div>",
+id: "teaching.1",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
+
+
+{ subject: "<div class='wug3b'></div>",
+id: "teaching.2",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
+
+{ subject: "<div class='wug4b'></div>",
+id: "teaching.3",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
 
 
 
@@ -41,48 +69,137 @@ var teach = [
 // A clockwise, B red-grey
 var test = [
 
+  { subject: "<div class='wug1'></div>",
+ id: "teaching.1",
+ shape: "The green circle",
+ //adjective: "small",
+ phrase: "does not wug."
+},
 
-  { subject: "<div class='dot2_wug2'></div>",
+{ subject: "<div class='wug2'></div>",
+id: "teaching.1",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
+
+
+{ subject: "<div class='wug3b'></div>",
+id: "teaching.2",
+shape: "The green circle",
+//adjective: "small",
+phrase: "wugs."
+},
+
+{ subject: "<div class='wug4b'></div>",
+id: "teaching.3",
+shape: "The green circle",
+//adjective: "small",
+phrase: "wugs."
+},
+
+
+
+  { subject: "<div class='dot2'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "The green circle",
   // adjective: "small",
   phrase: "wugs."
   },
 
-  { subject: "<div class='dot3_wug3'></div>",
+  { subject: "<div class='dot3'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug."
   },
 
-  { subject: "<div class='dot1_up1'></div>",
+  { subject: "<div class='dot1'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "The green circle",
   // adjective: "small",
   phrase: "wugs."
   },
 
-  { subject: "<div class='dot2_up2'></div>",
+  { subject: "<div class='dot4'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug."
   },
 
-  { subject: "<div class='dot1_down1'></div>",
+  { subject: "<div class='dot2a'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "The green circle",
   // adjective: "small",
   phrase: "wugs."
   },
 
-  { subject: "<div class='dot2_down2'></div>",
+  { subject: "<div class='dot3a'></div>",
   id: "teaching.1",
-  shape: "circle",
+  shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug."
   },
+
+  { subject: "<div class='dot1a'></div>",
+  id: "teaching.1",
+  shape: "The green circle",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='dot4a'></div>",
+  id: "teaching.1",
+  shape: "The green circle",
+  // adjective: "small",
+  phrase: "does not wug."
+  },
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4b'></div>",
+  id: "teaching.1",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "teaching.1",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='dot3b'></div>"
+  + "<div class='wug4b'></div>",
+  id: "teaching.1",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='dot2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "teaching.1",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+
+
+
+
 
 
 

@@ -50,7 +50,7 @@ var instructions_block = {
 var teaching = function(stimulus) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>The " +  stimulus.shape + " " + stimulus.phrase + "</p>",
+    prompt: "<p style='text-align:center'> " +  stimulus.shape + " " + stimulus.phrase + "</p>",
   //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus.stim,
     choices: ["Next"],
@@ -67,7 +67,7 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'>The " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
+    prompt: "<p style='text-align:center'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
   //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
     choices: ["False", "True"],
@@ -92,23 +92,39 @@ function DoAnimation(){
 //     targetElement1.classList.add("up1");
 // }
 // else
- if (document.getElementsByClassName("wug2_up1")[0] !== undefined &&
-document.getElementsByClassName("wug1_up1")[0] == undefined) {
-  var targetElement = document.getElementsByClassName("wug2_up1")[0];
+ if (document.getElementsByClassName("wug2")[0] !== undefined &&
+document.getElementsByClassName("wug1")[0] == undefined) {
+  var targetElement = document.getElementsByClassName("wug2")[0];
 
-  targetElement.classList.remove("up1");
+  targetElement.classList.remove("up2");
   void targetElement.offsetWidth;
-  targetElement.classList.add("up1");
+  targetElement.classList.add("up2");
 }
 
-else if (document.getElementsByClassName("wug2_up1")[0] !== undefined &&
-document.getElementsByClassName("wug1_up1")[0] !== undefined) {
+if (document.getElementsByClassName("wug1")[0] !== undefined &&
+document.getElementsByClassName("wug2")[0] == undefined) {
+ var targetElement = document.getElementsByClassName("wug1")[0];
 
-  var elements = document.querySelectorAll(".wug2_up1");
-  var elements2 = document.querySelectorAll(".wug1_up1");
+ targetElement.classList.remove("up1");
+ void targetElement.offsetWidth;
+ targetElement.classList.add("up1");
+}
+
+ else if (document.getElementsByClassName("wug1b")[0] !== undefined &&
+document.getElementsByClassName("wug2b")[0] !== undefined &&
+document.getElementsByClassName("wug3b")[0] !== undefined &&
+document.getElementsByClassName("wug4b")[0] !== undefined) {
+
+  var elements = document.querySelectorAll(".wug1b");
+  var elements2 = document.querySelectorAll(".wug2b");
+  var elements3 = document.querySelectorAll(".wug3b");
+  var elements4 = document.querySelectorAll(".wug4b");
+
 
   var array = Array.from(elements);
 var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
 
 array.forEach(function(x) {
       x.classList.remove("up1");
@@ -122,55 +138,257 @@ array2.forEach(function(x) {
        x.classList.add("up2");
 });
 
+array3.forEach(function(x) {
+      x.classList.remove("up3");
+      void x.offsetWidth;
+       x.classList.add("up3");
+});
+
+array4.forEach(function(x) {
+      x.classList.remove("up4");
+      void x.offsetWidth;
+       x.classList.add("up4");
+});
+
 }
 
-else if (document.getElementsByClassName("wug1_up1")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("wug1_up1")[0];
+else if (document.getElementsByClassName("wug1b")[0] !== undefined &&
+document.getElementsByClassName("wug2b")[0] !== undefined &&
+document.getElementsByClassName("dot3b")[0] !== undefined &&
+document.getElementsByClassName("wug4b")[0] !== undefined) {
 
-  targetElement.classList.remove("up1");
+ var elements = document.querySelectorAll(".wug1b");
+ var elements2 = document.querySelectorAll(".wug2b");
+ var elements3 = document.querySelectorAll(".dot3b");
+ var elements4 = document.querySelectorAll(".wug4b");
+
+
+ var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+     x.classList.remove("up1");
+     void x.offsetWidth;
+      x.classList.add("up1");
+});
+
+array2.forEach(function(x) {
+     x.classList.remove("up2");
+     void x.offsetWidth;
+      x.classList.add("up2");
+});
+
+array3.forEach(function(x) {
+     x.classList.remove("up3");
+     void x.offsetWidth;
+      x.classList.add("up3");
+});
+
+array4.forEach(function(x) {
+     x.classList.remove("up4");
+     void x.offsetWidth;
+      x.classList.add("up4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
+document.getElementsByClassName("wug2a")[0] !== undefined &&
+document.getElementsByClassName("wug3a")[0] !== undefined &&
+document.getElementsByClassName("wug4a")[0] !== undefined) {
+
+ var elements = document.querySelectorAll(".wug1a");
+ var elements2 = document.querySelectorAll(".wug2a");
+ var elements3 = document.querySelectorAll(".wug3a");
+ var elements4 = document.querySelectorAll(".wug4a");
+
+
+ var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+     x.classList.remove("down1");
+     void x.offsetWidth;
+      x.classList.add("down1");
+});
+
+array2.forEach(function(x) {
+     x.classList.remove("down2");
+     void x.offsetWidth;
+      x.classList.add("down2");
+});
+
+array3.forEach(function(x) {
+     x.classList.remove("down3");
+     void x.offsetWidth;
+      x.classList.add("down3");
+});
+
+array4.forEach(function(x) {
+     x.classList.remove("down4");
+     void x.offsetWidth;
+      x.classList.add("down4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
+document.getElementsByClassName("dot2a")[0] !== undefined &&
+document.getElementsByClassName("wug3a")[0] !== undefined &&
+document.getElementsByClassName("wug4a")[0] !== undefined) {
+
+ var elements = document.querySelectorAll(".wug1a");
+ var elements2 = document.querySelectorAll(".dot2a");
+ var elements3 = document.querySelectorAll(".wug3a");
+ var elements4 = document.querySelectorAll(".wug4a");
+
+
+ var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+     x.classList.remove("down1");
+     void x.offsetWidth;
+      x.classList.add("down1");
+});
+
+array2.forEach(function(x) {
+     x.classList.remove("down2");
+     void x.offsetWidth;
+      x.classList.add("down2");
+});
+
+array3.forEach(function(x) {
+     x.classList.remove("down3");
+     void x.offsetWidth;
+      x.classList.add("down3");
+});
+
+array4.forEach(function(x) {
+     x.classList.remove("down4");
+     void x.offsetWidth;
+      x.classList.add("down4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug3")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug3")[0];
+
+  targetElement.classList.remove("up3");
   void targetElement.offsetWidth;
-  targetElement.classList.add("up1");
+  targetElement.classList.add("up3");
 }
 
-else if (document.getElementsByClassName("wug3_up1")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("wug3_up1")[0];
+else if (document.getElementsByClassName("wug3b")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug3b")[0];
 
-  targetElement.classList.remove("up1");
+  targetElement.classList.remove("down3");
   void targetElement.offsetWidth;
-  targetElement.classList.add("up1");
+  targetElement.classList.add("down3");
 }
 
-else if (document.getElementsByClassName("dot1_up1")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("dot1_up1")[0];
+else if (document.getElementsByClassName("wug4")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug4")[0];
 
-  targetElement.classList.remove("up1");
+  targetElement.classList.remove("up4");
   void targetElement.offsetWidth;
-  targetElement.classList.add("up1");
+  targetElement.classList.add("up4");
 }
 
-else if (document.getElementsByClassName("dot2_up2")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("dot2_up2")[0];
+else if (document.getElementsByClassName("wug4b")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug4b")[0];
 
-  targetElement.classList.remove("up2");
+  targetElement.classList.remove("down4");
   void targetElement.offsetWidth;
-  targetElement.classList.add("up2");
+  targetElement.classList.add("down4");
 }
 
-else if (document.getElementsByClassName("dot1_down1")[0] !== undefined) {
-  var targetElement = document.getElementsByClassName("dot1_down1")[0];
+else if (document.getElementsByClassName("wug1b")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug1b")[0];
 
   targetElement.classList.remove("down1");
   void targetElement.offsetWidth;
   targetElement.classList.add("down1");
 }
 
-else {
-
-  var targetElement = document.getElementsByClassName("dot2_down2")[0];
+else if (document.getElementsByClassName("wug2b")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("wug2b")[0];
 
   targetElement.classList.remove("down2");
   void targetElement.offsetWidth;
   targetElement.classList.add("down2");
+}
+
+else if (document.getElementsByClassName("dot1")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot1")[0];
+
+  targetElement.classList.remove("up1");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up1");
+}
+
+else if (document.getElementsByClassName("dot2")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot2")[0];
+
+  targetElement.classList.remove("up2");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up2");
+}
+
+else if (document.getElementsByClassName("dot3")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot3")[0];
+
+  targetElement.classList.remove("up3");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up3");
+}
+
+else if (document.getElementsByClassName("dot1a")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot1a")[0];
+
+  targetElement.classList.remove("down1");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("down1");
+}
+
+else if (document.getElementsByClassName("dot2a")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot2a")[0];
+
+  targetElement.classList.remove("down2");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("down3");
+}
+
+else if (document.getElementsByClassName("dot3a")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot3a")[0];
+
+  targetElement.classList.remove("down3");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("down3");
+}
+
+else if (document.getElementsByClassName("dot4a")[0] !== undefined) {
+  var targetElement = document.getElementsByClassName("dot4a")[0];
+
+  targetElement.classList.remove("down4");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("down4");
+}
+
+else if (document.getElementsByClassName("dot4")[0] !== undefined){
+
+  var targetElement = document.getElementsByClassName("dot4")[0];
+
+  targetElement.classList.remove("up4");
+  void targetElement.offsetWidth;
+  targetElement.classList.add("up4");
 
 }
 };
