@@ -34,35 +34,35 @@ var teach = [
   phrase: "wugs."
   },
 
-//   { subject: "<div class='wug1b'></div>",
-//  id: "teaching.1",
-//  shape: "The green circle",
-//  //adjective: "small",
-//  phrase: "does not wug."
-// },
-//
-// { subject: "<div class='wug2b'></div>",
-// id: "teaching.1",
-// shape: "The green circle",
-// //adjective: "small",
-// phrase: "does not wug."
-// },
-//
-//
-// { subject: "<div class='wug3b'></div>",
-// id: "teaching.2",
-// shape: "The green circle",
-// //adjective: "small",
-// phrase: "does not wug."
-// },
-//
-// { subject: "<div class='wug4b'></div>",
-// id: "teaching.3",
-// shape: "The green circle",
-// //adjective: "small",
-// phrase: "does not wug."
-// },
-//
+  { subject: "<div class='wug1b'></div>",
+ id: "teaching.1",
+ shape: "The green circle",
+ //adjective: "small",
+ phrase: "does not wug."
+},
+
+{ subject: "<div class='wug2b'></div>",
+id: "teaching.1",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
+
+
+{ subject: "<div class='wug3b'></div>",
+id: "teaching.2",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
+
+{ subject: "<div class='wug4b'></div>",
+id: "teaching.3",
+shape: "The green circle",
+//adjective: "small",
+phrase: "does not wug."
+},
+
 
 
 ];
@@ -121,7 +121,7 @@ var test = [
   shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug.",
-  condition: "AnotB"
+  condition: "AnotB",
   },
 
   { subject: "<div class='dot1'></div>",

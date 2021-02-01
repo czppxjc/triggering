@@ -2,80 +2,16 @@
 // matter since this will be randomized.  each item needs a unique ID
 
 
-var teach = [
-
-
-    { subject: "<div class='wug1'></div>",
-   id: "teaching.1",
-   shape: "The green circle",
-   //adjective: "small",
-   phrase: "wugs."
-  },
-
-  { subject: "<div class='wug2'></div>",
-  id: "teaching.1",
-  shape: "The green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
-
-
-  { subject: "<div class='wug3'></div>",
-  id: "teaching.2",
-  shape: "The green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
-
-  { subject: "<div class='wug4'></div>",
-  id: "teaching.3",
-  shape: "The green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
-
-  { subject: "<div class='wug1b'></div>",
- id: "teaching.1",
- shape: "The green circle",
- //adjective: "small",
- phrase: "does not wug."
-},
-
-{ subject: "<div class='wug2b'></div>",
-id: "teaching.1",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
-
-
-{ subject: "<div class='wug3b'></div>",
-id: "teaching.2",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
-
-{ subject: "<div class='wug4b'></div>",
-id: "teaching.3",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
 
 
 
-];
-
-
-
-var test_first = [
+var test = [
 
   { subject: "<div class='wug1'></div>",
  id: "teaching.1",
  shape: "The green circle",
  //adjective: "small",
- phrase: "does not wug.",
+ phrase: "moved from red upward.",
  condition: "AB"
 },
 
@@ -83,67 +19,101 @@ var test_first = [
 id: "teaching.1",
 shape: "The green circle",
 //adjective: "small",
-phrase: "wugs.",
+phrase: "did not move from red upward.",
 condition: "AB"
 },
 
 
-{ subject: "<div class='wug3b'></div>",
+{ subject: "<div class='wug3'></div>",
+id: "teaching.1",
+shape: "The green circle",
+//adjective: "small",
+phrase: "moved from red upward.",
+condition: "AB"
+},
+
+
+{ subject: "<div class='wug4'></div>",
+id: "teaching.1",
+shape: "The green circle",
+//adjective: "small",
+phrase: "did not move from red upward.",
+condition: "AB"
+},
+
+{ subject: "<div class='dot1'></div>",
 id: "teaching.2",
 shape: "The green circle",
 //adjective: "small",
-phrase: "does not wug.",
-condition: "AnotB"
+phrase: "moved from red upward.",
+condition: "notAB"
 },
 
-{ subject: "<div class='wug4b'></div>",
+{ subject: "<div class='dot2'></div>",
+id: "teaching.2",
+shape: "The green circle",
+//adjective: "small",
+phrase: "did not move from red upward.",
+condition: "notAB"
+},
+
+
+{ subject: "<div class='dot3'></div>",
+id: "teaching.2",
+shape: "The green circle",
+//adjective: "small",
+phrase: "moved from red upward.",
+condition: "notAB"
+},
+
+{ subject: "<div class='dot4'></div>",
 id: "teaching.3",
 shape: "The green circle",
 //adjective: "small",
-phrase: "wugs.",
-condition: "AnotB"
+phrase: "did not move from red upward.",
+condition: "notAB"
 },
 
-];
-
-var test = [
-
-  { subject: "<div class='dot2'></div>",
-  id: "teaching.1",
-  shape: "The green circle",
-  // adjective: "small",
-  phrase: "wugs.",
-  condition: "notAB"
+    { subject: "<div class='wug1b'></div>",
+   id: "teaching.1",
+   shape: "The green circle",
+   //adjective: "small",
+   phrase: "moved from red upward.",
+   condition: "AnotB"
   },
 
-  { subject: "<div class='dot3'></div>",
+  { subject: "<div class='wug2b'></div>",
   id: "teaching.1",
   shape: "The green circle",
-  // adjective: "small",
-  phrase: "does not wug."
+  //adjective: "small",
+  phrase: "moved from red upward.",
+  condition: "AnotB"
   },
 
-  { subject: "<div class='dot1'></div>",
-  id: "teaching.1",
+
+  { subject: "<div class='wug3b'></div>",
+  id: "teaching.2",
   shape: "The green circle",
-  // adjective: "small",
-  phrase: "wugs.",
-  condition: "notAB"
+  //adjective: "small",
+  phrase: "did not move from red upward.",
+  condition: "AnotB"
   },
 
-  { subject: "<div class='dot4'></div>",
-  id: "teaching.1",
+  { subject: "<div class='wug4b'></div>",
+  id: "teaching.3",
   shape: "The green circle",
-  // adjective: "small",
-  phrase: "does not wug.",
-  condition: "notAB"
+  //adjective: "small",
+  phrase: "did not move from red upward.",
+  condition: "AnotB"
   },
+
+
 
   { subject: "<div class='dot2a'></div>",
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "moved from red upward.",
   condition: "notAnotB"
   },
 
@@ -151,7 +121,7 @@ var test = [
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "does not wug.",
+  phrase: "moved from red upward.",
   condition: "notAnotB"
   },
 
@@ -159,7 +129,7 @@ var test = [
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "did not move from red upward.",
   condition: "notAnotB"
   },
 
@@ -167,7 +137,7 @@ var test = [
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "does not wug.",
+  phrase: "did not move from red upward.",
   condition: "notAnotB"
   },
 
@@ -182,8 +152,8 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "all_universal"
+  phrase: "moved from red upward.",
+  condition: "all_true_existential"
   },
 
   { subject: "<div class='wug1b'></div>"
@@ -193,29 +163,30 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "all_false"
+  phrase: "moved from red upward.",
+  condition: "all_true_universal"
   },
+
 
   { subject: "<div class='wug1a'></div>"
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
   id: "teaching.1",
-  shape: "None of the green circles",
+  shape: "Every green circle",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "none_universal"
+  phrase: "moved from red upward.",
+  condition: "all_true_no_projection"
   },
 
-  { subject: "<div class='wug1a'></div>"
-  + "<div class='wug2b'></div>"
-  + "<div class='wug3a'></div>"
-  + "<div class='wug4b'></div>",
+  { subject: "<div class='dot1'></div>"
+  + "<div class='dot2'></div>"
+  + "<div class='dot3'></div>"
+  + "<div class='wug4'></div>",
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "moved from red upward.",
   condition: "none_false"
   },
 
@@ -226,19 +197,19 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "all_existential"
+  phrase: "moved from red upward.",
+  condition: "all_false"
   },
 
-  { subject: "<div class='wug1a'></div>"
+  { subject: "<div class='dot1a'></div>"
   + "<div class='dot2a'></div>"
-  + "<div class='wug3a'></div>"
-  + "<div class='wug4a'></div>",
+  + "<div class='dot3a'></div>"
+  + "<div class='dot4a'></div>",
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "non_existential"
+  phrase: "moved from red upward.",
+  condition: "none_true_existential"
   },
 
   { subject: "<div class='dot1a'></div>"
@@ -248,8 +219,8 @@ var test_last = [
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "none_no_projection"
+  phrase: "moved from red upward.",
+  condition: "none_true_no_projection"
   },
 
   { subject: "<div class='dot7'></div>"
@@ -257,10 +228,10 @@ var test_last = [
   + "<div class='dot5'></div>"
   + "<div class='dot6'></div>",
   id: "teaching.1",
-  shape: "Every green circles",
+  shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "all_no_projection"
+  phrase: "moved from red upward.",
+  condition: "none_true_universal"
   },
 
 
