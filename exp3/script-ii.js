@@ -51,7 +51,7 @@ var teaching = function(stimulus) {
   return {
     type: 'html-button-delay-response',
     prompt: "<p style='text-align:center'> " +  stimulus.shape + " " + stimulus.phrase + "</p>",
-  //  + "<p> condition:" + stimulus2.condition + " </p> ",
+  //  + "<p> condition:" + stimulus.condition + " </p> ",
     stimulus: stimulus.stim,
     choices: ["Next"],
     data: stimulus.data,
@@ -139,9 +139,9 @@ array2.forEach(function(x) {
 });
 
 array3.forEach(function(x) {
-      x.classList.remove("up3");
+      x.classList.remove("down2");
       void x.offsetWidth;
-       x.classList.add("up3");
+       x.classList.add("down2");
 });
 
 array4.forEach(function(x) {
@@ -182,9 +182,9 @@ array2.forEach(function(x) {
 
 
 array3.forEach(function(x) {
-      x.classList.remove("down3");
+      x.classList.remove("up3");
       void x.offsetWidth;
-       x.classList.add("down3");
+       x.classList.add("up3");
 });
 
 array4.forEach(function(x) {
@@ -279,15 +279,15 @@ array4.forEach(function(x) {
 
 }
 
-else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
-document.getElementsByClassName("wug2b")[0] !== undefined &&
-document.getElementsByClassName("wug3a")[0] !== undefined &&
-document.getElementsByClassName("wug4b")[0] !== undefined) {
+else if (document.getElementsByClassName("dot1")[0] !== undefined &&
+document.getElementsByClassName("dot2")[0] !== undefined &&
+document.getElementsByClassName("dot3")[0] !== undefined &&
+document.getElementsByClassName("wug4")[0] !== undefined) {
 
- var elements = document.querySelectorAll(".wug1a");
- var elements2 = document.querySelectorAll(".wug2b");
- var elements3 = document.querySelectorAll(".wug3a");
- var elements4 = document.querySelectorAll(".wug4b");
+ var elements = document.querySelectorAll(".dot1");
+ var elements2 = document.querySelectorAll(".dot2");
+ var elements3 = document.querySelectorAll(".dot3");
+ var elements4 = document.querySelectorAll(".wug4");
 
 
  var array = Array.from(elements);
@@ -296,9 +296,9 @@ var array3 = Array.from(elements3);
 var array4 = Array.from(elements4);
 
 array.forEach(function(x) {
-     x.classList.remove("down1");
+     x.classList.remove("up1");
      void x.offsetWidth;
-      x.classList.add("down1");
+      x.classList.add("up1");
 });
 
 array2.forEach(function(x) {
@@ -308,28 +308,28 @@ array2.forEach(function(x) {
 });
 
 array3.forEach(function(x) {
-     x.classList.remove("down3");
+     x.classList.remove("up3");
      void x.offsetWidth;
-      x.classList.add("down3");
+      x.classList.add("up3");
 });
 
 array4.forEach(function(x) {
-     x.classList.remove("down4");
+     x.classList.remove("up4");
      void x.offsetWidth;
-      x.classList.add("down4");
+      x.classList.add("up4");
 });
 
 }
 
-else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
+else if (document.getElementsByClassName("dot1a")[0] !== undefined &&
 document.getElementsByClassName("dot2a")[0] !== undefined &&
-document.getElementsByClassName("wug3a")[0] !== undefined &&
-document.getElementsByClassName("wug4a")[0] !== undefined) {
+document.getElementsByClassName("dot3a")[0] !== undefined &&
+document.getElementsByClassName("dot4a")[0] !== undefined) {
 
- var elements = document.querySelectorAll(".wug1a");
+ var elements = document.querySelectorAll(".dot1a");
  var elements2 = document.querySelectorAll(".dot2a");
- var elements3 = document.querySelectorAll(".wug3a");
- var elements4 = document.querySelectorAll(".wug4a");
+ var elements3 = document.querySelectorAll(".dot3a");
+ var elements4 = document.querySelectorAll(".dot4a");
 
 
  var array = Array.from(elements);
@@ -338,9 +338,9 @@ var array3 = Array.from(elements3);
 var array4 = Array.from(elements4);
 
 array.forEach(function(x) {
-     x.classList.remove("down1");
+     x.classList.remove("up1");
      void x.offsetWidth;
-      x.classList.add("down1");
+      x.classList.add("up1");
 });
 
 array2.forEach(function(x) {
