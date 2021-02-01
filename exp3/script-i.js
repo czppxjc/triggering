@@ -67,8 +67,8 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
-    + "<p> condition:" + stimulus2.condition + " </p> ",
+    prompt: "<p style='text-align:center'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
+//    + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
     choices: ["False", "True"],
     data: stimulus2.data,
@@ -572,7 +572,7 @@ else if (document.getElementsByClassName("dot4")[0] !== undefined){
 var teachMaker = function(material) {
   var stimulus = "<div class='container'><div class='ball'><div class='redline'></div>"
   + " " + material.subject +  "</div></div></div>"
-  + "<button onclick = 'DoAnimation();'>Show me!</button>"
+  + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
   var target = " " + material.subject + " "
 
@@ -601,7 +601,7 @@ var teachMaker = function(material) {
 var testMaker = function(material) {
   var stimulus2 = "<div class='container'><div class='ball'><div class='redline'></div>"
   + " " + material.subject + " </div></div></div>"
-  + "<button onclick = 'DoAnimation();'>Show me!</button>"
+  + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "
@@ -612,7 +612,7 @@ var testMaker = function(material) {
     id: material.id,
     type: "testing",
     shape: material.shape,
-  //  adjective: material.adjective,
+    phrase: material.phrase,
     condition: material.condition
   };
 

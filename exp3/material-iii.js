@@ -11,7 +11,7 @@ var test = [
  id: "teaching.1",
  shape: "The green circle",
  //adjective: "small",
- phrase: "moved from red upward.",
+ phrase: "moves from red upward.",
  condition: "AB"
 },
 
@@ -19,7 +19,7 @@ var test = [
 id: "teaching.1",
 shape: "The green circle",
 //adjective: "small",
-phrase: "did not move from red upward.",
+phrase: "does not move from red upward.",
 condition: "AB"
 },
 
@@ -28,7 +28,7 @@ condition: "AB"
 id: "teaching.1",
 shape: "The green circle",
 //adjective: "small",
-phrase: "moved from red upward.",
+phrase: "moves from red upward.",
 condition: "AB"
 },
 
@@ -37,7 +37,7 @@ condition: "AB"
 id: "teaching.1",
 shape: "The green circle",
 //adjective: "small",
-phrase: "did not move from red upward.",
+phrase: "does not move from red upward.",
 condition: "AB"
 },
 
@@ -45,7 +45,7 @@ condition: "AB"
 id: "teaching.2",
 shape: "The green circle",
 //adjective: "small",
-phrase: "moved from red upward.",
+phrase: "moves from red upward.",
 condition: "notAB"
 },
 
@@ -53,7 +53,7 @@ condition: "notAB"
 id: "teaching.2",
 shape: "The green circle",
 //adjective: "small",
-phrase: "did not move from red upward.",
+phrase: "does not move from red upward.",
 condition: "notAB"
 },
 
@@ -62,7 +62,7 @@ condition: "notAB"
 id: "teaching.2",
 shape: "The green circle",
 //adjective: "small",
-phrase: "moved from red upward.",
+phrase: "moves from red upward.",
 condition: "notAB"
 },
 
@@ -70,7 +70,7 @@ condition: "notAB"
 id: "teaching.3",
 shape: "The green circle",
 //adjective: "small",
-phrase: "did not move from red upward.",
+phrase: "does not move from red upward.",
 condition: "notAB"
 },
 
@@ -78,7 +78,7 @@ condition: "notAB"
    id: "teaching.1",
    shape: "The green circle",
    //adjective: "small",
-   phrase: "moved from red upward.",
+   phrase: "moves from red upward.",
    condition: "AnotB"
   },
 
@@ -86,7 +86,7 @@ condition: "notAB"
   id: "teaching.1",
   shape: "The green circle",
   //adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "AnotB"
   },
 
@@ -95,7 +95,7 @@ condition: "notAB"
   id: "teaching.2",
   shape: "The green circle",
   //adjective: "small",
-  phrase: "did not move from red upward.",
+  phrase: "does not move from red upward.",
   condition: "AnotB"
   },
 
@@ -103,7 +103,7 @@ condition: "notAB"
   id: "teaching.3",
   shape: "The green circle",
   //adjective: "small",
-  phrase: "did not move from red upward.",
+  phrase: "does not move from red upward.",
   condition: "AnotB"
   },
 
@@ -113,7 +113,7 @@ condition: "notAB"
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "notAnotB"
   },
 
@@ -121,7 +121,7 @@ condition: "notAB"
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "notAnotB"
   },
 
@@ -129,7 +129,7 @@ condition: "notAB"
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "did not move from red upward.",
+  phrase: "does not move from red upward.",
   condition: "notAnotB"
   },
 
@@ -137,7 +137,7 @@ condition: "notAB"
   id: "teaching.1",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "did not move from red upward.",
+  phrase: "does not move from red upward.",
   condition: "notAnotB"
   },
 
@@ -152,7 +152,7 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "all_true_existential"
   },
 
@@ -163,7 +163,7 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "all_true_universal"
   },
 
@@ -175,7 +175,7 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "all_true_no_projection"
   },
 
@@ -186,7 +186,7 @@ var test_last = [
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "none_false"
   },
 
@@ -197,7 +197,7 @@ var test_last = [
   id: "teaching.1",
   shape: "Every green circle",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "all_false"
   },
 
@@ -208,7 +208,7 @@ var test_last = [
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "none_true_existential"
   },
 
@@ -219,7 +219,7 @@ var test_last = [
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "none_true_no_projection"
   },
 
@@ -230,7 +230,7 @@ var test_last = [
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "moved from red upward.",
+  phrase: "moves from red upward.",
   condition: "none_true_universal"
   },
 
