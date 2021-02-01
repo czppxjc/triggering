@@ -13,7 +13,7 @@ var teach = [
   },
 
   { subject: "<div class='wug2'></div>",
-  id: "teaching.1",
+  id: "teaching.2",
   shape: "The green circle",
   //adjective: "small",
   phrase: "wugs."
@@ -21,28 +21,28 @@ var teach = [
 
 
   { subject: "<div class='wug3'></div>",
-  id: "teaching.2",
-  shape: "The green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
-
-  { subject: "<div class='wug4'></div>",
   id: "teaching.3",
   shape: "The green circle",
   //adjective: "small",
   phrase: "wugs."
   },
 
+  { subject: "<div class='wug4'></div>",
+  id: "teaching.4",
+  shape: "The green circle",
+  //adjective: "small",
+  phrase: "wugs."
+  },
+
   { subject: "<div class='wug1b'></div>",
- id: "teaching.1",
+ id: "teaching.5",
  shape: "The green circle",
  //adjective: "small",
  phrase: "does not wug."
 },
 
 { subject: "<div class='wug2b'></div>",
-id: "teaching.1",
+id: "teaching.6",
 shape: "The green circle",
 //adjective: "small",
 phrase: "does not wug."
@@ -50,14 +50,14 @@ phrase: "does not wug."
 
 
 { subject: "<div class='wug3b'></div>",
-id: "teaching.2",
+id: "teaching.7",
 shape: "The green circle",
 //adjective: "small",
 phrase: "does not wug."
 },
 
 { subject: "<div class='wug4b'></div>",
-id: "teaching.3",
+id: "teaching.8",
 shape: "The green circle",
 //adjective: "small",
 phrase: "does not wug."
@@ -72,7 +72,7 @@ phrase: "does not wug."
 var test_first = [
 
   { subject: "<div class='wug1'></div>",
- id: "teaching.1",
+ id: "testing.1",
  shape: "The green circle",
  //adjective: "small",
  phrase: "does not wug.",
@@ -80,7 +80,7 @@ var test_first = [
 },
 
 { subject: "<div class='wug2'></div>",
-id: "teaching.1",
+id: "testing.2",
 shape: "The green circle",
 //adjective: "small",
 phrase: "wugs.",
@@ -89,7 +89,7 @@ condition: "AB"
 
 
 { subject: "<div class='wug3b'></div>",
-id: "teaching.2",
+id: "testing.3",
 shape: "The green circle",
 //adjective: "small",
 phrase: "does not wug.",
@@ -97,7 +97,7 @@ condition: "notAB"
 },
 
 { subject: "<div class='wug4b'></div>",
-id: "teaching.3",
+id: "testing.4",
 shape: "The green circle",
 //adjective: "small",
 phrase: "wugs.",
@@ -109,7 +109,7 @@ condition: "notAB"
 var test = [
 
   { subject: "<div class='dot2'></div>",
-  id: "teaching.1",
+  id: "testing.5",
   shape: "The green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -117,7 +117,7 @@ var test = [
   },
 
   { subject: "<div class='dot3'></div>",
-  id: "teaching.1",
+  id: "testing.6",
   shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug.",
@@ -125,7 +125,7 @@ var test = [
   },
 
   { subject: "<div class='dot1'></div>",
-  id: "teaching.1",
+  id: "testing.7",
   shape: "The green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -133,7 +133,7 @@ var test = [
   },
 
   { subject: "<div class='dot4'></div>",
-  id: "teaching.1",
+  id: "testing.8",
   shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug.",
@@ -141,7 +141,7 @@ var test = [
   },
 
   { subject: "<div class='dot2a'></div>",
-  id: "teaching.1",
+  id: "testing.9",
   shape: "The green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -149,7 +149,7 @@ var test = [
   },
 
   { subject: "<div class='dot3a'></div>",
-  id: "teaching.1",
+  id: "testing.10",
   shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug.",
@@ -157,7 +157,7 @@ var test = [
   },
 
   { subject: "<div class='dot1a'></div>",
-  id: "teaching.1",
+  id: "testing.11",
   shape: "The green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -165,7 +165,7 @@ var test = [
   },
 
   { subject: "<div class='dot4a'></div>",
-  id: "teaching.1",
+  id: "testing.12",
   shape: "The green circle",
   // adjective: "small",
   phrase: "does not wug.",
@@ -180,7 +180,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "teaching.1",
+  id: "testing.13",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -191,7 +191,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "teaching.1",
+  id: "testing.14",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -202,7 +202,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "teaching.1",
+  id: "testing.15",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wugs.",
@@ -213,7 +213,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4b'></div>",
-  id: "teaching.1",
+  id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wugs.",
@@ -224,7 +224,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "teaching.1",
+  id: "testing.17",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -235,7 +235,7 @@ var test_last = [
   + "<div class='dot2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "teaching.1",
+  id: "testing.18",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wugs.",
@@ -246,7 +246,7 @@ var test_last = [
   + "<div class='dot2a'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='dot4b'></div>",
-  id: "teaching.1",
+  id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wugs.",
@@ -257,7 +257,7 @@ var test_last = [
   + "<div class='dot8'></div>"
   + "<div class='dot5'></div>"
   + "<div class='dot6'></div>",
-  id: "teaching.1",
+  id: "testing.20",
   shape: "Every green circles",
   // adjective: "small",
   phrase: "wugs.",
