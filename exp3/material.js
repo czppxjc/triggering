@@ -66,8 +66,10 @@ phrase: "does not wug."
 
 
 ];
-// A clockwise, B red-grey
-var test = [
+
+
+
+var test_first = [
 
   { subject: "<div class='wug1'></div>",
  id: "teaching.1",
@@ -80,7 +82,7 @@ var test = [
 id: "teaching.1",
 shape: "The green circle",
 //adjective: "small",
-phrase: "does not wug."
+phrase: "wugs."
 },
 
 
@@ -88,7 +90,7 @@ phrase: "does not wug."
 id: "teaching.2",
 shape: "The green circle",
 //adjective: "small",
-phrase: "wugs."
+phrase: "does not wug."
 },
 
 { subject: "<div class='wug4b'></div>",
@@ -98,7 +100,9 @@ shape: "The green circle",
 phrase: "wugs."
 },
 
+];
 
+var test = [
 
   { subject: "<div class='dot2'></div>",
   id: "teaching.1",
@@ -156,6 +160,10 @@ phrase: "wugs."
   phrase: "does not wug."
   },
 
+];
+
+var test_last = [
+
   { subject: "<div class='wug1b'></div>"
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
@@ -166,10 +174,30 @@ phrase: "wugs."
   phrase: "wugs."
   },
 
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "teaching.1",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
   { subject: "<div class='wug1a'></div>"
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
+  id: "teaching.1",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wugs."
+  },
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
   id: "teaching.1",
   shape: "None of the green circles",
   // adjective: "small",

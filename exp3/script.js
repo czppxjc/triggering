@@ -33,7 +33,7 @@ var instructions_block = {
     type: 'survey-multi-select',
       questions: [
       {prompt: "<p style='text-align:center'>What do you think wugging was about?</p>",
-      options: ["wugging had to do with the direction of the movement/rotation direction", "wugging had to do with the size of the shape", "wugging had to do with the colors"],
+      options: ["wugging had to do with the direction of the movement", "wugging had to do with the red line", "wugging had to do with the lower or upper half of the grey circle"],
       horizontal: false}],
   //    validation: "request",
    data: { questionId: "self_report" }
@@ -154,6 +154,49 @@ array4.forEach(function(x) {
 
 else if (document.getElementsByClassName("wug1b")[0] !== undefined &&
 document.getElementsByClassName("wug2b")[0] !== undefined &&
+document.getElementsByClassName("wug3a")[0] !== undefined &&
+document.getElementsByClassName("wug4a")[0] !== undefined) {
+
+ var elements = document.querySelectorAll(".wug1b");
+ var elements2 = document.querySelectorAll(".wug2b");
+ var elements3 = document.querySelectorAll(".wug3a");
+ var elements4 = document.querySelectorAll(".wug4a");
+
+
+ var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+     x.classList.remove("up1");
+     void x.offsetWidth;
+      x.classList.add("up1");
+});
+
+array2.forEach(function(x) {
+     x.classList.remove("up2");
+     void x.offsetWidth;
+      x.classList.add("up2");
+});
+
+
+array3.forEach(function(x) {
+      x.classList.remove("down3");
+      void x.offsetWidth;
+       x.classList.add("down3");
+});
+
+array4.forEach(function(x) {
+      x.classList.remove("up4");
+      void x.offsetWidth;
+       x.classList.add("up4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1b")[0] !== undefined &&
+document.getElementsByClassName("wug2b")[0] !== undefined &&
 document.getElementsByClassName("dot3b")[0] !== undefined &&
 document.getElementsByClassName("wug4b")[0] !== undefined) {
 
@@ -220,6 +263,48 @@ array2.forEach(function(x) {
      x.classList.remove("down2");
      void x.offsetWidth;
       x.classList.add("down2");
+});
+
+array3.forEach(function(x) {
+     x.classList.remove("down3");
+     void x.offsetWidth;
+      x.classList.add("down3");
+});
+
+array4.forEach(function(x) {
+     x.classList.remove("down4");
+     void x.offsetWidth;
+      x.classList.add("down4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
+document.getElementsByClassName("wug2b")[0] !== undefined &&
+document.getElementsByClassName("wug3a")[0] !== undefined &&
+document.getElementsByClassName("wug4b")[0] !== undefined) {
+
+ var elements = document.querySelectorAll(".wug1a");
+ var elements2 = document.querySelectorAll(".wug2b");
+ var elements3 = document.querySelectorAll(".wug3a");
+ var elements4 = document.querySelectorAll(".wug4b");
+
+
+ var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+     x.classList.remove("down1");
+     void x.offsetWidth;
+      x.classList.add("down1");
+});
+
+array2.forEach(function(x) {
+     x.classList.remove("up2");
+     void x.offsetWidth;
+      x.classList.add("up2");
 });
 
 array3.forEach(function(x) {
@@ -476,15 +561,28 @@ stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
 
 // setting first items
 
-//var stimuli_set_first = new Array;
+var stimuli_set_first = new Array;
 
-//for (var i in test_first) {
-//  stimuli_set_first.push(testing(testMaker(test_first[i])));
-//}
+for (var i in test_first) {
+  stimuli_set_first.push(testing(testMaker(test_first[i])));
+}
 
-
+stimuli_set_first = jsPsych.randomization.repeat(stimuli_set_first, 1);
 
 var timeline = new Array;
+
+// setting last items
+
+var stimuli_set_last = new Array;
+
+for (var i in test_last) {
+  stimuli_set_last.push(testing(testMaker(test_last[i])));
+}
+
+stimuli_set_last = jsPsych.randomization.repeat(stimuli_set_last, 1);
+
+var timeline = new Array;
+
 
 
 //timeline.push(consent_block);
@@ -501,13 +599,17 @@ for (var i in stimuli_set) {
 
 timeline.push(break_block);
 
-//for (var i in stimuli_set_first) {
-//  timeline.push(stimuli_set_first[i]);
-//}
+for (var i in stimuli_set_first) {
+  timeline.push(stimuli_set_first[i]);
+}
 
 
 for (var i in stimuli_set2) {
   timeline.push(stimuli_set2[i]);
+}
+
+for (var i in stimuli_set_last) {
+  timeline.push(stimuli_set_last[i]);
 }
 
 
