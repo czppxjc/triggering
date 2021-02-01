@@ -1,6 +1,6 @@
-var instructions = new Array;
+var instructions_text = new Array;
 
-instructions.push(
+instructions_text.push(
   "<h1>Instructions</h1><p>In this experiment, we will show you animations and make a statement about them. "
   + " Your task is to decide whether you think the statement is true or false.</p>");
 
