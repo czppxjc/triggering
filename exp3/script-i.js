@@ -715,6 +715,6 @@ jsPsych.init({
   on_finish: function(data){ SaveData("triggering3",
                                       theSubject,
                                       jsPsych.data.get().csv);
-                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 15039F44 </p></center>"); }
+                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 3E5C9062 </p></center>"); }
 //  on_finish: function(data){ jsPsych.data.displayData("json"); }
 });
