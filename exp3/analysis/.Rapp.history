@@ -1,0 +1,1573 @@
+# This script loads the data#
+#
+### LOAD PACKAGES#
+library(dplyr)#
+library(plyr)#
+library(ggplot2)#
+library(stringr)#
+library(lsr)#
+library(lme4)#
+#library(lmTest)#
+library(lmerTest)#
+library(simr)#
+library(emmeans)#
+library(exactRankTests)#
+library(pwr)#
+library(psych)#
+library(boot)#
+library(rcompanion)#
+library(rsq)#
+library(tidyr)#
+library(naniar)#
+library(RColorBrewer)#
+data = read.csv(file=file.choose(),sep = ',',header = T,na.strings=c("","NA"))#
+length(unique(data$subjectId))#
+#
+#92#
+head(data)#
+exp2 <- subset(data, type == "testing")#
+#
+is.numeric(exp2$button_pressed)#
+#
+levels(exp2$condition)#
+levels(exp2$phrase)#
+#
+exp2$negation <- ifelse(exp2$phrase == "does not move from red upward." | exp2$phrase == "does not wug.", "negation", "no negation")#
+#
+exp2$type <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB"| exp2$condition == "notAnotB"#
+                           | exp2$condition == "notAB", "simple", "quantificational")#
+#
+exp2$index <- ifelse(((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "negation" & exp2$button_pressed == 1) #
+                     | (exp2$condition == "AB" & exp2$negation == "no negation" & exp2$button_pressed == 1)#
+| ((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "no negation" & exp2$button_pressed == 0)#
+| (exp2$condition == "AB" & exp2$negation == "negation" & exp2$button_pressed == 0), 1, 0)#
+#
+is.numeric(exp2$index)#
+#
+exp_qua <- subset(exp2, type == "quantificational")#
+exp <- subset(exp2, type == "simple")#
+#
+results1 <- ddply(exp, .(condition, group, negation), summarize, M = mean(index, na.rm =TRUE))#
+results1b <- ddply(exp, .(condition, group, negation), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+controls <- subset(exp, group == "control")#
+results2 <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed, na.rm =TRUE))#
+### plotting#
+plot <- ggplot(data=results1, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")#
+plot2 <- ggplot(data=results2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+#               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot2 +   labs(title="",#
+              x="", y = "PSP index")
+results1
+exp2$truth <- exp2$button_pressed * (1 - exp2$negation * 2)#
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))
+exp2$negation
+exp2$truth <- exp2$button_pressed * (1 - (exp2$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))
+exp$truth <- exp$button_pressed * (1 - (exp2$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))
+exp2$truth <- exp$button_pressed * (1 - (exp2$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))
+exp2$truth <- exp$button_pressed * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))
+exp$truth <- exp$button_pressed * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))
+exp$truth <- exp$button_pressed * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))
+results_ec_2
+exp$truth <- exp$button_pressed * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))
+exp$truth <- exp$button_pressed * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3
+exp$truth <- (2*exp$button_pressed-1) * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp2, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3
+exp$truth <- (2*exp$button_pressed-1) * (1 - (exp$negation == "negation") * 2)#
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_1$truth <- (2* results_ec_1 $M-1) * (1 - (results_ec_1 $negation == "negation") * 2)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3
+results_ec_1
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_1$truth <- (2* results_ec_1 $M-1) * (1 - (results_ec_1 $negation == "negation") * 2)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_1$truth <- (results_ec_1$M) * (1 - (results_ec_1$negation == "negation") * 2)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_1$truth <- (results_ec_1$M) * (1 - (results_ec_1$negation == "negation") * 2)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_1$truth <- (results_ec_1$M) * (1 - (results_ec_1$negation == "negation") * 2)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(truth, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_1$truth <- (results_ec_1$M) * (1 - (results_ec_1$negation == "negation") * 2)#
+results_ec_1$truth <- (#
+	(results_ec_1$negation == "no negation") * (1-results_ec_1$M)#
+	(results_ec_1$negation == "negation") * (results_ec_1$M)#
+)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(truth, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+plot(results_ec_1$M)
+plot(results_ec_1$truth)
+plot((1-results_ec_1$M))
+plot(results_ec_1$M)
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+results_ec_1$truth <- (#
+	((results_ec_1$negation == "no negation") * (1-results_ec_1$M))#
+	+#
+	((results_ec_1$negation == "negation") * (results_ec_1$M))#
+)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(truth, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_2
+plot(results_ec_2)
+plot(results_ec_2$M)
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+results_ec_1$truth <- (#
+	((results_ec_1$negation == "no negation") * (1-results_ec_1$M))#
+	+#
+	((results_ec_1$negation == "negation") * (results_ec_1$M))#
+)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+results_ec_1$truth <- (#
+	((results_ec_1$negation == "no negation") * (results_ec_1$M))#
+	+#
+	((results_ec_1$negation == "negation") * (1-results_ec_1$M))#
+)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+results_ec_1$truth_pos <- (#
+	((results_ec_1$negation == "no negation") * (results_ec_1$M))#
+	+#
+	((results_ec_1$negation == "negation") * (1-results_ec_1$M))#
+)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = mean(truth_pos, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+results_ec_1$truth_pos <- (#
+	((results_ec_1$negation == "no negation") * (results_ec_1$M))#
+	+#
+	((results_ec_1$negation == "negation") * (1-results_ec_1$M))#
+)#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=group, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~condition)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_wrap(~condition)#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_wrap(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_gridp(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+plot <- ggplot(data=exp2, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_gridp(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+plot <- ggplot(data=exp2, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed))#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, subjectId), summarize, M = sum(M, na.rm =TRUE))#
+results_ec_3 <- ddply(results_ec_2, .(condition, group), summarize, M = mean(M, na.rm =TRUE))#
+results_ec_3#
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+exp
+exp$button_pressed
+aggregate(button_pressed~negation*group*condition, mean, data=exp)
+plot <- ggplot(data=exp, aes(x=negation, y=as.numeric(button_pressed), fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)
+1+1
+plot <- ggplot(data=exp2, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)#
+plot +   labs(title="",  x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition) +#
+  labs(title="", x="", y="PSP index")
+ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition) +#
+  labs(title="", x="", y="PSP index")
+ggplot(data=exp, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)
+ggplot(data=exp2, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)
+ggplot(data=exp_qua, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+  facet_grid(~condition)
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=exp, aes(x=condition, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_4 <- ddply(results_ec_2, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))#
+plot <- ggplot(results_ec_4 =exp, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(condition)#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_4
+results_ec_4 <- ddply(results_ec_2, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))
+results_ec_4 <- ddply(results_ec_1, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))
+plot <- ggplot(results_ec_4 =exp, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(condition)#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_4 <- ddply(results_ec_1, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))#
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(condition)#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_4
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+  plot +   labs(title="", x="", y = "PSP index")
+results_ec_4
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=stack) +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_4, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_4, aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_3, aes(y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(~condition)
+plot <- ggplot(data=results_ec_3, aes(y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(~condition)#
+#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_4 <- ddply(results_ec_1, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))#
+plot <- ggplot(data=results_ec_4, aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "PSP index")
+plot <- ggplot(data=results_ec_3, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_4 <- ddply(results_ec_1, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))#
+plot <- ggplot(data=results_ec_4, aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "PSP index")
+results_ec_2 <- ddply(results_ec_1, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))#
+plot <- ggplot(data=results_ec_4, aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+results_ec_1 <-  ddply(exp, .(condition, group, negation, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+results_ec_2 <- ddply(results_ec_1, .(condition, group, negation), summarize, M = mean(M, na.rm =TRUE))#
+plot <- ggplot(data=results_ec_4, aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+ggplot(data=exp_qua, aes(x=negation, y=button_pressed, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(~condition)
+plot2 <- ggplot(data=results2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+#               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot2 +   labs(title="",#
+              x="", y = "PSP index")
+explode(exp_qua)
+separate(exp_qua, condition)
+separate(exp_qua, condition, into=["kjh", "lkj"])
+separate(exp_qua, condition, into=c("kjh", "lkj"))
+separate(exp_qua, condition, into=c("kjh", "lkj"), sep="_")
+separate(exp_qua, condition, into=c("kjh", "lkj", "kjljj"), sep="_")
+table(exp_qua$condition)
+table(exp$condition)
+table(exp$condition, exp$group)
+separate(exp_qua, condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right")
+table(exp_qua$condition)
+separate(exp_qua, condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge")
+columns(exp_qua)
+col(exp_qua)
+head(exp_qua)
+exp_qua %> separate(condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge")
+exp_qua %>% separate(condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge")
+exp_qua %<>% separate(condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge")
+exp_qua %>% separate(condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge")
+exp_qua %>% #
+	separate(condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge") %>%#
+	exp_qua
+exp_qua_2 <-#
+	separate(exp_qua, condition, into=c("kjh", "lkj", "kjljj"), sep="_", fill="right", extra="merge")
+exp_qua_2
+head(exp_qua_2)
+exp_qua_2 <-#
+	separate(exp_qua, condition, into=c("quantifier", "truth", "presupposition"), sep="_", fill="right", extra="merge")
+head(exp_qua_2)
+exp_qua <-#
+	separate(exp_qua, condition, into=c("quantifier", "condition"), sep="_", fill="right", extra="merge")
+head(exp_qua_2)
+head(exp_qua)
+exp_qua_1 <- ddply(exp_qua, .(quantifier, group, truth, presupposition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+exp_qua_2 <- ddply(exp_qua_1, .(quantifier, group, truth, presupposition), summarize, M = mean(button_pressed, na.rm =TRUE))
+exp_qua_1 <- ddply(exp_qua, .(quantifier, group, condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+exp_qua_2 <- ddply(exp_qua_1, .(quantifier, group, condition), summarize, M = mean(button_pressed, na.rm =TRUE))
+exp_qua_1 <- ddply(exp_qua, .(quantifier, group, condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE))#
+exp_qua_2 <- ddply(exp_qua_1, .(quantifier, group, condition), summarize, M = mean(M, na.rm =TRUE))
+ggplot(data=exp_qua_2, aes(x=negation, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(quantifier~condition) #
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+ggplot(data=exp_qua_2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(quantifier~condition) #
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+plot <- ggplot(data=exp_qua_2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(quantifier~condition) #
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+plot <- ggplot(data=results_ec_4, aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)#
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+plot <- ggplot(data=exp_qua_2, aes(x=group, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge()) +#
+  facet_grid(quantifier~condition) #
+plot +   labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, M = mean(M, na.rm =TRUE))
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, descr=describe(button_pressed))
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		        N    = length(button_pressed),#
+               mean = mean(button_pressed),#
+               sd   = sd(button_pressed),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed),#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(M),#
+               mean = mean(M),#
+               sd   = sd(M),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed),#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(M),#
+               mean = mean(M),#
+               sd   = sd(M),#
+               se   = sd(M) / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed),#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(M),#
+               mean = mean(M),#
+               sd   = sd(M),#
+               se   = sd(M) / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(M),#
+               mean = mean(M),#
+               sd   = sd(M),#
+               se   = sd(M) / sqrt(N)#
+		) %>% head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(M),#
+               mean = mean(M),#
+               sd   = sd(M),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(M),#
+               mean = mean(M),#
+               sd   = sd(M),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),,#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+exp %>>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2)
+exp_2
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2 = .)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2) %> head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2) %> head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2) %> #
+head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2) %>% #
+head
+exp_2
+ls.str()
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2) %>% #
+head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>%
+head
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (exp_2 = .)
+exp_2
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2 = .)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (exp_2 = .)
+exp_2
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (exp_2 = (.))
+exp_2
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2 = (.))
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>% (~ exp_2)
+exp_2
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>% (#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) -> exp_2)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>% (~#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) -> exp_2)
+exp_2
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+exp %>>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>%#
+ggplot(data=., aes(x=group, y=M, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>%#
+ggplot(data=., aes(x=group, y=mean, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition)
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>%#
+ggplot(data=., aes(x=group, y=mean, fill=negation)) +#
+  geom_bar(stat="identity", position="stack") +#
+  facet_grid(~condition) +   labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=mean, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               M = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       N    = length(!is.na(M)),#
+               mean = mean(M, na.rm=TRUE),#
+               sd   = sd(M, na.rm=TRUE),#
+               se   = sd / sqrt(N)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=mean, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+			position=position_dodge(.9))+#
+		theme_classic(base_size = 20) +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		theme_classic(base_size = 20) +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+#		theme_classic(base_size = 20) +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, condition), summarize, M = mean(M, na.rm =TRUE)) %>%#
+	ggplot(data=., aes(x=group, y=M)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		facet_grid(quantifier~condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, condition), summarize, M = mean(M, na.rm =TRUE)) %>%#
+	ggplot(data=., aes(x=group, y=M)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		facet_grid(condition~quantifier) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, M = mean(M, na.rm =TRUE)) %>%#
+	ggplot(data=., aes(x=group, y=M)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+# This script loads the data#
+#
+### LOAD PACKAGES#
+library(dplyr)#
+library(plyr)#
+library(ggplot2)#
+library(stringr)#
+library(lsr)#
+library(lme4)#
+#library(lmTest)#
+library(lmerTest)#
+library(simr)#
+library(emmeans)#
+library(exactRankTests)#
+library(pwr)#
+library(psych)#
+library(boot)#
+library(rcompanion)#
+library(rsq)#
+library(tidyr)#
+library(naniar)#
+library(RColorBrewer)#
+data = read.csv(file=file.choose(),sep = ',',header = T,na.strings=c("","NA"))#
+length(unique(data$subjectId))#
+#
+#92#
+head(data)#
+exp2 <- subset(data, type == "testing")#
+#
+is.numeric(exp2$button_pressed)#
+#
+levels(exp2$condition)#
+levels(exp2$phrase)#
+#
+exp2$negation <- ifelse(exp2$phrase == "does not move from red upward." | exp2$phrase == "does not wug.", "negation", "no negation")#
+#
+exp2$type <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB"| exp2$condition == "notAnotB"#
+                           | exp2$condition == "notAB", "simple", "quantificational")#
+#
+exp2$index <- ifelse(((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "negation" & exp2$button_pressed == 1) #
+                     | (exp2$condition == "AB" & exp2$negation == "no negation" & exp2$button_pressed == 1)#
+| ((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "no negation" & exp2$button_pressed == 0)#
+| (exp2$condition == "AB" & exp2$negation == "negation" & exp2$button_pressed == 0), 1, 0)#
+#
+is.numeric(exp2$index)#
+#
+exp_qua <- subset(exp2, type == "quantificational")#
+exp <- subset(exp2, type == "simple")#
+#
+results1 <- ddply(exp, .(condition, group, negation), summarize, M = mean(index, na.rm =TRUE))#
+results1b <- ddply(exp, .(condition, group, negation), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+controls <- subset(exp, group == "control")#
+results2 <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed, na.rm =TRUE))#
+### plotting#
+plot <- ggplot(data=results1, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")#
+plot2 <- ggplot(data=results2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+#               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot2 +   labs(title="",#
+              x="", y = "PSP index")#
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")#
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, M = mean(M, na.rm =TRUE)) %>%#
+	ggplot(data=., aes(x=group, y=M)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(m)),#
+		m = mean(m, na.rm=TRUE),#
+        sd   = sd(m, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		)) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(m)),#
+		m = mean(m, na.rm=TRUE),#
+        sd   = sd(m, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(M)),#
+		m = mean(M, na.rm=TRUE),#
+        sd   = sd(M, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+# This script loads the data#
+#
+### LOAD PACKAGES#
+library(dplyr)#
+library(plyr)#
+library(ggplot2)#
+library(stringr)#
+library(lsr)#
+library(lme4)#
+#library(lmTest)#
+library(lmerTest)#
+library(simr)#
+library(emmeans)#
+library(exactRankTests)#
+library(pwr)#
+library(psych)#
+library(boot)#
+library(rcompanion)#
+library(rsq)#
+library(tidyr)#
+library(naniar)#
+library(RColorBrewer)#
+data = read.csv(file=file.choose(),sep = ',',header = T,na.strings=c("","NA"))#
+length(unique(data$subjectId))#
+#
+#92#
+head(data)#
+exp2 <- subset(data, type == "testing")#
+#
+is.numeric(exp2$button_pressed)#
+#
+levels(exp2$condition)#
+levels(exp2$phrase)#
+#
+exp2$negation <- ifelse(exp2$phrase == "does not move from red upward." | exp2$phrase == "does not wug.", "negation", "no negation")#
+#
+exp2$type <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB"| exp2$condition == "notAnotB"#
+                           | exp2$condition == "notAB", "simple", "quantificational")#
+#
+exp2$index <- ifelse(((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "negation" & exp2$button_pressed == 1) #
+                     | (exp2$condition == "AB" & exp2$negation == "no negation" & exp2$button_pressed == 1)#
+| ((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "no negation" & exp2$button_pressed == 0)#
+| (exp2$condition == "AB" & exp2$negation == "negation" & exp2$button_pressed == 0), 1, 0)#
+#
+is.numeric(exp2$index)#
+#
+exp_qua <- subset(exp2, type == "quantificational")#
+exp <- subset(exp2, type == "simple")#
+#
+results1 <- ddply(exp, .(condition, group, negation), summarize, M = mean(index, na.rm =TRUE))#
+results1b <- ddply(exp, .(condition, group, negation), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+controls <- subset(exp, group == "control")#
+results2 <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed, na.rm =TRUE))#
+### plotting#
+plot <- ggplot(data=results1, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")#
+plot2 <- ggplot(data=results2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+#               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot2 +   labs(title="",#
+              x="", y = "PSP index")#
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "Bivalence means sum to 1")#
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(M)),#
+		m = mean(M, na.rm=TRUE),#
+        sd   = sd(M, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "Bivalence means sum to 1")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "1=bivalence, less=pres gap")#
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(M)),#
+		m = mean(M, na.rm=TRUE),#
+        sd   = sd(M, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "1=bivalence, less=pres gap")
+# This script loads the data#
+#
+### LOAD PACKAGES#
+library(dplyr)#
+library(plyr)#
+library(ggplot2)#
+library(stringr)#
+library(lsr)#
+library(lme4)#
+#library(lmTest)#
+library(lmerTest)#
+library(simr)#
+library(emmeans)#
+library(exactRankTests)#
+library(pwr)#
+library(psych)#
+library(boot)#
+library(rcompanion)#
+library(rsq)#
+library(tidyr)#
+library(naniar)#
+library(RColorBrewer)#
+data = read.csv(file=file.choose(),sep = ',',header = T,na.strings=c("","NA"))#
+length(unique(data$subjectId))#
+#
+#92#
+head(data)#
+exp2 <- subset(data, type == "testing")#
+#
+is.numeric(exp2$button_pressed)#
+#
+levels(exp2$condition)#
+levels(exp2$phrase)#
+#
+exp2$negation <- ifelse(exp2$phrase == "does not move from red upward." | exp2$phrase == "does not wug.", "negation", "no negation")#
+#
+exp2$type <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB"| exp2$condition == "notAnotB"#
+                           | exp2$condition == "notAB", "simple", "quantificational")#
+#
+exp2$index <- ifelse(((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "negation" & exp2$button_pressed == 1) #
+                     | (exp2$condition == "AB" & exp2$negation == "no negation" & exp2$button_pressed == 1)#
+| ((exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB") & exp2$negation == "no negation" & exp2$button_pressed == 0)#
+| (exp2$condition == "AB" & exp2$negation == "negation" & exp2$button_pressed == 0), 1, 0)#
+#
+is.numeric(exp2$index)#
+#
+exp_qua <- subset(exp2, type == "quantificational")#
+exp <- subset(exp2, type == "simple")#
+#
+results1 <- ddply(exp, .(condition, group, negation), summarize, M = mean(index, na.rm =TRUE))#
+results1b <- ddply(exp, .(condition, group, negation), summarize, M = mean(button_pressed, na.rm =TRUE))#
+#
+controls <- subset(exp, group == "control")#
+results2 <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed, na.rm =TRUE))#
+### plotting#
+plot <- ggplot(data=results1, aes(x=condition, y=M)) +#
+  geom_bar(stat="identity", position=position_dodge())+#
+  facet_wrap(~group)#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+ #               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot +   labs(title="",#
+                           x="", y = "PSP index")#
+plot2 <- ggplot(data=results2, aes(x=condition, y=M, fill=group)) +#
+  geom_bar(stat="identity", position=position_dodge())#
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,#
+#               position=position_dodge(.9))+#
+#  theme_classic(base_size = 20) #
+#
+plot2 +   labs(title="",#
+              x="", y = "PSP index")#
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "1=bivalence, less=pres gap")#
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(M)),#
+		m = mean(M, na.rm=TRUE),#
+        sd   = sd(M, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "")
+exp %>% ddply(.(condition, group, negation, subjectId), #
+		summarize, #
+               m = mean(button_pressed)#
+		) %>%#
+	ddply(.(condition, group, negation), #
+		summarize, #
+		       n    = length(!is.na(m)),#
+               m = mean(m, na.rm=TRUE),#
+               sd   = sd(m, na.rm=TRUE),#
+               se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m, fill=negation)) +#
+		geom_bar(stat="identity", position="stack") +#
+		facet_grid(~condition) +   #
+		labs(title="", x="", y = "1=bivalence, less=pres gap")
+exp_qua %>%#
+	separate(condition, into=c("quantifier", "t_condition"), sep="_", fill="right", extra="merge")	 %>%#
+	ddply(.(quantifier, group, t_condition, subjectId), summarize, M = mean(button_pressed, na.rm =TRUE)) %>%#
+	ddply(.(quantifier, group, t_condition), summarize, #
+		n    = length(!is.na(M)),#
+		m = mean(M, na.rm=TRUE),#
+        sd   = sd(M, na.rm=TRUE),#
+        se   = sd / sqrt(n)#
+		) %>%#
+	ggplot(data=., aes(x=group, y=m)) +#
+		geom_bar(stat="identity", position=position_dodge()) +#
+		geom_errorbar(aes(ymin=m-se, ymax=m+se), width=.2,#
+			position=position_dodge(.9))+#
+		facet_grid(quantifier~t_condition) +#
+		labs(title="", x="", y = "")
