@@ -27,41 +27,41 @@ var teach = [
   phrase: "wugs."
   },
 
-  { subject: "<div class='wug4'></div>",
-  id: "teaching.4",
-  shape: "The green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
+//   { subject: "<div class='wug4'></div>",
+//   id: "teaching.4",
+//   shape: "The green circle",
+//   //adjective: "small",
+//   phrase: "wugs."
+//   },
 
-  { subject: "<div class='wug1b'></div>",
- id: "teaching.5",
- shape: "The green circle",
- //adjective: "small",
- phrase: "does not wug."
-},
+//   { subject: "<div class='wug1b'></div>",
+//  id: "teaching.5",
+//  shape: "The green circle",
+//  //adjective: "small",
+//  phrase: "does not wug."
+// },
 
-{ subject: "<div class='wug2b'></div>",
-id: "teaching.6",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
+// { subject: "<div class='wug2b'></div>",
+// id: "teaching.6",
+// shape: "The green circle",
+// //adjective: "small",
+// phrase: "does not wug."
+// },
 
 
-{ subject: "<div class='wug3b'></div>",
-id: "teaching.7",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
+// { subject: "<div class='wug3b'></div>",
+// id: "teaching.7",
+// shape: "The green circle",
+// //adjective: "small",
+// phrase: "does not wug."
+// },
 
-{ subject: "<div class='wug4b'></div>",
-id: "teaching.8",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
+// { subject: "<div class='wug4b'></div>",
+// id: "teaching.8",
+// shape: "The green circle",
+// //adjective: "small",
+// phrase: "does not wug."
+// },
 
 
 
@@ -75,7 +75,8 @@ var test_first = [
  id: "testing.1",
  shape: "The green circle",
  //adjective: "small",
- phrase: "does not wug.",
+ negation: "not true:",
+ phrase: "wugs.",
  condition: "AB"
 },
 
@@ -83,6 +84,7 @@ var test_first = [
 id: "testing.2",
 shape: "The green circle",
 //adjective: "small",
+negation: "true:",
 phrase: "wugs.",
 condition: "AB"
 },
@@ -92,7 +94,8 @@ condition: "AB"
 id: "testing.3",
 shape: "The green circle",
 //adjective: "small",
-phrase: "does not wug.",
+negation: "not true:",
+phrase: "wugs.",
 condition: "notAB"
 },
 
@@ -100,6 +103,7 @@ condition: "notAB"
 id: "testing.4",
 shape: "The green circle",
 //adjective: "small",
+negation: "true:",
 phrase: "wugs.",
 condition: "notAB"
 },
@@ -112,6 +116,7 @@ var test = [
   id: "testing.5",
   shape: "The green circle",
   // adjective: "small",
+  negation: "true:",
   phrase: "wugs.",
   condition: "AnotB"
   },
@@ -120,7 +125,8 @@ var test = [
   id: "testing.6",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "does not wug.",
+  negation: "not true:",
+  phrase: "wugs.",
   condition: "AnotB",
   },
 
@@ -128,7 +134,8 @@ var test = [
   id: "testing.7",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "wugs.",
+  negation: "true:",
+phrase: "wugs.",
   condition: "AnotB"
   },
 
@@ -136,7 +143,8 @@ var test = [
   id: "testing.8",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "does not wug.",
+  negation: "not true:",
+  phrase: "wugs.",
   condition: "AnotB"
   },
 
@@ -144,7 +152,8 @@ var test = [
   id: "testing.9",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "wugs.",
+  negation: "true:",
+phrase: "wugs.",
   condition: "notAnotB"
   },
 
@@ -152,7 +161,8 @@ var test = [
   id: "testing.10",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "does not wug.",
+  negation: "not true:",
+ phrase: "wugs.",
   condition: "notAnotB"
   },
 
@@ -160,6 +170,7 @@ var test = [
   id: "testing.11",
   shape: "The green circle",
   // adjective: "small",
+  negation: "true:",
   phrase: "wugs.",
   condition: "notAnotB"
   },
@@ -168,7 +179,8 @@ var test = [
   id: "testing.12",
   shape: "The green circle",
   // adjective: "small",
-  phrase: "does not wug.",
+  negation: "not true:",
+  phrase: "wugs.",
   condition: "notAnotB"
   },
 
@@ -182,6 +194,7 @@ var test_last = [
   + "<div class='wug4b'></div>",
   id: "testing.13",
   shape: "Every green circle",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "all_true_universal"
@@ -194,6 +207,7 @@ var test_last = [
   id: "testing.14",
   shape: "Every green circle",
   // adjective: "small",
+  negation: "true:",
   phrase: "wugs.",
   condition: "all_false"
   },
@@ -204,6 +218,7 @@ var test_last = [
   + "<div class='wug4a'></div>",
   id: "testing.15",
   shape: "None of the green circles",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "none_true_universal"
@@ -215,6 +230,7 @@ var test_last = [
   + "<div class='wug4b'></div>",
   id: "testing.16",
   shape: "None of the green circles",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "none_false"
@@ -226,6 +242,7 @@ var test_last = [
   + "<div class='wug4b'></div>",
   id: "testing.17",
   shape: "Every green circle",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "all_true_existential"
@@ -237,6 +254,7 @@ var test_last = [
   + "<div class='wug4a'></div>",
   id: "testing.18",
   shape: "None of the green circles",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "none_true_existential"
@@ -248,6 +266,7 @@ var test_last = [
   + "<div class='dot4b'></div>",
   id: "testing.19",
   shape: "None of the green circles",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "none_true_no_projection"
@@ -259,6 +278,7 @@ var test_last = [
   + "<div class='dot6'></div>",
   id: "testing.20",
   shape: "Every green circles",
+  negation: "true:",
   // adjective: "small",
   phrase: "wugs.",
   condition: "all_true_no_projection"

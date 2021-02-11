@@ -16,7 +16,7 @@ var instructions_block = {
 
   var break_block = {
     type: "html-button-response",
-    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>! You will see animations and will be asked to make a decision.</p>",
+    stimulus: "<p style='text-align:center'>Now, let's see what you learned about <i>wug</i>! You will see animations and will be asked to make a decision.</p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -50,7 +50,8 @@ var instructions_block = {
 var teaching = function(stimulus) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'> " +  stimulus.shape + " " + stimulus.phrase + "</p>",
+    prompt: "<p> In this situation the following is true: </p> " +
+    "<p style='text-align:center; font-style:italic'> " +  stimulus.shape + " " + stimulus.phrase + "</p>",
   //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus.stim,
     choices: ["Next"],
@@ -67,10 +68,11 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
+    prompt: "<p style='text-align:center'> Someone says the following is " + stimulus2.negation + " </p> " +
+    "<p style='text-align:center; font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
 //    + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
-    choices: ["False", "True"],
+    choices: ["The situation above is not what the person saw", "The situation above is what the person saw"],
     data: stimulus2.data,
   //  prompt_delay: 3000,
     button_delay: 2000,
@@ -602,7 +604,7 @@ var testMaker = function(material) {
   var stimulus2 = "<div class='container'><div class='ball'><div class='redline'></div>"
   + " " + material.subject + " </div></div></div>"
   + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
-
+var negation = " " + material.negation + " "
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "
   var phrase = " " + material.phrase + " "
@@ -620,6 +622,7 @@ var testMaker = function(material) {
           phrase: phrase,
           shape: shape,
           condition: condition,
+          negation: negation,
       //    adjective: adjective,
           data: data};
 };
