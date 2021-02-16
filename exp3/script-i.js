@@ -72,7 +72,7 @@ var testing = function(stimulus2) {
     "<p style='text-align:center; font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
 //    + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus2.stim,
-    choices: ["The situation above is not what the person saw", "The situation above is what the person saw"],
+    choices: ["The situation above is not what the person is seeing", "The situation above is what the person is seeing"],
     data: stimulus2.data,
   //  prompt_delay: 3000,
     button_delay: 2000,
