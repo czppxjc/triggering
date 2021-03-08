@@ -16,7 +16,8 @@ var instructions_block = {
 
   var break_block = {
     type: "html-button-response",
-    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>! You will see animations and will be asked to make a decision.</p>",
+    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>" 
+    + " <p style='text-align:center'> You will see one visible animation and another one which is hidden. Your task is to decide whether the sentence you will see describes the visible animation. </p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -67,7 +68,7 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
+    prompt: "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
     + "<p style='text-align:center'> The sentence describes: </p> ",
     stimulus: stimulus2.stim,
     choices: ["The scenario on the left", "The scenario on the right"],
@@ -703,7 +704,7 @@ for (var i in stimuli_set_last) {
 
 
 
-timeline.push(self_report);
+//timeline.push(self_report);
 
 
 timeline.push(demographics_block);
@@ -712,7 +713,7 @@ timeline.push(demographics_block);
 jsPsych.init({
   timeline: timeline,
   show_progress_bar: true,
-  on_finish: function(data){ SaveData("triggering3",
+  on_finish: function(data){ SaveData("triggering4_CB",
                                       theSubject,
                                       jsPsych.data.get().csv);
                               $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 3E5C9062 </p></center>"); }
