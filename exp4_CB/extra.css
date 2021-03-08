@@ -1,0 +1,477 @@
+
+
+.container1a {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+
+.container1b {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  left: 350px;
+top: 0px;
+}
+
+.container2 {
+  width: 650px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ball2 {
+  height: 300px;
+  width: 300px;
+  left: 350px;
+  background-color: black;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 0.5px;
+  position: absolute;
+}
+
+.ball_test {
+  height: 300px;
+  width: 300px;
+  left: 0px;
+  background-color: grey;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 0.5px;
+  position: relative;
+}
+
+
+.ball {
+  height: 300px;
+  width: 300px;
+  left: 0px;
+  background-color: grey;
+    border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+    border-width: 0.5px;
+  position: absolute;
+}
+
+.redline {
+  width: 300px;
+  height:5px;
+  left: 0px;
+  top: 145px;
+  background-color: red;
+  border-style: solid;
+  border-width: thin;
+  position: relative;
+}
+
+
+.wug1 {
+  height: 0px;
+  width: 0px;
+  left: -60px;
+  top: 130px;
+  background-color: LawnGreen;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.wug2 {
+  height: 0px;
+  width: 0px;
+  left: -30px;
+  top: 130px;
+  background-color: LawnGreen;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+
+.wug3 {
+  height: 0px;
+  width: 0px;
+  background-color: LawnGreen;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: 40px;
+  top: 130px;
+  }
+
+  .wug4 {
+    height: 0px;
+    width: 0px;
+    background-color: LawnGreen;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    top: 130px;
+    }
+
+    .wug1a {
+      height: 0px;
+      width: 0px;
+      left: -65px;
+      top: 130px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+
+    .wug2a {
+      height: 0px;
+      width: 0px;
+      left: 65px;
+      top: 130px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+
+
+    .wug3a {
+      height: 0px;
+      width: 0px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      left: 15px;
+      top: 130px;
+      }
+
+      .wug4a {
+        height: 0px;
+        width: 0px;
+        background-color: LawnGreen;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        left: -35px;
+        top: 130px;
+        }
+
+
+    .wug1b {
+      height: 0px;
+      width: 0px;
+      left: -65px;
+      top: 130px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+
+    .wug2b {
+      height: 0px;
+      width: 0px;
+      left: -20px;
+      top: 130px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+
+
+    .wug3b {
+      height: 0px;
+      width: 0px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      left: 30px;
+      top: 130px;
+      }
+
+      .wug4b {
+        height: 0px;
+        width: 0px;
+        background-color: LawnGreen;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        left: 55px;
+        top: 130px;
+        }
+
+    .dot1 {
+      height: 0px;
+      width: 0px;
+      background-color: LawnGreen;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      left: -40px;
+      top: 240px;
+      }
+
+      .dot2 {
+        height: 0px;
+        width: 0px;
+        background-color: LawnGreen;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        left: 50px;
+        top: 235px;
+        }
+
+        .dot3 {
+          height: 0px;
+          width: 0px;
+          background-color: LawnGreen;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          left: -20px;
+          top: 60px;
+          }
+
+          .dot4 {
+            height: 0px;
+            width: 0px;
+            background-color: LawnGreen;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            left: 20px;
+            top: 90px;
+            }
+
+
+            .dot1a {
+              height: 0px;
+              width: 0px;
+              background-color: LawnGreen;
+              border-radius: 50%;
+              display: inline-block;
+              position: relative;
+              left: -10px;
+              top: 150px;
+              }
+
+              .dot2a {
+                height: 0px;
+                width: 0px;
+                background-color: LawnGreen;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                left: 100px;
+                top: 40px;
+                }
+
+                .dot3a {
+                  height: 0px;
+                  width: 0px;
+                  background-color: LawnGreen;
+                  border-radius: 50%;
+                  display: inline-block;
+                  position: relative;
+                  left: -75px;
+                  top: 20px;
+                  }
+
+                  .dot4a {
+                    height: 0px;
+                    width: 0px;
+                    background-color: LawnGreen;
+                    border-radius: 50%;
+                    display: inline-block;
+                    position: relative;
+                    left: 35px;
+                    top: 20px;
+                    }
+
+                    .dot1b {
+                      height: 0px;
+                      width: 0px;
+                      background-color: LawnGreen;
+                      border-radius: 50%;
+                      display: inline-block;
+                      position: relative;
+                      left: -25px;
+                      top: 150px;
+                      }
+
+                      .dot2b {
+                        height: 0px;
+                        width: 0px;
+                        background-color: LawnGreen;
+                        border-radius: 50%;
+                        display: inline-block;
+                        position: relative;
+                        left: 55px;
+                        top: 100px;
+                        }
+
+                        .dot3b {
+                          height: 0px;
+                          width: 0px;
+                          background-color: LawnGreen;
+                          border-radius: 50%;
+                          display: inline-block;
+                          position: relative;
+                          left: -55px;
+                          top: 60px;
+                          }
+
+                          .dot4b {
+                            height: 0px;
+                            width: 0px;
+                            background-color: LawnGreen;
+                            border-radius: 50%;
+                            display: inline-block;
+                            position: relative;
+                            left: 15px;
+                            top: 90px;
+                            }
+
+
+                            .dot5 {
+                              height: 0px;
+                              width: 0px;
+                              background-color: LawnGreen;
+                              border-radius: 50%;
+                              display: inline-block;
+                              position: relative;
+                              left: -85px;
+                              top: 160px;
+                              }
+
+                              .dot6 {
+                                height: 0px;
+                                width: 0px;
+                                background-color: LawnGreen;
+                                border-radius: 50%;
+                                display: inline-block;
+                                position: relative;
+                                left: -25px;
+                                top: 200px;
+                                }
+
+                                .dot7 {
+                                  height: 0px;
+                                  width: 0px;
+                                  background-color: LawnGreen;
+                                  border-radius: 50%;
+                                  display: inline-block;
+                                  position: relative;
+                                  left: 0px;
+                                  top: 150px;
+                                  }
+
+                                  .dot8 {
+                                    height: 0px;
+                                    width: 0px;
+                                    background-color: LawnGreen;
+                                    border-radius: 50%;
+                                    display: inline-block;
+                                    position: relative;
+                                    left: 90px;
+                                    top: 100px;
+                                    }
+
+
+
+
+.up2 {
+  animation: up2 2s;
+  }
+
+  .up1 {
+    animation: up1 2s;
+    }
+
+    .down2 {
+      animation: down2 2s;
+      }
+
+      .down1 {
+        animation: down1 2s;
+        }
+
+        .up3 {
+              animation: up3 2s;
+                      }
+
+                      .up4 {
+                            animation: up4 2s;
+                                    }
+        .down3 {
+                  animation: down3 2s;
+                        }
+
+                        .down4 {
+                                  animation: down4 2s;
+                                        }
+
+
+
+@keyframes up2 {
+        0%  {width: 20px; height:20px;}
+        30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+        99.5% {transform: translate(0px, -75px); width: 20px; height:20px;}
+      100% {transform: translate(0px, -75px); width: 0px; height:0px;} }
+
+
+@keyframes up1 {
+    0%  {width: 20px; height:20px;}
+    30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+    99.5% {transform: translate(0px, -90px); width: 20px; height:20px;}
+  100% {transform: translate(0px, -90px); width: 0px; height:0px;} }
+
+  @keyframes up3 {
+      0%  {width: 20px; height:20px;}
+      30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+      99.5% {transform: translate(0px, -45px); width: 20px; height:20px;}
+    100% {transform: translate(0px, -45px); width: 0px; height:0px;} }
+
+    @keyframes up4 {
+        0%  {width: 20px; height:20px;}
+        30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+        99.5% {transform: translate(0px, -60px); width: 20px; height:20px;}
+      100% {transform: translate(0px, -60px); width: 0px; height:0px;} }
+
+
+  @keyframes down2 {
+          0%  {width: 20px; height:20px;}
+          30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+          99.5% {transform: translate(0px, 70px); width: 20px; height:20px;}
+        100% {transform: translate(0px, 25px); width: 0px; height:0px;} }
+
+
+  @keyframes down1 {
+      0%  {width: 20px; height:20px;}
+      30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+      99.5% {transform: translate(0px, 30px); width: 20px; height:20px;}
+    100% {transform: translate(0px, 30px); width: 0px; height:0px;} }
+
+    @keyframes down3 {
+        0%  {width: 20px; height:20px;}
+        30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+        99.5% {transform: translate(0px, 50px); width: 20px; height:20px;}
+      100% {transform: translate(0px, 50px); width: 0px; height:0px;} }
+
+
+      @keyframes down4 {
+          0%  {width: 20px; height:20px;}
+          30%  {transform: translate(0px, 0px); width: 20px; height:20px;}
+          99.5% {transform: translate(0px, 85px); width: 20px; height:20px;}
+        100% {transform: translate(0px, 85px); width: 0px; height:0px;} }
