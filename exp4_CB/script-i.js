@@ -537,7 +537,7 @@ else if (document.getElementsByClassName("dot2a")[0] !== undefined) {
 
   targetElement.classList.remove("down2");
   void targetElement.offsetWidth;
-  targetElement.classList.add("down3");
+  targetElement.classList.add("down2");
 }
 
 else if (document.getElementsByClassName("dot3a")[0] !== undefined) {
