@@ -17,7 +17,8 @@ var instructions_block = {
   var break_block = {
     type: "html-button-response",
     stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>" 
-    + " <p style='text-align:center'> You will see one visible animation and another one which is hidden. Your task is to decide whether the sentence you will see describes the visible animation. </p>",
+    + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden. "
+    + " Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate given the sentence you will see. </p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -71,7 +72,7 @@ var testing = function(stimulus2) {
     prompt: "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
     + "<p style='text-align:center'> The sentence describes: </p> ",
     stimulus: stimulus2.stim,
-    choices: ["The scenario on the left", "The scenario on the right"],
+    choices: ["The visible scenario on the left", "The hidden scenario on the right"],
     data: stimulus2.data,
   //  prompt_delay: 3000,
     button_delay: 2000,
