@@ -16,7 +16,9 @@ var instructions_block = {
 
   var break_block = {
     type: "html-button-response",
-    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>! You will see animations and will be asked to make a decision.</p>",
+    stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>" 
+    + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden. "
+    + " Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate given the sentence you will see. </p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -51,7 +53,7 @@ var teaching = function(stimulus) {
   return {
     type: 'html-button-delay-response',
     prompt: "<p style='text-align:center'> " +  stimulus.shape + " " + stimulus.phrase + "</p>",
-  //  + "<p> condition:" + stimulus.condition + " </p> ",
+  //  + "<p> condition:" + stimulus2.condition + " </p> ",
     stimulus: stimulus.stim,
     choices: ["Next"],
     data: stimulus.data,
@@ -67,10 +69,10 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>",
-    //+ "<p> condition:" + stimulus2.condition + " </p> ",
+    prompt: "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
+    + "<p style='text-align:center'> The sentence describes: </p> ",
     stimulus: stimulus2.stim,
-    choices: ["False", "True"],
+    choices: ["The visible scenario on the left", "The hidden scenario on the right"],
     data: stimulus2.data,
   //  prompt_delay: 3000,
     button_delay: 2000,
@@ -139,9 +141,9 @@ array2.forEach(function(x) {
 });
 
 array3.forEach(function(x) {
-      x.classList.remove("down2");
+      x.classList.remove("up3");
       void x.offsetWidth;
-       x.classList.add("down2");
+       x.classList.add("up3");
 });
 
 array4.forEach(function(x) {
@@ -182,9 +184,9 @@ array2.forEach(function(x) {
 
 
 array3.forEach(function(x) {
-      x.classList.remove("up3");
+      x.classList.remove("down3");
       void x.offsetWidth;
-       x.classList.add("up3");
+       x.classList.add("down3");
 });
 
 array4.forEach(function(x) {
@@ -279,15 +281,15 @@ array4.forEach(function(x) {
 
 }
 
-else if (document.getElementsByClassName("dot1")[0] !== undefined &&
-document.getElementsByClassName("dot2")[0] !== undefined &&
-document.getElementsByClassName("dot3")[0] !== undefined &&
-document.getElementsByClassName("wug4")[0] !== undefined) {
+else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
+document.getElementsByClassName("wug2b")[0] !== undefined &&
+document.getElementsByClassName("wug3a")[0] !== undefined &&
+document.getElementsByClassName("wug4b")[0] !== undefined) {
 
- var elements = document.querySelectorAll(".dot1");
- var elements2 = document.querySelectorAll(".dot2");
- var elements3 = document.querySelectorAll(".dot3");
- var elements4 = document.querySelectorAll(".wug4");
+ var elements = document.querySelectorAll(".wug1a");
+ var elements2 = document.querySelectorAll(".wug2b");
+ var elements3 = document.querySelectorAll(".wug3a");
+ var elements4 = document.querySelectorAll(".wug4b");
 
 
  var array = Array.from(elements);
@@ -296,9 +298,9 @@ var array3 = Array.from(elements3);
 var array4 = Array.from(elements4);
 
 array.forEach(function(x) {
-     x.classList.remove("up1");
+     x.classList.remove("down1");
      void x.offsetWidth;
-      x.classList.add("up1");
+      x.classList.add("down1");
 });
 
 array2.forEach(function(x) {
@@ -308,28 +310,28 @@ array2.forEach(function(x) {
 });
 
 array3.forEach(function(x) {
-     x.classList.remove("up3");
+     x.classList.remove("down3");
      void x.offsetWidth;
-      x.classList.add("up3");
+      x.classList.add("down3");
 });
 
 array4.forEach(function(x) {
-     x.classList.remove("up4");
+     x.classList.remove("down4");
      void x.offsetWidth;
-      x.classList.add("up4");
+      x.classList.add("down4");
 });
 
 }
 
-else if (document.getElementsByClassName("dot1a")[0] !== undefined &&
+else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
 document.getElementsByClassName("dot2a")[0] !== undefined &&
-document.getElementsByClassName("dot3a")[0] !== undefined &&
-document.getElementsByClassName("dot4a")[0] !== undefined) {
+document.getElementsByClassName("wug3a")[0] !== undefined &&
+document.getElementsByClassName("wug4a")[0] !== undefined) {
 
- var elements = document.querySelectorAll(".dot1a");
+ var elements = document.querySelectorAll(".wug1a");
  var elements2 = document.querySelectorAll(".dot2a");
- var elements3 = document.querySelectorAll(".dot3a");
- var elements4 = document.querySelectorAll(".dot4a");
+ var elements3 = document.querySelectorAll(".wug3a");
+ var elements4 = document.querySelectorAll(".wug4a");
 
 
  var array = Array.from(elements);
@@ -338,9 +340,9 @@ var array3 = Array.from(elements3);
 var array4 = Array.from(elements4);
 
 array.forEach(function(x) {
-     x.classList.remove("up1");
+     x.classList.remove("down1");
      void x.offsetWidth;
-      x.classList.add("up1");
+      x.classList.add("down1");
 });
 
 array2.forEach(function(x) {
@@ -536,7 +538,7 @@ else if (document.getElementsByClassName("dot2a")[0] !== undefined) {
 
   targetElement.classList.remove("down2");
   void targetElement.offsetWidth;
-  targetElement.classList.add("down3");
+  targetElement.classList.add("down2");
 }
 
 else if (document.getElementsByClassName("dot3a")[0] !== undefined) {
@@ -570,7 +572,7 @@ else if (document.getElementsByClassName("dot4")[0] !== undefined){
 // defining teaching and testing
 
 var teachMaker = function(material) {
-  var stimulus = "<div class='container'><div class='ball'><div class='redline'></div>"
+  var stimulus = "<div class='container'><div class='ball_test'><div class='redline'></div>"
   + " " + material.subject +  "</div></div></div>"
   + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
@@ -599,9 +601,9 @@ var teachMaker = function(material) {
 
 
 var testMaker = function(material) {
-  var stimulus2 = "<div class='container'><div class='ball'><div class='redline'></div>"
-  + " " + material.subject + " </div></div></div>"
-  + "<button onclick = 'DoAnimation();'>Please click here animation!</button>"
+  var stimulus2 = "<div class='container2'><div class='ball'><div class='redline'></div>"
+  + " " + material.subject + " </div><div class = 'ball2'></div></div>"
+  + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
   var shape = " " + material.shape + " "
 //  var adjective = " " + material.adjective + " "
@@ -681,11 +683,11 @@ timeline.push(instructions_block);
 
 
 
-for (var i in stimuli_set) {
-  timeline.push(stimuli_set[i]);
-}
+ for (var i in stimuli_set) {
+   timeline.push(stimuli_set[i]);
+ }
 
-timeline.push(break_block);
+ timeline.push(break_block);
 
 for (var i in stimuli_set_first) {
   timeline.push(stimuli_set_first[i]);
@@ -703,7 +705,7 @@ for (var i in stimuli_set_last) {
 
 
 
-timeline.push(self_report);
+//timeline.push(self_report);
 
 
 timeline.push(demographics_block);
@@ -712,9 +714,9 @@ timeline.push(demographics_block);
 jsPsych.init({
   timeline: timeline,
   show_progress_bar: true,
-  on_finish: function(data){ SaveData("triggering3",
+  on_finish: function(data){ SaveData("triggering4_CB",
                                       theSubject,
                                       jsPsych.data.get().csv);
-                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 3E5C9062 </p></center>"); }
+                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 8FCD555C </p></center>"); }
 //  on_finish: function(data){ jsPsych.data.displayData("json"); }
 });

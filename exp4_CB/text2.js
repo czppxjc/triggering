@@ -1,8 +1,9 @@
 var instructions_text = new Array;
 
 instructions_text.push(
-  "<h1>Instructions</h1><p>In this experiment, we will show you animations and make a statement about them. "
-  + " Your task is to decide whether you think the statement is true or false.</p>");
+  "<h1>Instructions</h1><p>In this experiment, we will show you two animations, one visible and one hidden. "
+  + " You will see a sentene describing a situation. "
+  + " Your task is to decide whether you think the sentence is describing the hidden or visible animation. You should choose the hidden scenario if you consider the sentence an inappropriate description of the visible scenario.</p>");
 
 //instructions_text.push(
 //  "<h2>Example 1</h2><p>Assume the following <strong>boldface</strong> sentence is true:</p><p><strong>Dana has a son and a daughter.</strong></p><p><i>Question:</i></p><p>Does it follow that <i>Dana has two kids</i>?</p><p><i>Answer:</i></p><p>Yes. (Because, when the sentence in <strong>boldface</strong> is assumed to be true, the conclusion has to be true as well.)</p><p>Click below for another example.</p>");
