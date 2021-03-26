@@ -149,41 +149,40 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.17",
-  shape: "Every green circle",
-  // adjective: "small",
-  phrase: "moves from red upward.",
-  condition: "all_true_existential"
-  },
-
-  { subject: "<div class='wug1b'></div>"
-  + "<div class='wug2b'></div>"
-  + "<div class='wug3a'></div>"
-  + "<div class='wug4a'></div>",
-  id: "testing.18",
+  id: "testing.13",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "moves from red upward.",
   condition: "all_true_universal"
   },
 
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.14",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "moves from red upward.",
+  condition: "all_false"
+  },
 
   { subject: "<div class='wug1a'></div>"
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.19",
-  shape: "Every green circle",
+  id: "testing.15",
+  shape: "None of the green circles",
   // adjective: "small",
   phrase: "moves from red upward.",
-  condition: "all_true_no_projection"
+  condition: "none_true_universal"
   },
 
-  { subject: "<div class='dot1'></div>"
-  + "<div class='dot2'></div>"
-  + "<div class='dot3'></div>"
-  + "<div class='wug4'></div>",
-  id: "testing.20",
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "moves from red upward.",
@@ -194,18 +193,18 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.21",
+  id: "testing.17",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "moves from red upward.",
-  condition: "all_false"
+  condition: "all_true_existential"
   },
 
-  { subject: "<div class='dot1a'></div>"
+  { subject: "<div class='wug1a'></div>"
   + "<div class='dot2a'></div>"
-  + "<div class='dot3a'></div>"
-  + "<div class='dot4a'></div>",
-  id: "testing.22",
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.18",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "moves from red upward.",
@@ -216,7 +215,7 @@ var test_last = [
   + "<div class='dot2a'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='dot4b'></div>",
-  id: "testing.23",
+  id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "moves from red upward.",
@@ -227,12 +226,13 @@ var test_last = [
   + "<div class='dot8'></div>"
   + "<div class='dot5'></div>"
   + "<div class='dot6'></div>",
-  id: "testing.24",
-  shape: "None of the green circles",
+  id: "testing.20",
+  shape: "Every green circles",
   // adjective: "small",
   phrase: "moves from red upward.",
-  condition: "none_true_universal"
+  condition: "all_true_no_projection"
   },
+
 
 
 

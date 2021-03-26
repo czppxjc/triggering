@@ -215,7 +215,7 @@ var test_last = [
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "all_true_existential"
+  condition: "all_true_universal"
   },
 
   { subject: "<div class='wug1b'></div>"
@@ -226,25 +226,24 @@ var test_last = [
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "all_true_universal"
+  condition: "all_false"
   },
-
 
   { subject: "<div class='wug1a'></div>"
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
   id: "testing.15",
-  shape: "Every green circle",
+  shape: "None of the green circles",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "all_true_no_projection"
+  condition: "none_true_universal"
   },
 
-  { subject: "<div class='dot1'></div>"
-  + "<div class='dot2'></div>"
-  + "<div class='dot3'></div>"
-  + "<div class='wug4'></div>",
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
   id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
@@ -260,13 +259,13 @@ var test_last = [
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "all_false"
+  condition: "all_true_existential"
   },
 
-  { subject: "<div class='dot1a'></div>"
+  { subject: "<div class='wug1a'></div>"
   + "<div class='dot2a'></div>"
-  + "<div class='dot3a'></div>"
-  + "<div class='dot4a'></div>",
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
   id: "testing.18",
   shape: "None of the green circles",
   // adjective: "small",
@@ -290,10 +289,10 @@ var test_last = [
   + "<div class='dot5'></div>"
   + "<div class='dot6'></div>",
   id: "testing.20",
-  shape: "None of the green circles",
+  shape: "Every green circles",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "none_true_universal"
+  condition: "all_true_no_projection"
   },
 
 
