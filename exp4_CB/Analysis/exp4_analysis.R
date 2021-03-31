@@ -29,7 +29,7 @@ data = read.csv(file=file.choose(),sep = ',',header = T,na.strings=c("","NA"))
 
 length(unique(data$subjectId))
 
-#49
+#155
 
 
 head(data)
@@ -41,8 +41,9 @@ is.numeric(exp2$button_pressed)
 
 levels(exp2$condition)
 levels(exp2$phrase)
+levels(exp2$group)
 
-exp2$negation <- ifelse(exp2$phrase == "does not wug.", "negative", "positive")
+exp2$negation <- ifelse((exp2$phrase == "does not wug." | exp2$phrase == "does not move from red upward.") , "negative", "positive")
 
 exp2$cond <- ifelse(exp2$condition == "AB", "upward-from red", 
                   ifelse(exp2$condition == "notAB", "not upward-from red", 
@@ -51,7 +52,6 @@ exp2$cond <- ifelse(exp2$condition == "AB", "upward-from red",
 
 exp2$type <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB", "simple", "quantificational")
 
-exp2$vis_pic <- ifelse(exp2$button_pressed == 0, 1, 0)
 
 
 is.numeric(exp2$CB)
@@ -65,22 +65,23 @@ exp <- subset(exp3, type == "simple")
 
 
 
-results <- ddply(exp, .(cond, negation), summarize, M = mean(button_pressed, na.rm =TRUE), RT = mean(rt, na.rm =TRUE) )
+results <- ddply(exp, .(cond, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE) )
 
-results_qua <- ddply(exp_qua, .(condition, negation), summarize, M = mean(button_pressed, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
+results_qua <- ddply(exp_qua, .(condition, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
 
 
 ### plotting
 
 
-plot <- ggplot(data=results, aes(x=cond, y=M, fill = negation)) +
-  geom_bar(stat="identity", position=position_dodge())
+plot <- ggplot(data=results, aes(x=group, y=M, fill = negation)) +
+  geom_bar(stat="identity", position=position_dodge())+
+facet_wrap(~cond)
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
  #               position=position_dodge(.9))+
 #  theme_classic(base_size = 20) 
 
 plot +   labs(title="",
-                           x="", y = "rate of CB choices")
+                           x="", y = "rate of visible picture choices")
 
 plot_rt <- ggplot(data=results, aes(x=cond, y=RT, fill = negation)) +
   geom_bar(stat="identity", position=position_dodge())
@@ -96,14 +97,15 @@ plot_rt +   labs(title="",
 
 
 
-plot <- ggplot(data=results_qua, aes(x=condition, y=M)) +
-  geom_bar(stat="identity", position=position_dodge())
+plot <- ggplot(data=results_qua, aes(x=group, y=M)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  facet_wrap(~condition)
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
 #               position=position_dodge(.9))+
 #  theme_classic(base_size = 20) 
 
 plot +   labs(title="",
-              x="", y = "rate of CB choices")
+              x="", y = "rate of visible picture choices")
 
 
 
