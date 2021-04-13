@@ -83,8 +83,9 @@ facet_wrap(~cond)
 plot +   labs(title="",
                            x="", y = "rate of visible picture choices")
 
-plot_rt <- ggplot(data=results, aes(x=cond, y=RT, fill = negation)) +
-  geom_bar(stat="identity", position=position_dodge())
+plot_rt <- ggplot(data=results, aes(x=group, y=RT, fill = negation)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  facet_wrap(~cond)
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
 #               position=position_dodge(.9))+
 #  theme_classic(base_size = 20) 
