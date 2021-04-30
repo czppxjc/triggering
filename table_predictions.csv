@@ -1,0 +1,65 @@
+exp;cond;negation;group;M
+actual;not upward-from red;negative;control;0.465116279069767
+predicted;not upward-from red;negative;control;0.9
+actual;not upward-from red;negative;no training;0.657142857142857
+predicted;not upward-from red;negative;no training;0.7
+actual;not upward-from red;negative;wug=red;0.724137931034483
+predicted;not upward-from red;negative;wug=red;0.3
+actual;not upward-from red;negative;wug=upward;0.888888888888889
+predicted;not upward-from red;negative;wug=upward;0.9
+actual;not upward-from red;positive;control;0.34
+predicted;not upward-from red;positive;control;0.1
+actual;not upward-from red;positive;no training;0.162790697674419
+predicted;not upward-from red;positive;no training;0.15
+actual;not upward-from red;positive;wug=red;0.185185185185185
+predicted;not upward-from red;positive;wug=red;0.3
+actual;not upward-from red;positive;wug=upward;0.151515151515152
+predicted;not upward-from red;positive;wug=upward;0.1
+actual;not upward-not from red;negative;control;0.674418604651163
+predicted;not upward-not from red;negative;control;0.8
+actual;not upward-not from red;negative;no training;0.604395604395604
+predicted;not upward-not from red;negative;no training;0.8
+actual;not upward-not from red;negative;wug=red;0.676923076923077
+predicted;not upward-not from red;negative;wug=red;0.8
+actual;not upward-not from red;negative;wug=upward;0.701492537313433
+predicted;not upward-not from red;negative;wug=upward;0.85
+actual;not upward-not from red;positive;control;0.1
+predicted;not upward-not from red;positive;control;0.1
+actual;not upward-not from red;positive;no training;0.161290322580645
+predicted;not upward-not from red;positive;no training;0.05
+actual;not upward-not from red;positive;wug=red;0.123076923076923
+predicted;not upward-not from red;positive;wug=red;0.05
+actual;not upward-not from red;positive;wug=upward;0.130434782608696
+predicted;not upward-not from red;positive;wug=upward;0.05
+actual;upward-from red;negative;control;0.0727272727272727
+predicted;upward-from red;negative;control;0.05
+actual;upward-from red;negative;no training;0.222222222222222
+predicted;upward-from red;negative;no training;0.15
+actual;upward-from red;negative;wug=red;0.333333333333333
+predicted;upward-from red;negative;wug=red;0.15
+actual;upward-from red;negative;wug=upward;0.193548387096774
+predicted;upward-from red;negative;wug=upward;0.1
+actual;upward-from red;positive;control;0.892857142857143
+predicted;upward-from red;positive;control;0.9
+actual;upward-from red;positive;no training;0.953488372093023
+predicted;upward-from red;positive;no training;0.95
+actual;upward-from red;positive;wug=red;0.964285714285714
+predicted;upward-from red;positive;wug=red;0.95
+actual;upward-from red;positive;wug=upward;0.941176470588235
+predicted;upward-from red;positive;wug=upward;0.95
+actual;upward-not from red;negative;control;0.851063829787234
+predicted;upward-not from red;negative;control;0.85
+actual;upward-not from red;negative;no training;0.36046511627907
+predicted;upward-not from red;negative;no training;0.85
+actual;upward-not from red;negative;wug=red;0.426229508196721
+predicted;upward-not from red;negative;wug=red;0.8
+actual;upward-not from red;negative;wug=upward;0.164179104477612
+predicted;upward-not from red;negative;wug=upward;0.30
+actual;upward-not from red;positive;control;0.0517241379310345
+predicted;upward-not from red;positive;control;0.05
+actual;upward-not from red;positive;no training;0.5
+predicted;upward-not from red;positive;no training;0.15
+actual;upward-not from red;positive;wug=red;0.467741935483871
+predicted;upward-not from red;positive;wug=red;0.15
+actual;upward-not from red;positive;wug=upward;0.611940298507463
+predicted;upward-not from red;positive;wug=upward;0.30

@@ -67,20 +67,21 @@ exp <- subset(exp3, type == "simple")
 
 results <- ddply(exp, .(cond, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE) )
 
-results_qua <- ddply(exp_qua, .(condition, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
+results_qua <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
 
+results_pred = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
 
 ### plotting
+##write.table(results, file = "results.txt", sep = ",", quote = FALSE, row.names = F)
 
-
-plot <- ggplot(data=results, aes(x=group, y=M, fill = negation)) +
-  geom_bar(stat="identity", position=position_dodge())+
-facet_wrap(~cond)
+plot <- ggplot(data=subset(results_pred, group == "control")) +
+  geom_bar(aes(x=exp, y=M, fill = negation), stat="identity", position="dodge", width = 0.8, color = "black")+
+facet_wrap(~cond)+
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
  #               position=position_dodge(.9))+
-#  theme_classic(base_size = 20) 
+  theme_classic(base_size = 20) 
 
-plot +   labs(title="",
+plot +   labs(title="training: no training - controls",
                            x="", y = "rate of visible picture choices")
 
 plot_rt <- ggplot(data=results, aes(x=group, y=RT, fill = negation)) +
@@ -96,19 +97,19 @@ plot_rt +   labs(title="",
 
 
 
+results_pred_qua = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
 
-
-plot <- ggplot(data=results_qua, aes(x=group, y=M)) +
-  geom_bar(stat="identity", position=position_dodge())+
-  facet_wrap(~condition)
+plot <- ggplot(data=subset(results_pred_qua, sentence == "none wugged "), aes(x=exp, y=M, fill = group)) +
+  geom_bar(stat="identity", position=position_dodge(),width = 0.8, color = "black")+
+  facet_wrap(~condition)+
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
 #               position=position_dodge(.9))+
-#  theme_classic(base_size = 20) 
+ theme_classic(base_size = 20) 
 
-plot +   labs(title="",
+plot +   labs(title="Quantifier 'none'",
               x="", y = "rate of visible picture choices")
 
-
+levels(results_pred_qua$condition)
 
 plot_rt_qua <- ggplot(data=results_qua, aes(x=condition, y=RT)) +
   geom_bar(stat="identity", position=position_dodge())
