@@ -1,5 +1,3 @@
-# This script loads the data
-
 ### LOAD PACKAGES
 library(dplyr)
 library(plyr)
@@ -80,6 +78,13 @@ results_qua <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pr
 
 results_pred = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
 
+results$cond <- as.factor(results$cond) 
+levels(results$cond)
+results$cond <- factor(results$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
+results_pred$cond <- factor(results_pred$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
+
+
+
 ### plotting
 ##write.table(results, file = "results.txt", sep = ",", quote = FALSE, row.names = F)
 
@@ -93,15 +98,15 @@ facet_wrap(~cond)+
 plot +   labs(title="Predictions under H1a and H2a",
                            x="", y = "predicted rate of visible picture choices")
 
-plot_m <- ggplot(data=results, aes(x=group, y=M, fill=negation)) +
+plot_m1 <- ggplot(data=subset(results, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
   geom_bar(stat="identity", position=position_dodge())+
-  facet_wrap(~cond)+
+theme_classic(base_size = 20)  # facet_wrap(~group)+
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
 #               position=position_dodge(.9))+
-  theme_classic(base_size = 20) 
 
-plot_m +   labs(title="Results by training, animation, polarity",
-              x="training", y = "mean visible picture choices")
+
+plot_m1 +   labs(title="'training: wug=upward'-group",
+              x="animation", y = "mean visible picture choices")
 
 results2 <- ddply(exp, .(cond, novelty, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE) )
 
