@@ -198,6 +198,7 @@ anova(model_0a, model_0c)
 
 ###
 
+#hypothesis 2
 
 model_1a <- glmer(button_pressed ~ cond*negation*group + (1| subjectId), 
                   family = "binomial", 
@@ -232,7 +233,7 @@ sum <- summary(contrast(contrasts_1a, "tukey", simple = "each", combine = TRUE, 
 ## hypothesis 1
 
 
-model_2a <- glmer(button_pressed ~ cond*negation + (1| subjectId), 
+model_2a <- glmer(button_pressed ~ negation*cond + (1+negation | subjectId), 
                   family = "binomial", 
                   data =  subset(exp, group == "no training" & critical == "critical"),
                   control=glmerControl(optimizer="bobyqa",
@@ -242,7 +243,7 @@ model_2a <- glmer(button_pressed ~ cond*negation + (1| subjectId),
 summary(model_2a)
 
 
-model_2b <- glmer(button_pressed ~ negation+cond + (1| subjectId), 
+model_2b <- glmer(button_pressed ~ negation+cond + (1+negation| subjectId), 
                   family = "binomial", 
                   data =  subset(exp, group == "no training" & critical == "critical"),
                   control=glmerControl(optimizer="bobyqa",
