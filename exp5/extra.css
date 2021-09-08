@@ -209,6 +209,96 @@ top: 0px;
         top: 130px;
         }
 
+        .wug1c {
+          height: 0px;
+          width: 0px;
+          left: -80px;
+          top: 130px;
+          background-color: LawnGreen;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+        }
+    
+        .wug2c {
+          height: 0px;
+          width: 0px;
+          left: -60px;
+          top: 130px;
+          background-color: LawnGreen;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+        }
+    
+    
+        .wug3c {
+          height: 0px;
+          width: 0px;
+          background-color: LawnGreen;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          left: 10px;
+          top: 130px;
+          }
+    
+          .wug4c {
+            height: 0px;
+            width: 0px;
+            background-color: LawnGreen;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            left: 75px;
+            top: 130px;
+            }
+
+            .wug1d {
+              height: 0px;
+              width: 0px;
+              left: -35px;
+              top: 130px;
+              background-color: LawnGreen;
+              border-radius: 50%;
+              display: inline-block;
+              position: relative;
+            }
+        
+            .wug2d {
+              height: 0px;
+              width: 0px;
+              left: 0px;
+              top: 130px;
+              background-color: LawnGreen;
+              border-radius: 50%;
+              display: inline-block;
+              position: relative;
+            }
+        
+        
+            .wug3d {
+              height: 0px;
+              width: 0px;
+              background-color: LawnGreen;
+              border-radius: 50%;
+              display: inline-block;
+              position: relative;
+              left: 35px;
+              top: 130px;
+              }
+        
+              .wug4d {
+                height: 0px;
+                width: 0px;
+                background-color: LawnGreen;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                left: 80px;
+                top: 130px;
+                }
+
     .dot1 {
       height: 0px;
       width: 0px;

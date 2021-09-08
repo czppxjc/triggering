@@ -156,6 +156,90 @@ array4.forEach(function(x) {
 
 }
 
+else if (document.getElementsByClassName("wug1c")[0] !== undefined &&
+document.getElementsByClassName("wug2c")[0] !== undefined &&
+document.getElementsByClassName("wug3c")[0] !== undefined &&
+document.getElementsByClassName("wug4c")[0] !== undefined) {
+
+  var elements = document.querySelectorAll(".wug1c");
+  var elements2 = document.querySelectorAll(".wug2c");
+  var elements3 = document.querySelectorAll(".wug3c");
+  var elements4 = document.querySelectorAll(".wug4c");
+
+
+  var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+      x.classList.remove("up1");
+      void x.offsetWidth;
+       x.classList.add("up1");
+});
+
+array2.forEach(function(x) {
+      x.classList.remove("up2");
+      void x.offsetWidth;
+       x.classList.add("up2");
+});
+
+array3.forEach(function(x) {
+      x.classList.remove("up3");
+      void x.offsetWidth;
+       x.classList.add("up3");
+});
+
+array4.forEach(function(x) {
+      x.classList.remove("up4");
+      void x.offsetWidth;
+       x.classList.add("up4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1d")[0] !== undefined &&
+document.getElementsByClassName("wug2d")[0] !== undefined &&
+document.getElementsByClassName("wug3d")[0] !== undefined &&
+document.getElementsByClassName("wug4d")[0] !== undefined) {
+
+  var elements = document.querySelectorAll(".wug1d");
+  var elements2 = document.querySelectorAll(".wug2d");
+  var elements3 = document.querySelectorAll(".wug3d");
+  var elements4 = document.querySelectorAll(".wug4d");
+
+
+  var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+      x.classList.remove("up1");
+      void x.offsetWidth;
+       x.classList.add("up1");
+});
+
+array2.forEach(function(x) {
+      x.classList.remove("up2");
+      void x.offsetWidth;
+       x.classList.add("up2");
+});
+
+array3.forEach(function(x) {
+      x.classList.remove("up3");
+      void x.offsetWidth;
+       x.classList.add("up3");
+});
+
+array4.forEach(function(x) {
+      x.classList.remove("up4");
+      void x.offsetWidth;
+       x.classList.add("up4");
+});
+
+}
+
 else if (document.getElementsByClassName("wug1a")[0] !== undefined &&
 document.getElementsByClassName("wug2a")[0] !== undefined &&
 document.getElementsByClassName("wug3a")[0] !== undefined &&
@@ -541,6 +625,90 @@ array4.forEach(function(x) {
      x.classList.remove("down4");
      void x.offsetWidth;
       x.classList.add("down4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1c")[0] !== undefined &&
+document.getElementsByClassName("wug2c")[0] !== undefined &&
+document.getElementsByClassName("wug3d")[0] !== undefined &&
+document.getElementsByClassName("wug4d")[0] !== undefined) {
+
+  var elements = document.querySelectorAll(".wug1c");
+  var elements2 = document.querySelectorAll(".wug2c");
+  var elements3 = document.querySelectorAll(".wug3d");
+  var elements4 = document.querySelectorAll(".wug4d");
+
+
+  var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+      x.classList.remove("down1");
+      void x.offsetWidth;
+       x.classList.add("down1");
+});
+
+array2.forEach(function(x) {
+      x.classList.remove("down2");
+      void x.offsetWidth;
+       x.classList.add("down2");
+});
+
+array3.forEach(function(x) {
+      x.classList.remove("down3");
+      void x.offsetWidth;
+       x.classList.add("down3");
+});
+
+array4.forEach(function(x) {
+      x.classList.remove("down4");
+      void x.offsetWidth;
+       x.classList.add("down4");
+});
+
+}
+
+else if (document.getElementsByClassName("wug1d")[0] !== undefined &&
+document.getElementsByClassName("wug2d")[0] !== undefined &&
+document.getElementsByClassName("wug3c")[0] !== undefined &&
+document.getElementsByClassName("wug4c")[0] !== undefined) {
+
+  var elements = document.querySelectorAll(".wug1d");
+  var elements2 = document.querySelectorAll(".wug2d");
+  var elements3 = document.querySelectorAll(".wug3c");
+  var elements4 = document.querySelectorAll(".wug4c");
+
+
+  var array = Array.from(elements);
+var array2 = Array.from(elements2);
+var array3 = Array.from(elements3);
+var array4 = Array.from(elements4);
+
+array.forEach(function(x) {
+      x.classList.remove("down1");
+      void x.offsetWidth;
+       x.classList.add("down1");
+});
+
+array2.forEach(function(x) {
+      x.classList.remove("down3");
+      void x.offsetWidth;
+       x.classList.add("down3");
+});
+
+array3.forEach(function(x) {
+      x.classList.remove("down3");
+      void x.offsetWidth;
+       x.classList.add("down3");
+});
+
+array4.forEach(function(x) {
+      x.classList.remove("down4");
+      void x.offsetWidth;
+       x.classList.add("down4");
 });
 
 }
@@ -1577,9 +1745,9 @@ timeline.push(instructions_block);
 //}
 
 
-//for (var i in stimuli_set2) {
- // timeline.push(stimuli_set2[i]);
-//}
+for (var i in stimuli_set2) {
+  timeline.push(stimuli_set2[i]);
+}
 
 for (var i in stimuli_set_last) {
  timeline.push(stimuli_set_last[i]);

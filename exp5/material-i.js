@@ -108,68 +108,48 @@ condition: "notAB"
 
 var test = [
 
-  { subject: "<div class='dot2'></div>",
-  id: "testing.5",
-  shape: "The green circle",
+  { subject: "<div class='wug1c'></div>"
+  + "<div class='wug2c'></div>"
+  + "<div class='wug3c'></div>"
+  + "<div class='wug4c'></div>",
+  id: "testing.13",
+  shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "AnotB"
+  condition: "all_true_universal"
   },
 
-  { subject: "<div class='dot3'></div>",
-  id: "testing.6",
-  shape: "The green circle",
-  // adjective: "small",
-  phrase: "does not wug.",
-  condition: "AnotB",
-  },
-
-  { subject: "<div class='dot1'></div>",
-  id: "testing.7",
-  shape: "The green circle",
+  { subject: "<div class='wug1d'></div>"
+  + "<div class='wug2d'></div>"
+  + "<div class='wug3d'></div>"
+  + "<div class='wug4d'></div>",
+  id: "testing.13",
+  shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "AnotB"
+  condition: "all_true_universal"
   },
 
-  { subject: "<div class='dot4'></div>",
-  id: "testing.8",
-  shape: "The green circle",
+  { subject: "<div class='wug1c'></div>"
+  + "<div class='wug2c'></div>"
+  + "<div class='wug3d'></div>"
+  + "<div class='wug4d'></div>",
+  id: "testing.13",
+  shape: "None of the green circles",
   // adjective: "small",
-  phrase: "does not wug.",
-  condition: "AnotB"
+  phrase: "wug.",
+  condition: "none_true_universal"
   },
 
-  { subject: "<div class='dot2a'></div>",
-  id: "testing.9",
-  shape: "The green circle",
+  { subject: "<div class='wug1d'></div>"
+  + "<div class='wug2d'></div>"
+  + "<div class='wug3c'></div>"
+  + "<div class='wug4c'></div>",
+  id: "testing.13",
+  shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
-  condition: "notAnotB"
-  },
-
-  { subject: "<div class='dot3a'></div>",
-  id: "testing.10",
-  shape: "The green circle",
-  // adjective: "small",
-  phrase: "does not wug.",
-  condition: "notAnotB"
-  },
-
-  { subject: "<div class='dot1a'></div>",
-  id: "testing.11",
-  shape: "The green circle",
-  // adjective: "small",
-  phrase: "wugs.",
-  condition: "notAnotB"
-  },
-
-  { subject: "<div class='dot4a'></div>",
-  id: "testing.12",
-  shape: "The green circle",
-  // adjective: "small",
-  phrase: "does not wug.",
-  condition: "notAnotB"
+  phrase: "wug.",
+  condition: "none_true_universal"
   },
 
 ];
@@ -215,6 +195,9 @@ var test_last = [
   phrase: "wugs.",
   condition: "all_true_universal"
   },
+
+
+
 
   // every false (from red) items
 
@@ -335,7 +318,7 @@ var test_last = [
   id: "testing.15",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_universal"
   },
 
@@ -346,7 +329,7 @@ var test_last = [
   id: "testing.15",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_universal"
   },
 
@@ -358,7 +341,7 @@ var test_last = [
   id: "testing.15",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_universal"
   },
 
@@ -372,7 +355,7 @@ var test_last = [
   id: "testing.18",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_existential"
   },
 
@@ -383,7 +366,7 @@ var test_last = [
   id: "testing.18",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_existential"
   },
 
@@ -394,7 +377,7 @@ var test_last = [
   id: "testing.18",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_existential"
   },
 
@@ -409,7 +392,7 @@ var test_last = [
   id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_no_projection"
   },
 
@@ -420,7 +403,7 @@ var test_last = [
   id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_no_projection"
   },
 
@@ -431,7 +414,7 @@ var test_last = [
   id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_true_no_projection"
   },
 
@@ -444,7 +427,7 @@ var test_last = [
   id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_false"
   },
 
@@ -455,7 +438,7 @@ var test_last = [
   id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_false"
   },
 
@@ -466,7 +449,7 @@ var test_last = [
   id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_false"
   },
 
@@ -509,7 +492,7 @@ var test_weird = [
   id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wuga.",
   condition: "none_weird_nored"
   },
 
