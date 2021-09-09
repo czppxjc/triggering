@@ -17,8 +17,8 @@ var instructions_block = {
   var break_block = {
     type: "html-button-response",
     stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>" 
-    + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden. "
-    + " Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate given the sentence you will see. </p>",
+    + " <p style='text-align:center'> You will see animations again, depicting different events. You will also see two sentences, but only one of them is visible, the other hidden (behind a grey bar). "
+    + " Your task is to decide whether the animation is desribed by the visible sentence, or the hidden one. You should choose the hidden sentence if you consider the visible one inappropriate given the animation. </p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -69,10 +69,10 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
-    + "<p style='text-align:center'> The sentence describes: </p> ",
+    prompt: "<div class= 'container3'><div class= 'container3a' style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</div><div class = container3b style='text-align:center;font-weight:bold;font-style:italic'></div></div>"
+    + "<p style='text-align:center'><br> The situation is described by: </p> ",
     stimulus: stimulus2.stim,
-    choices: ["The visible scenario on the left", "The hidden scenario on the right"],
+    choices: ["The visible sentence on the left", "The hidden sentence on the right"],
     data: stimulus2.data,
   //  prompt_delay: 3000,
     button_delay: 2000,
@@ -1640,8 +1640,8 @@ var teachMaker = function(material) {
 
 
 var testMaker = function(material) {
-  var stimulus2 = "<div class='container2'><div class='ball'><div class='redline'></div>"
-  + " " + material.subject + " </div><div class = 'ball2'></div></div>"
+  var stimulus2 = "<div class='container1a'><div class='ball'><div class='redline'></div>"
+  + " " + material.subject + " </div></div>"
   + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
   var shape = " " + material.shape + " "

@@ -234,6 +234,30 @@ var test_last = [
   condition: "all_false"
   },
 
+  // some (true controls)
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.14",
+  shape: "Some of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "some_true"
+  },
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.14",
+  shape: "Some of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "some_true"
+  },
+
   // all true, existential projection
 
   { subject: "<div class='dot1b'></div>"
@@ -453,6 +477,30 @@ var test_last = [
   condition: "none_false"
   },
 
+  // some items (controls)
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.16",
+  shape: "Some of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "some_true"
+  },
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.16",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_false"
+  },
+
 
 
 ];
@@ -469,7 +517,7 @@ var test_weird = [
   id: "testing.16",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wugs.",
+  phrase: "wug.",
   condition: "none_weird_red"
   },
 
@@ -492,7 +540,7 @@ var test_weird = [
   id: "testing.19",
   shape: "None of the green circles",
   // adjective: "small",
-  phrase: "wuga.",
+  phrase: "wug.",
   condition: "none_weird_nored"
   },
 

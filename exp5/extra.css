@@ -9,6 +9,34 @@
   top: 0px;
 }
 
+.container3 {
+  width: 650px;
+  height: 28px;
+  margin: 0 auto;
+  position: relative;
+  left: 0px;
+  top: 20px;
+}
+
+.container3a {
+  width: 300px;
+  height: 28px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.container3b {
+  width: 300px;
+  height: 28px;
+  margin: 0 auto;
+  position: relative;
+  background-color: grey;
+  left: 150px;
+  top: 0px;
+}
+
 .container1b {
   width: 300px;
   height: 300px;
@@ -47,6 +75,8 @@ top: 0px;
     border-width: 0.5px;
   position: relative;
 }
+
+
 
 
 .ball {
