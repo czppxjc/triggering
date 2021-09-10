@@ -4,6 +4,7 @@ var theSubject = jsPsych.randomization.randomID(10);
 // and add it to the data being saved
 jsPsych.data.addProperties({ subjectId: theSubject });
 jsPsych.data.addProperties({ group: group });
+jsPsych.data.addProperties({ task: task });
 
 // set up instructions, reading "instructions_text" from instructions.js
 var instructions_block = {
@@ -17,8 +18,8 @@ var instructions_block = {
   var break_block = {
     type: "html-button-response",
     stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>" 
-    + " <p style='text-align:center'> You will see animations again, depicting different events. You will also see two sentences, but only one of them is visible, the other hidden (behind a grey bar). "
-    + " Your task is to decide whether the animation is desribed by the visible sentence, or the hidden one. You should choose the hidden sentence if you consider the visible one inappropriate given the animation. </p>",
+    + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden. "
+    + " Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate given the sentence you will see. </p>",
     choices: ["Continue"],
     data: { questionId: "break" }
   };
@@ -69,10 +70,10 @@ var teaching = function(stimulus) {
 var testing = function(stimulus2) {
   return {
     type: 'html-button-delay-response',
-    prompt: "<div class= 'container3'><div class= 'container3a' style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</div><div class = container3b style='text-align:center;font-weight:bold;font-style:italic'></div></div>"
-    + "<p style='text-align:center'><br> The situation is described by: </p> ",
+    prompt: "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
+    + "<p style='text-align:center'> The sentence describes: </p> ",
     stimulus: stimulus2.stim,
-    choices: ["The visible sentence on the left", "The hidden sentence on the right"],
+    choices: ["The visible scenario on the left", "The hidden scenario on the right"],
     data: stimulus2.data,
   //  prompt_delay: 3000,
     button_delay: 2000,
@@ -1640,8 +1641,8 @@ var teachMaker = function(material) {
 
 
 var testMaker = function(material) {
-  var stimulus2 = "<div class='container1a'><div class='ball'><div class='redline'></div>"
-  + " " + material.subject + " </div></div>"
+  var stimulus2 = "<div class='container2'><div class='ball'><div class='redline'></div>"
+  + " " + material.subject + " </div><div class = 'ball2'></div></div>"
   + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
   var shape = " " + material.shape + " "
@@ -1679,16 +1680,16 @@ stimuli_set = jsPsych.randomization.repeat(stimuli_set, 1);
 
 //testing stimuli
 
-var stimuli_set2 = new Array;
+// var stimuli_set2 = new Array;
 
-for (var i in test) {
-  stimuli_set2.push(testing(testMaker(test[i])));
+// for (var i in test) {
+//   stimuli_set2.push(testing(testMaker(test[i])));
 
-}
+// }
 
-stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
+// stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
 
-// setting first items
+// // setting first items
 
 // var stimuli_set_first = new Array;
 
@@ -1738,7 +1739,7 @@ timeline.push(instructions_block);
    timeline.push(stimuli_set[i]);
  }
 
-  timeline.push(break_block);
+   timeline.push(break_block);
 
 // for (var i in stimuli_set_first) {
 //   timeline.push(stimuli_set_first[i]);
@@ -1767,7 +1768,7 @@ timeline.push(demographics_block);
 jsPsych.init({
   timeline: timeline,
   show_progress_bar: true,
- on_finish: function(data){ SaveData("triggering5",
+ on_finish: function(data){ SaveData("triggering4_CB",
                                      theSubject,
                                      jsPsych.data.get().csv);
                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 8FCD555C </p></center>"); }

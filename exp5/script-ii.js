@@ -4,6 +4,7 @@ var theSubject = jsPsych.randomization.randomID(10);
 // and add it to the data being saved
 jsPsych.data.addProperties({ subjectId: theSubject });
 jsPsych.data.addProperties({ group: group });
+jsPsych.data.addProperties({ task: task });
 
 // set up instructions, reading "instructions_text" from instructions.js
 var instructions_block = {
