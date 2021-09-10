@@ -1690,15 +1690,15 @@ stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
 
 // setting first items
 
-var stimuli_set_first = new Array;
+// var stimuli_set_first = new Array;
 
-for (var i in test_first) {
-  stimuli_set_first.push(testing(testMaker(test_first[i])));
-}
+// for (var i in test_first) {
+//   stimuli_set_first.push(testing(testMaker(test_first[i])));
+// }
 
-stimuli_set_first = jsPsych.randomization.repeat(stimuli_set_first, 1);
+// stimuli_set_first = jsPsych.randomization.repeat(stimuli_set_first, 1);
 
-var timeline = new Array;
+// var timeline = new Array;
 
 // setting last items
 
@@ -1740,14 +1740,14 @@ timeline.push(instructions_block);
 
   timeline.push(break_block);
 
-for (var i in stimuli_set_first) {
-  timeline.push(stimuli_set_first[i]);
-}
+// for (var i in stimuli_set_first) {
+//   timeline.push(stimuli_set_first[i]);
+// }
 
 
-for (var i in stimuli_set2) {
-  timeline.push(stimuli_set2[i]);
-}
+// for (var i in stimuli_set2) {
+//   timeline.push(stimuli_set2[i]);
+// }
 
 for (var i in stimuli_set_last) {
  timeline.push(stimuli_set_last[i]);
@@ -1771,5 +1771,5 @@ jsPsych.init({
                                      theSubject,
                                      jsPsych.data.get().csv);
                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 8FCD555C </p></center>"); }
-//   on_finish: function(data){ jsPsych.data.displayData("json"); }
+ // on_finish: function(data){ jsPsych.data.displayData("json"); }
 });
