@@ -112,7 +112,7 @@ var test = [
   + "<div class='wug2c'></div>"
   + "<div class='wug3c'></div>"
   + "<div class='wug4c'></div>",
-  id: "testing.13",
+  id: "testing.5",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -123,7 +123,7 @@ var test = [
   + "<div class='wug2d'></div>"
   + "<div class='wug3d'></div>"
   + "<div class='wug4d'></div>",
-  id: "testing.13",
+  id: "testing.6",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -134,7 +134,7 @@ var test = [
   + "<div class='wug2c'></div>"
   + "<div class='wug3d'></div>"
   + "<div class='wug4d'></div>",
-  id: "testing.13",
+  id: "testing.7",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -145,7 +145,7 @@ var test = [
   + "<div class='wug2d'></div>"
   + "<div class='wug3c'></div>"
   + "<div class='wug4c'></div>",
-  id: "testing.13",
+  id: "testing.8",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -164,7 +164,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.XX",
+  id: "testing.9",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -176,7 +176,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.XX",
+  id: "testing.10",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -189,7 +189,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.13",
+  id: "testing.11",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -205,7 +205,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.14",
+  id: "testing.12",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -216,7 +216,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.14",
+  id: "testing.13",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -240,7 +240,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.14",
+  id: "testing.15",
   shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -251,7 +251,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.14",
+  id: "testing.16",
   shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -275,7 +275,7 @@ var test_last = [
   + "<div class='dot2a'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.17",
+  id: "testing.18",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -286,7 +286,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='dot4b'></div>",
-  id: "testing.17",
+  id: "testing.19",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -312,7 +312,7 @@ var test_last = [
   + "<div class='dot6'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='dot4b'></div>",
-  id: "testing.20",
+  id: "testing.21",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -323,7 +323,7 @@ var test_last = [
   + "<div class='dot8'></div>"
   + "<div class='dot1b'></div>"
   + "<div class='dot2b'></div>",
-  id: "testing.20",
+  id: "testing.22",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -339,7 +339,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.15",
+  id: "testing.23",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -350,7 +350,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.15",
+  id: "testing.24",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -362,7 +362,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.15",
+  id: "testing.25",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -376,7 +376,7 @@ var test_last = [
   + "<div class='dot3a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='dot4a'></div>",
-  id: "testing.18",
+  id: "testing.26",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -387,7 +387,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='dot3a'></div>"
   + "<div class='dot4a'></div>",
-  id: "testing.18",
+  id: "testing.27",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -398,7 +398,7 @@ var test_last = [
   + "<div class='dot2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.18",
+  id: "testing.28",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -413,7 +413,7 @@ var test_last = [
   + "<div class='dot10'></div>"
   + "<div class='dot11'></div>"
   + "<div class='dot12'></div>",
-  id: "testing.19",
+  id: "testing.29",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -424,7 +424,7 @@ var test_last = [
   + "<div class='dot10'></div>"
   + "<div class='dot3a'></div>"
   + "<div class='dot4a'></div>",
-  id: "testing.19",
+  id: "testing.30",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -435,7 +435,7 @@ var test_last = [
   + "<div class='dot12'></div>"
   + "<div class='dot3a'></div>"
   + "<div class='dot4a'></div>",
-  id: "testing.19",
+  id: "testing.31",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -448,7 +448,7 @@ var test_last = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.16",
+  id: "testing.32",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -459,7 +459,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.16",
+  id: "testing.33",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -470,7 +470,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.16",
+  id: "testing.34",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -483,7 +483,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.16",
+  id: "testing.35",
   shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -494,7 +494,7 @@ var test_last = [
   + "<div class='wug2a'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.16",
+  id: "testing.36",
   shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -514,7 +514,7 @@ var test_weird = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.16",
+  id: "testing.37",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -526,7 +526,7 @@ var test_weird = [
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
   + "<div class='wug4b'></div>",
-  id: "testing.16",
+  id: "testing.38",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
@@ -537,7 +537,7 @@ var test_weird = [
   + "<div class='dot7'></div>"
   + "<div class='dot10'></div>"
   + "<div class='dot11'></div>",
-  id: "testing.19",
+  id: "testing.39",
   shape: "None of the green circles",
   // adjective: "small",
   phrase: "wug.",
@@ -548,7 +548,7 @@ var test_weird = [
   + "<div class='dot9'></div>"
   + "<div class='dot7'></div>"
   + "<div class='dot11'></div>",
-  id: "testing.19",
+  id: "testing.40",
   shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
