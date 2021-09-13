@@ -495,10 +495,10 @@ var test_last = [
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
   id: "testing.16",
-  shape: "None of the green circles",
+  shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
-  condition: "none_false"
+  condition: "some_true"
   },
 
 

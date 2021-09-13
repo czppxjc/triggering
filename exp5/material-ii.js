@@ -207,6 +207,35 @@ var test = [
 
 var test_last = [
 
+  // every true universal items
+
+ 
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.XX",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_universal"
+  },
+
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.XX",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_universal"
+  },
+
+
+
   { subject: "<div class='wug1b'></div>"
   + "<div class='wug2b'></div>"
   + "<div class='wug3b'></div>"
@@ -218,9 +247,14 @@ var test_last = [
   condition: "all_true_universal"
   },
 
-  { subject: "<div class='wug1b'></div>"
-  + "<div class='wug2b'></div>"
-  + "<div class='wug3a'></div>"
+
+
+
+  // every false (from red) items
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
   id: "testing.14",
   shape: "Every green circle",
@@ -231,27 +265,30 @@ var test_last = [
 
   { subject: "<div class='wug1a'></div>"
   + "<div class='wug2a'></div>"
-  + "<div class='wug3a'></div>"
+  + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.15",
-  shape: "None of the green circles",
+  id: "testing.14",
+  shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "none_true_universal"
+  condition: "all_false"
   },
 
   { subject: "<div class='wug1a'></div>"
   + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
-  + "<div class='wug4b'></div>",
-  id: "testing.16",
-  shape: "None of the green circles",
+  + "<div class='wug4a'></div>",
+  id: "testing.14",
+  shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "none_false"
+  condition: "all_false"
   },
 
-  { subject: "<div class='wug1b'></div>"
+
+  // all true, existential projection
+
+  { subject: "<div class='dot1b'></div>"
   + "<div class='wug2b'></div>"
   + "<div class='dot3b'></div>"
   + "<div class='wug4b'></div>",
@@ -262,42 +299,264 @@ var test_last = [
   condition: "all_true_existential"
   },
 
-  { subject: "<div class='wug1a'></div>"
-  + "<div class='dot2a'></div>"
-  + "<div class='wug3a'></div>"
-  + "<div class='wug4a'></div>",
-  id: "testing.18",
-  shape: "None of the green circles",
-  // adjective: "small",
-  phrase: "wugs.",
-  condition: "none_true_existential"
-  },
-
   { subject: "<div class='dot1a'></div>"
   + "<div class='dot2a'></div>"
-  + "<div class='dot3b'></div>"
-  + "<div class='dot4b'></div>",
-  id: "testing.19",
-  shape: "None of the green circles",
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.17",
+  shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
-  condition: "none_true_no_projection"
+  condition: "all_true_existential"
   },
+
+    { subject: "<div class='dot1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='dot3b'></div>"
+  + "<div class='dot4b'></div>",
+  id: "testing.17",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_existential"
+  },
+
+
+
+// all true no projection
 
   { subject: "<div class='dot7'></div>"
   + "<div class='dot8'></div>"
   + "<div class='dot5'></div>"
   + "<div class='dot6'></div>",
   id: "testing.20",
-  shape: "Every green circles",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_no_projection"
+  },
+
+   { subject: "<div class='dot5'></div>"
+  + "<div class='dot6'></div>"
+  + "<div class='dot3b'></div>"
+  + "<div class='dot4b'></div>",
+  id: "testing.20",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_no_projection"
+  },
+
+   { subject: "<div class='dot7'></div>"
+  + "<div class='dot8'></div>"
+  + "<div class='dot1b'></div>"
+  + "<div class='dot2b'></div>",
+  id: "testing.20",
+  shape: "Every green circle",
   // adjective: "small",
   phrase: "wugs.",
   condition: "all_true_no_projection"
   },
 
 
+   // none items
+
+   // none true universal
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.15",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_universal"
+  },
+
+   { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.15",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_universal"
+  },
 
 
+   { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.15",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_universal"
+  },
+
+
+  // none true existential projection
+
+ { subject: "<div class='wug1a'></div>"
+  + "<div class='dot3a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='dot4a'></div>",
+  id: "testing.18",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_existential"
+  },
+
+   { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='dot3a'></div>"
+  + "<div class='dot4a'></div>",
+  id: "testing.18",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_existential"
+  },
+
+   { subject: "<div class='dot1b'></div>"
+  + "<div class='dot2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.18",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_existential"
+  },
+
+
+ 
+// none no projection
+
+  { subject: "<div class='dot9'></div>"
+  + "<div class='dot10'></div>"
+  + "<div class='dot11'></div>"
+  + "<div class='dot12'></div>",
+  id: "testing.19",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_no_projection"
+  },
+
+  { subject: "<div class='dot9'></div>"
+  + "<div class='dot10'></div>"
+  + "<div class='dot3a'></div>"
+  + "<div class='dot4a'></div>",
+  id: "testing.19",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_no_projection"
+  },
+
+  { subject: "<div class='dot11'></div>"
+  + "<div class='dot12'></div>"
+  + "<div class='dot3a'></div>"
+  + "<div class='dot4a'></div>",
+  id: "testing.19",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_no_projection"
+  },
+
+// none false (from red) items
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.16",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_false"
+  },
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.16",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_false"
+  },
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.16",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_false"
+  },
+
+
+
+];
+
+var test_weird = [
+
+  // weird cases
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.16",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_weird_red"
+  },
+
+
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4b'></div>",
+  id: "testing.16",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "every_weird_red"
+  },
+ 
+  { subject: "<div class='dot5'></div>"
+  + "<div class='dot7'></div>"
+  + "<div class='dot10'></div>"
+  + "<div class='dot11'></div>",
+  id: "testing.19",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_weird_nored"
+  },
+
+  { subject: "<div class='dot12'></div>"
+  + "<div class='dot9'></div>"
+  + "<div class='dot7'></div>"
+  + "<div class='dot11'></div>",
+  id: "testing.19",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "every_weird_nored"
+  },
 
 
 
