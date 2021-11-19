@@ -1738,11 +1738,11 @@ timeline.push(instructions_block);
 
 
 
- //for (var i in stimuli_set) {
- //  timeline.push(stimuli_set[i]);
- //}
+ for (var i in stimuli_set) {
+   timeline.push(stimuli_set[i]);
+ }
 
- //  timeline.push(break_block);
+   timeline.push(break_block);
 
 // for (var i in stimuli_set_first) {
 //   timeline.push(stimuli_set_first[i]);
@@ -1771,7 +1771,7 @@ timeline.push(demographics_block);
 jsPsych.init({
   timeline: timeline,
   show_progress_bar: true,
- on_finish: function(data){ SaveData("triggering5",
+ on_finish: function(data){ SaveData("triggering6",
                                      theSubject,
                                      jsPsych.data.get().csv);
                              $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 60088B0F </p></center>"); }
