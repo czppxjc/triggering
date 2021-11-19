@@ -69,15 +69,18 @@ var teaching = function(stimulus) {
 
 var testing = function(stimulus2) {
   return {
-    type: 'html-button-delay-response',
-    prompt: "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>"
-    + "<p style='text-align:center'> The sentence describes: </p> ",
-    stimulus: stimulus2.stim,
-    choices: ["The visible scenario on the left", "The hidden scenario on the right"],
+    type: 'html-slider-response',
+    stimulus: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold;font-style:italic'> " +  stimulus2.shape + " " + stimulus2.phrase + "</p>" + "<p style='text-align:center'> The sentence describing the scenario is </p> ",
+    slider_delay: 500,
+    container_delay: 4000,
+    button_delay: 5000,
+  //  stimulus_duration: 300,
+    labels: ["Extremely unlikely", "Extremely likely"],
+  //  response_ends_trial: false,
     data: stimulus2.data,
   //  prompt_delay: 3000,
-    button_delay: 2000,
-    post_trial_gap: 500
+  //  button_delay: 2000,
+  //  post_trial_gap: 500
   };
 };
 
@@ -1641,8 +1644,8 @@ var teachMaker = function(material) {
 
 
 var testMaker = function(material) {
-  var stimulus2 = "<div class='container2'><div class='ball'><div class='redline'></div>"
-  + " " + material.subject + " </div><div class = 'ball2'></div></div>"
+  var stimulus2 = "<div class='container1a'><div class='ball'><div class='redline'></div>"
+  + " " + material.subject + " </div></div>"
   + "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
 
   var shape = " " + material.shape + " "
@@ -1735,11 +1738,11 @@ timeline.push(instructions_block);
 
 
 
- for (var i in stimuli_set) {
-   timeline.push(stimuli_set[i]);
- }
+ //for (var i in stimuli_set) {
+ //  timeline.push(stimuli_set[i]);
+ //}
 
-   timeline.push(break_block);
+ //  timeline.push(break_block);
 
 // for (var i in stimuli_set_first) {
 //   timeline.push(stimuli_set_first[i]);

@@ -58,19 +58,19 @@ jsPsych.plugins["html-button-delay-response"] = (function() {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Stimulus delay',
         default: null,
-        description: 'Delays until stimulus is shown.'
+        description: 'Delay until stimulus is shown.'
       },
       prompt_delay: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Prompt delay',
         default: null,
-        description: 'Delays until prompt is shown.'
+        description: 'Delay until prompt is shown.'
       },
       button_delay: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'button delay',
         default: null,
-        description: 'Delays until buttons are shown.'
+        description: 'Delay until buttons are shown.'
       },
       margin_vertical: {
         type: jsPsych.plugins.parameterType.STRING,
