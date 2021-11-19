@@ -1738,28 +1738,28 @@ timeline.push(instructions_block);
 
 
 
- for (var i in stimuli_set) {
-   timeline.push(stimuli_set[i]);
- }
-
-   timeline.push(break_block);
-
-// for (var i in stimuli_set_first) {
-//   timeline.push(stimuli_set_first[i]);
-// }
-
-
-// for (var i in stimuli_set2) {
-//   timeline.push(stimuli_set2[i]);
-// }
-
-for (var i in stimuli_set_last) {
- timeline.push(stimuli_set_last[i]);
-}
-
-for (var i in stimuli_set_weird) {
-  timeline.push(stimuli_set_weird[i]);
- }
+for (var i in stimuli_set) {
+      timeline.push(stimuli_set[i]);
+    }
+   
+     timeline.push(break_block);
+   
+   for (var i in stimuli_set_first) {
+     timeline.push(stimuli_set_first[i]);
+   }
+   
+   
+   for (var i in stimuli_set2) {
+     timeline.push(stimuli_set2[i]);
+   }
+   
+   for (var i in stimuli_set_last) {
+    timeline.push(stimuli_set_last[i]);
+   }
+   
+   for (var i in stimuli_set_weird) {
+     timeline.push(stimuli_set_weird[i]);
+    }
 
 
 //timeline.push(self_report);
