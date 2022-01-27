@@ -1683,26 +1683,26 @@ stimuli_set = jsPsych.randomization.repeat(stimuli_set, 1);
 
 //testing stimuli
 
-// var stimuli_set2 = new Array;
+ var stimuli_set2 = new Array;
 
-// for (var i in test) {
-//   stimuli_set2.push(testing(testMaker(test[i])));
+ for (var i in test) {
+  stimuli_set2.push(testing(testMaker(test[i])));
 
-// }
+ }
 
-// stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
+ stimuli_set2 = jsPsych.randomization.repeat(stimuli_set2, 1);
 
-// // setting first items
+ // setting first items
 
-// var stimuli_set_first = new Array;
+ var stimuli_set_first = new Array;
 
-// for (var i in test_first) {
-//   stimuli_set_first.push(testing(testMaker(test_first[i])));
-// }
+ for (var i in test_first) {
+   stimuli_set_first.push(testing(testMaker(test_first[i])));
+ }
 
-// stimuli_set_first = jsPsych.randomization.repeat(stimuli_set_first, 1);
+ stimuli_set_first = jsPsych.randomization.repeat(stimuli_set_first, 1);
 
-// var timeline = new Array;
+ var timeline = new Array;
 
 // setting last items
 
