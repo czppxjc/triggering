@@ -1,4 +1,7 @@
 
+.hidden {
+  visibility: hidden;
+}
 
 .container1a {
   width: 300px;
