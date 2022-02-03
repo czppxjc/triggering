@@ -1616,7 +1616,7 @@ function DoAnimation() {
       }
 
 
-      var clicks = document.getElementById("clicks").innerHTML;
+      var clicks = parseInt(document.getElementById("clicks").innerHTML);
       clicks += 1;
       document.getElementById("clicks").innerHTML = clicks;
       //document.getElementById("clicks").style.visibility = "hidden";
@@ -1666,9 +1666,8 @@ var teachMaker = function (material) {
 var testMaker = function (material) {
       var stimulus2 = "<div class='container1a'><div class='ball'><div class='redline'></div>"
             + " " + material.subject + " </div></div>"
-            //+ "<button onclick = 'DoAnimation();'>Please click here for animation!</button>"
             + "<button type='button' onClick='DoAnimation()'>Click me</button>"
-            + "<p>Clicks: <a id='clicks'>0</a></p>"
+            + "<a id='clicks' class='hidden'>0</a>"
 
 
       var shape = " " + material.shape + " "
@@ -1676,14 +1675,12 @@ var testMaker = function (material) {
       var phrase = " " + material.phrase + " "
       var condition = " " + material.condition + " "
 
-
       var data = {
             id: material.id,
             type: "testing",
             shape: material.shape,
             phrase: material.phrase,
-            condition: material.condition,
-            clicks: document.getElementById("clicks").innerHTML = clicks
+            condition: material.condition
       };
 
       return {

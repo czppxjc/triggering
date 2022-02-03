@@ -198,7 +198,7 @@ jsPsych.plugins["html-button-delay-response"] = (function() {
       // gather the data to store for the trial
       var trial_data = {
         "rt": response.rt,
-        "stimulus": trial.stimulus,
+       // "stimulus": trial.stimulus,
         "button_pressed": response.button
       };
 

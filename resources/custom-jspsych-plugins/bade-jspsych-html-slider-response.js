@@ -206,12 +206,15 @@ jsPsych.plugins['html-slider-response'] = (function() {
 
     function end_trial(){
 
+      clicks = parseInt(document.getElementById("clicks").innerHTML)
+
       jsPsych.pluginAPI.clearAllTimeouts();
 
       // save data
       var trialdata = {
         "rt": response.rt,
         "responses": response.response,
+        "clicks": clicks,
         // "stimulus": trial.stimulus
       };
 
