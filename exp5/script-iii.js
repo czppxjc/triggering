@@ -1626,6 +1626,7 @@ function DoAnimation() {
 
 };
 
+   
 
 // defining teaching and testing
 
@@ -1668,7 +1669,14 @@ var testMaker = function (material) {
             + " " + material.subject + " </div></div>"
             + "<button type='button' onClick='DoAnimation()'>Click me</button>"
             + "<a id='clicks' class='hidden'>0</a>"
-
+            + "<input type='radio' name='gender' value='left'>Left"
+            + "<input type='radio' name='gender' value='right'>Right"
+            + "<div id='result'></div>"
+           
+     
+    
+          
+              
 
       var shape = " " + material.shape + " "
       //  var adjective = " " + material.adjective + " "
@@ -1692,6 +1700,18 @@ var testMaker = function (material) {
             data: data
       };
 };
+
+// function displayRadioValue() {
+//       var ele = document.getElementsByName('gender');
+        
+//       for(i = 0; i < ele.length; i++) {
+//           if(ele[i].checked)
+//           document.getElementById("result").innerHTML
+//                   = ele[i].value;
+//       }
+
+//       return;
+//   };
 
 
 

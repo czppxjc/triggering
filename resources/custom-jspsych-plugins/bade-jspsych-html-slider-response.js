@@ -208,6 +208,8 @@ jsPsych.plugins['html-slider-response'] = (function() {
 
       clicks = parseInt(document.getElementById("clicks").innerHTML)
 
+      selected = document.querySelector('input[name="gender"]:checked').value;
+
       jsPsych.pluginAPI.clearAllTimeouts();
 
       // save data
@@ -215,6 +217,7 @@ jsPsych.plugins['html-slider-response'] = (function() {
         "rt": response.rt,
         "responses": response.response,
         "clicks": clicks,
+        "button_response": selected,
         // "stimulus": trial.stimulus
       };
 
