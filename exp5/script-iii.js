@@ -1672,6 +1672,11 @@ var testMaker = function (material) {
             + "<input type='radio' name='gender' value='left'>Left"
             + "<input type='radio' name='gender' value='right'>Right"
             + "<div id='result'></div>"
+            + "<fieldset><div class='toggle'>"
+		+ "<input type='radio' name='sizeBy' value='weight' id='sizeWeight' checked='checked' />"
+		+ "<label for='sizeWeight'>Left</label>"
+		+ "<input type='radio' name='sizeBy' value='dimensions' id='sizeDimensions' />"
+		+ "<label for='sizeDimensions'>Right</label></div></fieldset>"
            
      
     
