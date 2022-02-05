@@ -1667,16 +1667,16 @@ var teachMaker = function (material) {
 var testMaker = function (material) {
       var stimulus2 = "<div class='container1a'><div class='ball'><div class='redline'></div>"
             + " " + material.subject + " </div></div>"
-            + "<button type='button' onClick='DoAnimation()'>Click me</button>"
+            + "<button type='button' onClick='DoAnimation()'>Click here for animation</button>"
             + "<a id='clicks' class='hidden'>0</a>"
-            + "<input type='radio' name='gender' value='left'>Left"
-            + "<input type='radio' name='gender' value='right'>Right"
-            + "<div id='result'></div>"
-            + "<fieldset><div class='toggle'>"
-		+ "<input type='radio' name='sizeBy' value='weight' id='sizeWeight' checked='checked' />"
-		+ "<label for='sizeWeight'>Left</label>"
-		+ "<input type='radio' name='sizeBy' value='dimensions' id='sizeDimensions' />"
-		+ "<label for='sizeDimensions'>Right</label></div></fieldset>"
+         //   + "<input type='radio' name='gender' value='left'>Left"
+           // + "<input type='radio' name='gender' value='right'>Right"
+        //    + "<div id='result'></div>"
+            + "<div class='switch-field'>"
+            + "<input type='radio' id='radio-one' name='switch-one' value='left' checked/>"
+            + "<label for='radio-one'>Overt picture on the left</label>"
+            + "<input type='radio' id='radio-two' name='switch-one' value='right' />"
+            + "<label for='radio-two'>Hidden picture on the right</label></div>"
            
      
     
