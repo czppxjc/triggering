@@ -1795,11 +1795,11 @@ timeline.push(instructions_block);
 
 
 
-// for (var i in stimuli_set) {
-//       timeline.push(stimuli_set[i]);
-//     }
+for (var i in stimuli_set) {
+      timeline.push(stimuli_set[i]);
+    }
 
-//      timeline.push(break_block);
+     timeline.push(break_block);
 
    for (var i in stimuli_set_first) {
      timeline.push(stimuli_set_first[i]);
