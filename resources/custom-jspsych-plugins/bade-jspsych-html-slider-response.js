@@ -113,7 +113,7 @@ jsPsych.plugins['html-slider-response'] = (function() {
     var html = '<div id="masc-html-slider-response-wrapper" style="margin: 30px 0px;">';
     html += '<div id="masc-html-slider-response-stimulus">' + trial.stimulus + '</div>';
     html += '<div id="masc-html-slider-response-container-slider" class="masc-html-slider-response-container" style="position:relative;">';
-    html += '<div class="masc-html-slider-response-value" id="html-slider-response-value">' + trial.start + '%</div>';
+    html += '<div class="masc-html-slider-response-value" id="html-slider-response-value">' + trial.start + '1</div>';
     html += '<input type="range" value="'+trial.start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" style="width: 100%;" id="jspsych-html-slider-response-response"></input>';
     html += '<div>';
     for(var j=0; j < trial.labels.length; j++){
@@ -167,7 +167,7 @@ jsPsych.plugins['html-slider-response'] = (function() {
 
     var sliderValueUpdater = function () {
       var sliderValue = display_element.querySelector('#html-slider-response-value');
-      var newValue = theSlider.value + "%";
+      var newValue = theSlider.value + "";
       sliderValue.innerHTML = newValue;
     };
 
