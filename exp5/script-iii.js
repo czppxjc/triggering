@@ -63,7 +63,7 @@ var teaching = function (stimulus) {
             choices: ["Next"],
             data: stimulus.data,
             //    prompt_delay: 3000,
-            button_delay: 500,
+            button_delay: 1500,
             post_trial_gap: 500
       };
 };
@@ -74,17 +74,27 @@ var teaching = function (stimulus) {
 var testing = function (stimulus2) {
       return {
             type: 'html-slider-response',
-            stimulus: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold;font-style:italic'> " + stimulus2.shape + " " + stimulus2.phrase + "</p>" + "<p style='text-align:center'> The sentence describing the scenario is </p> ",
+            stimulus: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold;font-style:italic'> " + stimulus2.shape + " " + stimulus2.phrase + "</p>" 
+            +"<p style='text-align:center'>The sentence describes the</p>"
+            + "<p style='text-align:center'><div class='switch-field' >"
+            + "<input type='radio' id='radio-one' name='switch-one' value='target'/>"
+            + "<label for='radio-one'>overt animation on the left</label>"
+            + "<input type='radio' id='radio-two' name='switch-one' value='CB' />"
+            + "<label for='radio-two'>hidden animation on the right</label></div><p>" 
+            +"<p style='text-align:center'>On a scale from 1 to 10, making the decision was</p>",
             slider_delay: 500,
             container_delay: 500,
-            button_delay: 500,
+            button_delay: 4000,
+            start: 5,
+            min: 1,
+            max: 10,
+            step: 1,
             //  stimulus_duration: 300,
-            labels: ["Extremely unlikely", "Extremely likely"],
+            labels: ["1 -- Extremely easy", "10 -- Extremely difficult"],
             //  response_ends_trial: false,
             data: stimulus2.data,
-            //  prompt_delay: 3000,
-            //  button_delay: 2000,
-            //  post_trial_gap: 500
+              prompt_delay: 2000,
+              post_trial_gap: 500
       };
 };
 
@@ -1665,18 +1675,14 @@ var teachMaker = function (material) {
 
 
 var testMaker = function (material) {
-      var stimulus2 = "<div class='container1a'><div class='ball'><div class='redline'></div>"
-            + " " + material.subject + " </div></div>"
-            + "<button type='button' onClick='DoAnimation()'>Click here for animation</button>"
+      var stimulus2 = "<div class='container2'><div class='ball'><div class='redline'></div>"
+      + " " + material.subject + " </div><div class = 'ball2'></div></div>"
+            + "<button type='button' onClick='DoAnimation()'>Click here for the animation!</button>"
             + "<a id='clicks' class='hidden'>0</a>"
          //   + "<input type='radio' name='gender' value='left'>Left"
            // + "<input type='radio' name='gender' value='right'>Right"
         //    + "<div id='result'></div>"
-            + "<div class='switch-field'>"
-            + "<input type='radio' id='radio-one' name='switch-one' value='left' checked/>"
-            + "<label for='radio-one'>Overt picture on the left</label>"
-            + "<input type='radio' id='radio-two' name='switch-one' value='right' />"
-            + "<label for='radio-two'>Hidden picture on the right</label></div>"
+         
            
      
     
@@ -1721,6 +1727,8 @@ var testMaker = function (material) {
 
 
 // teaching stimuli
+
+
 var stimuli_set = new Array;
 
 for (var i in teach) {
@@ -1793,25 +1801,25 @@ timeline.push(instructions_block);
 
 //      timeline.push(break_block);
 
-//    for (var i in stimuli_set_first) {
-//      timeline.push(stimuli_set_first[i]);
-//    }
+   for (var i in stimuli_set_first) {
+     timeline.push(stimuli_set_first[i]);
+   }
 
 
-//    for (var i in stimuli_set2) {
-//      timeline.push(stimuli_set2[i]);
-//    }
+   for (var i in stimuli_set2) {
+     timeline.push(stimuli_set2[i]);
+   }
 
-//    for (var i in stimuli_set_last) {
-//     timeline.push(stimuli_set_last[i]);
-//    }
+   for (var i in stimuli_set_last) {
+    timeline.push(stimuli_set_last[i]);
+   }
 
 for (var i in stimuli_set_weird) {
       timeline.push(stimuli_set_weird[i]);
 }
 
 
-//timeline.push(self_report);
+timeline.push(self_report);
 
 
 timeline.push(demographics_block);
