@@ -39,7 +39,7 @@ var self_report = {
       questions: [
             {
                   prompt: "<p style='text-align:center'>What do you think wugging was about?</p>",
-                  options: ["wugging had to do with the direction of the movement", "wugging had to do with the red line", "wugging had to do with the lower or upper half of the grey circle"],
+                  options: ["wugging had to do with the direction of the movement", "wugging had to do with the red line", "wugging had to do with position of the ball being below/above the red line"], 
                   horizontal: false
             }],
       //    validation: "request",
