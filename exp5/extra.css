@@ -3,11 +3,19 @@
   visibility: hidden;
 }
 
-.jspsych-survey-likert-statement-small {
+.button-prompt {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+}
+
+
+.jspsych-survey-likert-statement-short {
   display:block;
-  font-size: 18px;
+  font-size: 14px;
   padding-top: 0px;
   margin-bottom:10px;
+  font-style: italic;
 }
 
 .container1a {

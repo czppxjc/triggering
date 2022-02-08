@@ -21,7 +21,7 @@ var break_block = {
       type: "html-button-response",
       stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>"
             + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden.</p> "
-            + " <p style='text-align:center'>Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate. You will then be asked how confident you were in making this decision.</p>",
+            + " <p style='text-align:center'>Your task is to choose whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate. You will then be asked how confident you were in making this choice.</p>",
       choices: ["Continue"],
       data: { questionId: "break" }
 };
@@ -70,7 +70,7 @@ var teaching = function (stimulus) {
 
 
 var likert_scale = [
-      "0 -Not at all", 
+      "0%", 
       "1", 
       "2", 
       "3", 
@@ -79,21 +79,21 @@ var likert_scale = [
       "7", 
       "8", 
       "9", 
-      "10 -Fully"
+      "100%"
     ];
     
     var testing = function (stimulus2) {
       return {
-      preamble: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold;font-style:italic'> " + stimulus2.shape + " " + stimulus2.phrase 
-      +"<p style='text-align:center'>The sentence describes the</p>"
-      + "<p style='text-align:center'><div class='switch-field' >"
+      preamble: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold'> " + stimulus2.shape + " " + stimulus2.phrase 
+      +"<p class='button-prompt'>The sentence describes</p>"
+      + "<div class='switch-field'>"
       + "<input type='radio' id='radio-one' name='switch-one' value='target'/>"
-      + "<label for='radio-one'>overt animation on the left</label>"
-      + "<input type='radio' id='radio-two' name='switch-one' value='CB' />"
-      + "<label for='radio-two'>hidden animation on the right</label></div>",      
+      + "<label for='radio-one'>the overt animation on the left</label>"
+      + "<input type='radio' id='radio-two' name='switch-one' value='CB'/>"
+      + "<label for='radio-two'>the hidden animation on the right</label></div>",      
       type: 'survey-likert',
       questions: [
-        {prompt: "How confident did you feel when making your decision?", name: 'confidence', labels: likert_scale}
+        {prompt: "How confident are you about your choice?", name: 'confidence', labels: likert_scale}
       ],
       randomize_question_order: true,
       data: stimulus2.data,
