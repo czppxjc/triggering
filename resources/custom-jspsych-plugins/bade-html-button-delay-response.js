@@ -5,7 +5,7 @@
  * plugin for displaying a stimulus and getting a keyboard response
  *
  * documentation: docs.jspsych.org
- *
+ * adapted by Nadine Bade
  **/
 
 jsPsych.plugins["html-button-delay-response"] = (function() {

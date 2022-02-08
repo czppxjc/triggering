@@ -5,6 +5,7 @@
  * Josh de Leeuw
  *
  * adapted by Salvador Mascarenhas
+ * further adapted by Nadine Bade
  *
  * documentation: docs.jspsych.org
  *

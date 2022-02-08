@@ -20,8 +20,8 @@ var instructions_block = {
 var break_block = {
       type: "html-button-response",
       stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>"
-            + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden. "
-            + " Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate given the sentence you will see. </p>",
+            + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden.</p> "
+            + " <p style='text-align:center'>Your task is to decide whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate. You will then be asked how confident you were in making this decision.</p>",
       choices: ["Continue"],
       data: { questionId: "break" }
 };
@@ -39,7 +39,7 @@ var self_report = {
       questions: [
             {
                   prompt: "<p style='text-align:center'>What do you think wugging was about?</p>",
-                  options: ["wugging had to do with the direction of the movement", "wugging had to do with the red line", "wugging had to do with position of the ball being below/above the red line"], 
+                  options: ["wugging was primarily about vertical movement", "wugging was primarily about starting on the red line", "wugging was about the relative position of the circle and the red line", "wugging was about the circle not ending on the red line"], 
                   horizontal: false
             }],
       //    validation: "request",
@@ -69,34 +69,39 @@ var teaching = function (stimulus) {
 };
 
 
-
-
-var testing = function (stimulus2) {
+var likert_scale = [
+      "0 -Not at all", 
+      "1", 
+      "2", 
+      "3", 
+      "5",
+      "6", 
+      "7", 
+      "8", 
+      "9", 
+      "10 -Fully"
+    ];
+    
+    var testing = function (stimulus2) {
       return {
-            type: 'html-slider-response',
-            stimulus: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold;font-style:italic'> " + stimulus2.shape + " " + stimulus2.phrase + "</p>" 
-            +"<p style='text-align:center'>The sentence describes the</p>"
-            + "<p style='text-align:center'><div class='switch-field' >"
-            + "<input type='radio' id='radio-one' name='switch-one' value='target'/>"
-            + "<label for='radio-one'>overt animation on the left</label>"
-            + "<input type='radio' id='radio-two' name='switch-one' value='CB' />"
-            + "<label for='radio-two'>hidden animation on the right</label></div><p>" 
-            +"<p style='text-align:center'>On a scale from 1 to 10, making the decision was</p>",
-            slider_delay: 500,
-            container_delay: 500,
-            button_delay: 4000,
-            start: 5,
-            min: 1,
-            max: 10,
-            step: 1,
-            //  stimulus_duration: 300,
-            labels: ["1 -- Extremely easy", "10 -- Extremely difficult"],
-            //  response_ends_trial: false,
-            data: stimulus2.data,
-              prompt_delay: 2000,
-              post_trial_gap: 500
-      };
+      preamble: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold;font-style:italic'> " + stimulus2.shape + " " + stimulus2.phrase 
+      +"<p style='text-align:center'>The sentence describes the</p>"
+      + "<p style='text-align:center'><div class='switch-field' >"
+      + "<input type='radio' id='radio-one' name='switch-one' value='target'/>"
+      + "<label for='radio-one'>overt animation on the left</label>"
+      + "<input type='radio' id='radio-two' name='switch-one' value='CB' />"
+      + "<label for='radio-two'>hidden animation on the right</label></div>",      
+      type: 'survey-likert',
+      questions: [
+        {prompt: "How confident are you about your decision?", name: 'confidence', labels: likert_scale}
+      ],
+      randomize_question_order: true,
+      data: stimulus2.data,
+      post_trial_gap: 500
+    };
 };
+
+
 
 
 // define animation button
@@ -1795,11 +1800,11 @@ timeline.push(instructions_block);
 
 
 
-for (var i in stimuli_set) {
-      timeline.push(stimuli_set[i]);
+ for (var i in stimuli_set) {
+       timeline.push(stimuli_set[i]);
     }
 
-     timeline.push(break_block);
+      timeline.push(break_block);
 
    for (var i in stimuli_set_first) {
      timeline.push(stimuli_set_first[i]);
