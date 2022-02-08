@@ -71,14 +71,15 @@ var teaching = function (stimulus) {
 
 var likert_scale = [
       "0%", 
-      "1", 
-      "2", 
-      "3", 
-      "5",
-      "6", 
-      "7", 
-      "8", 
-      "9", 
+      "10", 
+      "20", 
+      "30", 
+      "40",
+      "50", 
+      "60", 
+      "70", 
+      "80", 
+      "90", 
       "100%"
     ];
     
@@ -87,15 +88,15 @@ var likert_scale = [
       preamble: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold'> " + stimulus2.shape + " " + stimulus2.phrase 
       +"<p class='button-prompt'>The sentence describes</p>"
       + "<div class='switch-field'>"
-      + "<input type='radio' id='radio-one' name='switch-one' value='target'/>"
+      + "<input type='radio' id='radio-one' name='switch-one' value='target'</input>"
       + "<label for='radio-one'>the overt animation on the left</label>"
-      + "<input type='radio' id='radio-two' name='switch-one' value='CB'/>"
+      + "<input type='radio' id='radio-two' name='switch-one' value='CB'</input>"
       + "<label for='radio-two'>the hidden animation on the right</label></div>",      
       type: 'survey-likert',
+      button_text: "button text",
       questions: [
-        {prompt: "How confident are you about your choice?", name: 'confidence', labels: likert_scale}
+        {prompt: "How confident are you about your choice?", name: 'confidence', labels: likert_scale, required: true}
       ],
-      randomize_question_order: true,
       data: stimulus2.data,
       post_trial_gap: 500
     };

@@ -4,6 +4,8 @@
  *
  * Josh de Leeuw
  *
+ * 
+ * adapted Nadine Bade
  * documentation: docs.jspsych.org
  *
  */
@@ -99,6 +101,11 @@ jsPsych.plugins['survey-likert'] = (function() {
 
     display_element.querySelector('#jspsych-survey-likert-form').addEventListener('submit', function(e){
       e.preventDefault();
+
+
+
+
+
       // measure response time
       var endTime = (new Date()).getTime();
       var response_time = endTime - startTime;
@@ -119,6 +126,7 @@ jsPsych.plugins['survey-likert'] = (function() {
         Object.assign(question_data, obje);
       }
 
+      // track clicks of animation button and selection button
       clicks = parseInt(document.getElementById("clicks").innerHTML)
 
       selected = document.querySelector('input[name="switch-one"]:checked').value;
