@@ -93,7 +93,7 @@ var likert_scale = [
       + "<label for='radio-two'>hidden animation on the right</label></div>",      
       type: 'survey-likert',
       questions: [
-        {prompt: "How confident are you about your decision?", name: 'confidence', labels: likert_scale}
+        {prompt: "How confident were you while making your decision?", name: 'confidence', labels: likert_scale}
       ],
       randomize_question_order: true,
       data: stimulus2.data,
