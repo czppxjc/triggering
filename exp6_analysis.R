@@ -55,12 +55,42 @@ exp6$condition2 <- ifelse(exp6$condition == "all_true_existential" | exp6$condit
 
 exp6$responses <- as.numeric(exp6$responses)
 
+exp6$trial_index <- as.numeric(exp6$trial_index)
+
+exp6_CB <- subset(exp6, button_response == "CB")
+exp6_target <- subset(exp6, button_response == "target")
+exp6_first_trials <- subset(exp6, trial_index < 23)
+
 results <- ddply(exp6, .(condition2), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
 results2 <- ddply(exp6, .(condition), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
 
+results2d <- ddply(exp6, .(condition, button_response), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+
+results2a <- ddply(exp6_CB, .(condition), summarize, clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+
+results2c <- ddply(exp6_target, .(condition), summarize, clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+
+
+
+results2b <- ddply(exp6_first_trials, .(condition), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+
+
+
 ### plotting
+
+# confidence by response
+
+plot_m1 <- ggplot(data=results2d, aes(x=condition, y=confidence, fill = button_response)) +
+  geom_bar(stat="identity", position=position_dodge())
+# facet_wrap(~button_response)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m1 +   labs(title="confidence by response",
+                 x="quantifier", y = "confidence")
 
 
 ## CB rates 
@@ -75,18 +105,19 @@ plot_m1 <- ggplot(data=results2, aes(x=condition, y=M)) +
 plot_m1 +   labs(title="covered box",
                  x="quantifier", y = "CB choices")
 
+## CB rates first trials
 
-
-## CB rates no distinction quantifier
-plot_m2 <- ggplot(data=results, aes(x=condition2, y=M)) +
+plot_m1a <- ggplot(data=results2b, aes(x=condition, y=M)) +
   geom_bar(stat="identity", position=position_dodge())
 #  facet_wrap(~group)
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
 #               position=position_dodge(.9))+
 #  theme_classic(base_size = 20) 
 
-plot_m2 +   labs(title="covered box",
-                x="quantifier", y = "CB choices")
+plot_m1a +   labs(title="covered box",
+                 x="quantifier", y = "CB choices")
+
+
 
 
 # clicks
@@ -99,6 +130,19 @@ plot_m3 <- ggplot(data=results2, aes(x=condition, y=clicks)) +
 #  theme_classic(base_size = 20) 
 
 plot_m3 +   labs(title="clicks",
+                 x="quantifier", y = "clicks on animation button")
+
+
+#clicks CB choices
+
+plot_m3a <- ggplot(data=results2a, aes(x=condition, y=clicks)) +
+  geom_bar(stat="identity", position=position_dodge())
+#  facet_wrap(~group)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m3a +   labs(title="clicks",
                  x="quantifier", y = "clicks on animation button")
 
 
@@ -115,6 +159,38 @@ plot_m4 <- ggplot(data=results2, aes(x=condition, y=confidence)) +
 
 plot_m4 +   labs(title="confidence",
                  x="quantifier", y = "average confidence")
+
+
+### confidence CB choices
+
+
+plot_m4a <- ggplot(data=results2a, aes(x=condition, y=confidence)) +
+  geom_bar(stat="identity", position=position_dodge())
+#  facet_wrap(~group)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m4a +   labs(title="confidence",
+                 x="quantifier", y = "average confidence")
+
+
+plot_m4b <- ggplot(data=results2c, aes(x=condition, y=confidence)) +
+  geom_bar(stat="identity", position=position_dodge())
+#  facet_wrap(~group)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m4b +   labs(title="confidence",
+                  x="quantifier", y = "average confidence")
+
+
+
+
+
+
+
 
 
 
