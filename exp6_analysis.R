@@ -34,15 +34,31 @@ data2 <- subset(data, trial_type == "survey-likert")
 
 head(data)
 
+mean_clicks <- ddply(data2, .(subjectId), summarize, 
+                      M = mean(clicks, na.rm = T))
 
+exp1 <- subset(data2, condition == "AB" | condition == "notAB")
 
+exp1$correct <- ifelse((exp1$condition == "AB" & exp1$phrase == "wugs." & exp1$button_response == "target") | 
+                         (exp1$condition == "AB" & exp1$phrase == "does not wug." & exp1$button_response == "CB") |
+                         (exp1$condition == "notAB" & exp1$phrase == "does not wug." & exp1$button_response == "target") |
+                         (exp1$condition == "notAB" & exp1$phrase == "wugs." & exp1$button_response == "CB"), 1, 0 )
 
+correct_resp <- ddply(exp1, .(subjectId), summarize, 
+                      M = mean(correct, na.rm = T))
 
-exp5 <- subset(data2, condition != "AB" & condition != "notAB")
+unattentive = correct_resp$subjectId[which(correct_resp$M < 0.90 )]
+length(unattentive)
+
+exp2 <- subset(data, !(subjectId %in% unattentive))
+
+exp3 <-subset(exp2, exp2$clicks != 0)
+
+exp5 <- subset(exp3, condition != "AB" & condition != "notAB")
 
 exp6 <- subset(exp5, condition != "every_weird_nored" & condition != "none_weird_nored" & condition != "every_weird_red" & condition != "none_weird_red")
 
-exp7 <- subset(exp5, condition == "every_weird_nored" | condition == "none_weird_nored" | condition == "every_weird_red" | condition == "none_weird_nored")
+exp7 <- subset(exp5, condition == "every_weird_nored" | condition == "none_weird_nored" | condition == "every_weird_red" | condition == "none_weird_red")
 
 
 
@@ -57,16 +73,25 @@ exp6$responses <- as.numeric(exp6$responses)
 
 exp6$trial_index <- as.numeric(exp6$trial_index)
 
+exp7$responses <- as.numeric(exp7$responses)
+
+
+
 exp6_CB <- subset(exp6, button_response == "CB")
 exp6_target <- subset(exp6, button_response == "target")
 exp6_first_trials <- subset(exp6, trial_index < 23)
 
 results <- ddply(exp6, .(condition2), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
+results_weird <- ddply(exp7, .(condition), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+
+results_weird2 <- ddply(exp7, .(condition, button_response), summarize, RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+
+
 results2 <- ddply(exp6, .(condition), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
 
-results2d <- ddply(exp6, .(condition, button_response), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
+results2d <- ddply(exp6, .(condition, button_response), summarize, RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
 results2a <- ddply(exp6_CB, .(condition), summarize, clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
@@ -76,13 +101,14 @@ results2c <- ddply(exp6_target, .(condition), summarize, clicks = mean(clicks, ,
 
 results2b <- ddply(exp6_first_trials, .(condition), summarize, M = mean(button_response=="CB", na.rm =TRUE), RT = mean(rt, na.rm =TRUE), clicks = mean(clicks, , na.rm =TRUE),  confidence = mean(responses, na.rm =TRUE))
 
-
+is.numeric(results2b$confidence)
 
 ### plotting
 
 # confidence by response
 
-plot_m1 <- ggplot(data=results2d, aes(x=condition, y=confidence, fill = button_response)) +
+plot_m1 <- ggplot(data=results2d, aes(x=condition, y=confidence, fill = button_response)) + 
+  coord_cartesian(ylim = c(5, 10))+
   geom_bar(stat="identity", position=position_dodge())
 # facet_wrap(~button_response)
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
@@ -91,6 +117,20 @@ plot_m1 <- ggplot(data=results2d, aes(x=condition, y=confidence, fill = button_r
 
 plot_m1 +   labs(title="confidence by response",
                  x="quantifier", y = "confidence")
+
+#clicks by response
+
+plot_m1 <- ggplot(data=results2d, aes(x=condition, y=clicks, fill = button_response)) + 
+  geom_bar(stat="identity", position=position_dodge())
+# facet_wrap(~button_response)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m1 +   labs(title="clicks by response",
+                 x="quantifier", y = "confidence")
+
+
 
 
 ## CB rates 
@@ -104,6 +144,46 @@ plot_m1 <- ggplot(data=results2, aes(x=condition, y=M)) +
 
 plot_m1 +   labs(title="covered box",
                  x="quantifier", y = "CB choices")
+
+# CB rates weird cases
+
+plot_m1 <- ggplot(data=results_weird, aes(x=condition, y=M)) +
+  geom_bar(stat="identity", position=position_dodge())
+#  facet_wrap(~group)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m1 +   labs(title="covered box",
+                 x="quantifier", y = "CB choices")
+
+# confidence weird cases
+
+plot_m1 <- ggplot(data=results_weird, aes(x=condition, y=confidence)) +
+  coord_cartesian(ylim = c(1, 10))+
+  geom_bar(stat="identity", position=position_dodge())
+#  facet_wrap(~group)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m1 +   labs(title="confidence",
+                 x="quantifier", y = "CB choices")
+
+#confidence by response weird cases
+
+plot_m1 <- ggplot(data=results_weird2, aes(x=condition, y=confidence, fill = button_response)) + 
+  coord_cartesian(ylim = c(1, 10))+
+  geom_bar(stat="identity", position=position_dodge())
+# facet_wrap(~button_response)
+#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+#               position=position_dodge(.9))+
+#  theme_classic(base_size = 20) 
+
+plot_m1 +   labs(title="confidence by response",
+                 x="quantifier", y = "confidence")
+
+#clicks by response
 
 ## CB rates first trials
 

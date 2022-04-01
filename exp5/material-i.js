@@ -27,12 +27,12 @@ var teach = [
   phrase: "wugs."
   },
 
-  { subject: "<div class='wug4'></div>",
-  id: "teaching.4",
-  shape: "The green circle",
-  //adjective: "small",
-  phrase: "wugs."
-  },
+  // { subject: "<div class='wug4'></div>",
+  // id: "teaching.4",
+  // shape: "The green circle",
+  // //adjective: "small",
+  // phrase: "wugs."
+  // },
 
   { subject: "<div class='wug1b'></div>",
  id: "teaching.5",
@@ -56,12 +56,12 @@ shape: "The green circle",
 phrase: "does not wug."
 },
 
-{ subject: "<div class='wug4b'></div>",
-id: "teaching.8",
-shape: "The green circle",
-//adjective: "small",
-phrase: "does not wug."
-},
+// { subject: "<div class='wug4b'></div>",
+// id: "teaching.8",
+// shape: "The green circle",
+// //adjective: "small",
+// phrase: "does not wug."
+// },
 
 
 
