@@ -35,14 +35,14 @@ var teach = [
   // },
 
   { subject: "<div class='wug1b'></div>",
- id: "teaching.5",
+ id: "teaching.4",
  shape: "The green circle",
  //adjective: "small",
  phrase: "does not wug."
 },
 
 { subject: "<div class='wug2b'></div>",
-id: "teaching.6",
+id: "teaching.5",
 shape: "The green circle",
 //adjective: "small",
 phrase: "does not wug."
@@ -50,7 +50,7 @@ phrase: "does not wug."
 
 
 { subject: "<div class='wug3b'></div>",
-id: "teaching.7",
+id: "teaching.6",
 shape: "The green circle",
 //adjective: "small",
 phrase: "does not wug."
@@ -68,7 +68,7 @@ phrase: "does not wug."
 ];
 
 
-
+// true/false simple cases (presupposition satisfied)
 var test_first = [
 
   { subject: "<div class='wug1'></div>",
@@ -106,6 +106,8 @@ condition: "notAB"
 
 ];
 
+// quantifier true/false cases (presupposition satisfied)
+
 var test = [
 
   { subject: "<div class='wug1c'></div>"
@@ -119,7 +121,7 @@ var test = [
   condition: "all_true_universal"
   },
 
-  { subject: "<div class='wug1d'></div>"
+/*   { subject: "<div class='wug1d'></div>"
   + "<div class='wug2d'></div>"
   + "<div class='wug3d'></div>"
   + "<div class='wug4d'></div>",
@@ -128,7 +130,7 @@ var test = [
   // adjective: "small",
   phrase: "wugs.",
   condition: "all_true_universal"
-  },
+  }, */
 
   { subject: "<div class='wug1c'></div>"
   + "<div class='wug2c'></div>"
@@ -141,16 +143,7 @@ var test = [
   condition: "none_true_universal"
   },
 
-  { subject: "<div class='wug1d'></div>"
-  + "<div class='wug2d'></div>"
-  + "<div class='wug3c'></div>"
-  + "<div class='wug4c'></div>",
-  id: "testing.8",
-  shape: "None of the green circles",
-  // adjective: "small",
-  phrase: "wug.",
-  condition: "none_true_universal"
-  },
+ 
 
 ];
 
@@ -234,29 +227,7 @@ var test_last = [
   condition: "all_false"
   },
 
-  // some (true controls)
-
-  { subject: "<div class='wug1a'></div>"
-  + "<div class='wug2a'></div>"
-  + "<div class='wug3b'></div>"
-  + "<div class='wug4a'></div>",
-  id: "testing.15",
-  shape: "Some of the green circles",
-  // adjective: "small",
-  phrase: "wug.",
-  condition: "some_true"
-  },
-
-  { subject: "<div class='wug1a'></div>"
-  + "<div class='wug2b'></div>"
-  + "<div class='wug3a'></div>"
-  + "<div class='wug4a'></div>",
-  id: "testing.16",
-  shape: "Some of the green circles",
-  // adjective: "small",
-  phrase: "wug.",
-  condition: "some_true"
-  },
+  
 
   // all true, existential projection
 
@@ -293,6 +264,17 @@ var test_last = [
   condition: "all_true_existential"
   },
 
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2b'></div>"
+  + "<div class='dot3b'></div>"
+  + "<div class='dot2a'></div>",
+  id: "testing.19",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_existential"
+  },
+
 
 
 // all true no projection
@@ -322,6 +304,17 @@ var test_last = [
    { subject: "<div class='dot7'></div>"
   + "<div class='dot8'></div>"
   + "<div class='dot1b'></div>"
+  + "<div class='dot2b'></div>",
+  id: "testing.22",
+  shape: "Every green circle",
+  // adjective: "small",
+  phrase: "wugs.",
+  condition: "all_true_no_projection"
+  },
+
+  { subject: "<div class='dot5'></div>"
+  + "<div class='dot6'></div>"
+  + "<div class='dot7'></div>"
   + "<div class='dot2b'></div>",
   id: "testing.22",
   shape: "Every green circle",
@@ -405,6 +398,17 @@ var test_last = [
   condition: "none_true_existential"
   },
 
+  { subject: "<div class='dot1b'></div>"
+  + "<div class='dot4a'></div>"
+  + "<div class='wug3a'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.28",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_existential"
+  },
+
 
  
 // none no projection
@@ -435,6 +439,18 @@ var test_last = [
   + "<div class='dot12'></div>"
   + "<div class='dot3a'></div>"
   + "<div class='dot4a'></div>",
+  id: "testing.31",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "none_true_no_projection"
+  },
+
+
+  { subject: "<div class='dot11'></div>"
+  + "<div class='dot12'></div>"
+  + "<div class='dot9'></div>"
+  + "<div class='dot10'></div>",
   id: "testing.31",
   shape: "None of the green circles",
   // adjective: "small",
@@ -477,29 +493,74 @@ var test_last = [
   condition: "none_false"
   },
 
-  // some items (controls)
 
-  { subject: "<div class='wug1b'></div>"
+  // some (true controls)
+
+  { subject: "<div class='wug1a'></div>"
   + "<div class='wug2a'></div>"
-  + "<div class='wug3a'></div>"
-  + "<div class='wug4b'></div>",
-  id: "testing.35",
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.15",
   shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
   condition: "some_true"
   },
 
-  { subject: "<div class='wug1b'></div>"
-  + "<div class='wug2a'></div>"
+  { subject: "<div class='wug1a'></div>"
+  + "<div class='wug2b'></div>"
   + "<div class='wug3a'></div>"
   + "<div class='wug4a'></div>",
-  id: "testing.36",
+  id: "testing.16",
   shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
   condition: "some_true"
   },
+
+  { subject: "<div class='wug1d'></div>"
+  + "<div class='wug2d'></div>"
+  + "<div class='wug3c'></div>"
+  + "<div class='wug4c'></div>",
+  id: "testing.8",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "some_false"
+  },
+
+  { subject: "<div class='wug1b'></div>"
+  + "<div class='wug2a'></div>"
+  + "<div class='wug3b'></div>"
+  + "<div class='wug4a'></div>",
+  id: "testing.24",
+  shape: "None of the green circles",
+  // adjective: "small",
+  phrase: "wug.",
+  condition: "some_false"
+  },
+
+  // { subject: "<div class='wug1b'></div>"
+  // + "<div class='wug2a'></div>"
+  // + "<div class='wug3a'></div>"
+  // + "<div class='wug4b'></div>",
+  // id: "testing.35",
+  // shape: "Some of the green circles",
+  // // adjective: "small",
+  // phrase: "wug.",
+  // condition: "some_true"
+  // },
+
+  // { subject: "<div class='wug1b'></div>"
+  // + "<div class='wug2a'></div>"
+  // + "<div class='wug3a'></div>"
+  // + "<div class='wug4a'></div>",
+  // id: "testing.36",
+  // shape: "Some of the green circles",
+  // // adjective: "small",
+  // phrase: "wug.",
+  // condition: "some_true"
+  // },
 
 
 
