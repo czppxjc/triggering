@@ -181,6 +181,50 @@ function DoAnimation() {
 
       }
 
+          // every up from red 
+
+          else if (document.getElementsByClassName("wug1b")[0] !== undefined &&
+          document.getElementsByClassName("wug2b")[0] !== undefined &&
+          document.getElementsByClassName("dot3b")[0] !== undefined &&
+          document.getElementsByClassName("dot2a")[0] !== undefined) {
+
+          var elements = document.querySelectorAll(".wug1b");
+          var elements2 = document.querySelectorAll(".wug2b");
+          var elements3 = document.querySelectorAll(".dot3b");
+          var elements4 = document.querySelectorAll(".dot2a");
+
+
+          var array = Array.from(elements);
+          var array2 = Array.from(elements2);
+          var array3 = Array.from(elements3);
+          var array4 = Array.from(elements4);
+
+          array.forEach(function (x) {
+                x.classList.remove("up1");
+                void x.offsetWidth;
+                x.classList.add("up1");
+          });
+
+          array2.forEach(function (x) {
+                x.classList.remove("up4");
+                void x.offsetWidth;
+                x.classList.add("up4");
+          });
+
+          array3.forEach(function (x) {
+                x.classList.remove("up1");
+                void x.offsetWidth;
+                x.classList.add("up1");
+          });
+
+          array4.forEach(function (x) {
+                x.classList.remove("up4");
+                void x.offsetWidth;
+                x.classList.add("up4");
+          });
+
+    }
+
       else if (document.getElementsByClassName("wug1c")[0] !== undefined &&
             document.getElementsByClassName("wug2c")[0] !== undefined &&
             document.getElementsByClassName("wug3c")[0] !== undefined &&
@@ -609,6 +653,48 @@ function DoAnimation() {
 
       }
 
+      else if (document.getElementsByClassName("dot5")[0] !== undefined &&
+      document.getElementsByClassName("dot6")[0] !== undefined &&
+      document.getElementsByClassName("dot7")[0] !== undefined &&
+      document.getElementsByClassName("dot2b")[0] !== undefined) {
+
+      var elements = document.querySelectorAll(".dot5");
+      var elements2 = document.querySelectorAll(".dot6");
+      var elements3 = document.querySelectorAll(".dot7");
+      var elements4 = document.querySelectorAll(".dot2b");
+
+
+      var array = Array.from(elements);
+      var array2 = Array.from(elements2);
+      var array3 = Array.from(elements3);
+      var array4 = Array.from(elements4);
+
+      array.forEach(function (x) {
+            x.classList.remove("up2");
+            void x.offsetWidth;
+            x.classList.add("up2");
+      });
+
+      array2.forEach(function (x) {
+            x.classList.remove("up2");
+            void x.offsetWidth;
+            x.classList.add("up2");
+      });
+
+      array3.forEach(function (x) {
+            x.classList.remove("up3");
+            void x.offsetWidth;
+            x.classList.add("up3");
+      });
+
+      array4.forEach(function (x) {
+            x.classList.remove("up3");
+            void x.offsetWidth;
+            x.classList.add("up3");
+      });
+
+}
+
 
       // none from red true
 
@@ -780,6 +866,48 @@ function DoAnimation() {
 
       }
 
+      else if (document.getElementsByClassName("dot1b")[0] !== undefined &&
+            document.getElementsByClassName("dot4a")[0] !== undefined &&
+            document.getElementsByClassName("wug3a")[0] !== undefined &&
+            document.getElementsByClassName("wug4a")[0] !== undefined) {
+
+            var elements = document.querySelectorAll(".dot1b");
+            var elements2 = document.querySelectorAll(".dot4a");
+            var elements3 = document.querySelectorAll(".wug3a");
+            var elements4 = document.querySelectorAll(".wug4a");
+
+
+            var array = Array.from(elements);
+            var array2 = Array.from(elements2);
+            var array3 = Array.from(elements3);
+            var array4 = Array.from(elements4);
+
+            array.forEach(function (x) {
+                  x.classList.remove("down1");
+                  void x.offsetWidth;
+                  x.classList.add("down1");
+            });
+
+            array2.forEach(function (x) {
+                  x.classList.remove("down2");
+                  void x.offsetWidth;
+                  x.classList.add("down2");
+            });
+
+            array3.forEach(function (x) {
+                  x.classList.remove("down3");
+                  void x.offsetWidth;
+                  x.classList.add("down3");
+            });
+
+            array4.forEach(function (x) {
+                  x.classList.remove("down2");
+                  void x.offsetWidth;
+                  x.classList.add("down2");
+            });
+
+      }
+
 
       else if (document.getElementsByClassName("wug1b")[0] !== undefined &&
             document.getElementsByClassName("wug2a")[0] !== undefined &&
@@ -822,6 +950,48 @@ function DoAnimation() {
             });
 
       }
+
+      else if (document.getElementsByClassName("dot11")[0] !== undefined &&
+      document.getElementsByClassName("dot12")[0] !== undefined &&
+      document.getElementsByClassName("dot9")[0] !== undefined &&
+      document.getElementsByClassName("dot3a")[0] !== undefined) {
+
+      var elements = document.querySelectorAll(".dot11");
+      var elements2 = document.querySelectorAll(".dot12");
+      var elements3 = document.querySelectorAll(".dot9");
+      var elements4 = document.querySelectorAll(".dot3a");
+
+
+      var array = Array.from(elements);
+      var array2 = Array.from(elements2);
+      var array3 = Array.from(elements3);
+      var array4 = Array.from(elements4);
+
+      array.forEach(function (x) {
+            x.classList.remove("down2");
+            void x.offsetWidth;
+            x.classList.add("down2");
+      });
+
+      array2.forEach(function (x) {
+            x.classList.remove("down2");
+            void x.offsetWidth;
+            x.classList.add("down2");
+      });
+
+      array3.forEach(function (x) {
+            x.classList.remove("down1");
+            void x.offsetWidth;
+            x.classList.add("down1");
+      });
+
+      array4.forEach(function (x) {
+            x.classList.remove("down1");
+            void x.offsetWidth;
+            x.classList.add("down1");
+      });
+
+}
 
       // none false from red
 
@@ -1834,9 +2004,9 @@ timeline.push(demographics_block);
 jsPsych.init({
       timeline: timeline,
       show_progress_bar: true,
-       on_finish: function(data){ SaveData("triggering6",
+       on_finish: function(data){ SaveData("triggering6b",
                                            theSubject,
                                            jsPsych.data.get().csv);
-                                    $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 4959FF13 </p></center>"); }
+                                    $(".jspsych-content").html("<center><p>Thank you for completing the experiment.  <strong>Please enter the code below on Prolific.</strong></p></center></p></center><center><p> 4358C1AC </p></center>"); }
    //   on_finish: function (data) { jsPsych.data.displayData("json"); }
 });
