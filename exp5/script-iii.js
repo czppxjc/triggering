@@ -20,8 +20,8 @@ var instructions_block = {
 var break_block = {
       type: "html-button-response",
       stimulus: "<p style='text-align:center'>Now, let's see how <b>you</b> use <i>wug</i>!</p>"
-            + " <p style='text-align:center'> You will see two animations but only one of them is visible, the other hidden.</p> "
-            + " <p style='text-align:center'>Your task is to choose whether the sentence you will see describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate. You will then be asked how confident you were in making this choice.</p>",
+            + " <p style='text-align:center'> We will show you two animations. However, only one of them is visible, the other animation is hidden.</p> "
+            + " <p style='text-align:center'>Your task is to decide whether the sentence you will read describes the visible animation or the hidden animation. You should choose the hidden scenario if you consider the visible one inappropriate. You will then be asked how confident you were while making your choice.</p>",
       choices: ["Continue"],
       data: { questionId: "break" }
 };
@@ -1902,16 +1902,30 @@ var testMaker = function (material) {
 
 
 
-// teaching stimuli
+// teaching stimuli positive
 
 
-var stimuli_set = new Array;
+var stimuli_set_teach1 = new Array;
 
-for (var i in teach) {
-      stimuli_set.push(teaching(teachMaker(teach[i])));
+for (var i in teach_first) {
+      stimuli_set_teach1.push(teaching(teachMaker(teach_first[i])));
 }
 
-stimuli_set = jsPsych.randomization.repeat(stimuli_set, 1);
+stimuli_set_teach1 = jsPsych.randomization.repeat(stimuli_set_teach1, 1);
+
+
+// teaching stimuli other
+
+
+var stimuli_set_teach2 = new Array;
+
+for (var i in teach_second) {
+      stimuli_set_teach2.push(teaching(teachMaker(teach_second[i])));
+}
+
+stimuli_set_teach2 = jsPsych.randomization.repeat(stimuli_set_teach2, 1);
+
+
 
 
 //testing stimuli
@@ -1971,9 +1985,13 @@ timeline.push(instructions_block);
 
 
 
- for (var i in stimuli_set) {
-       timeline.push(stimuli_set[i]);
+ for (var i in stimuli_set_teach1) {
+       timeline.push(stimuli_set_teach1[i]);
     }
+
+    for (var i in stimuli_set_teach2) {
+      timeline.push(stimuli_set_teach2[i]);
+   }
 
       timeline.push(break_block);
 

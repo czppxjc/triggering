@@ -2,7 +2,7 @@
 // matter since this will be randomized.  each item needs a unique ID
 
 
-var teach = [
+var teach_first = [
 
 
     { subject: "<div class='wug1'></div>",
@@ -19,6 +19,13 @@ var teach = [
   phrase: "wugs."
   },
 
+
+  
+
+];
+
+
+var teach_second = [
 
   { subject: "<div class='wug3'></div>",
   id: "teaching.3",
@@ -62,7 +69,6 @@ phrase: "does not wug."
 // //adjective: "small",
 // phrase: "does not wug."
 // },
-
 
 
 ];
@@ -525,7 +531,7 @@ var test_last = [
   + "<div class='wug3c'></div>"
   + "<div class='wug4c'></div>",
   id: "testing.37",
-  shape: "None of the green circles",
+  shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
   condition: "some_false"
@@ -536,7 +542,7 @@ var test_last = [
   + "<div class='wug3b'></div>"
   + "<div class='wug4a'></div>",
   id: "testing.38",
-  shape: "None of the green circles",
+  shape: "Some of the green circles",
   // adjective: "small",
   phrase: "wug.",
   condition: "some_false"
