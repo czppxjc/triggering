@@ -86,6 +86,7 @@ var likert_scale = [
     var testing = function (stimulus2) {
       return {
       preamble: "<p style='text-align:center'> " + stimulus2.stim + " </p> " + "<p style='text-align:center;font-weight:bold'> " + stimulus2.shape + " " + stimulus2.phrase 
+   // debug version   +"<p class='button-prompt'>The sentence describes " + stimulus2.condition + "</p>"
       +"<p class='button-prompt'>The sentence describes</p>"
       + "<div class='switch-field'>"
       + "<input type='radio' id='radio-one' name='switch-one' value='target'</input>"
@@ -456,15 +457,15 @@ function DoAnimation() {
             var array4 = Array.from(elements4);
 
             array.forEach(function (x) {
-                  x.classList.remove("up3");
+                  x.classList.remove("down3");
                   void x.offsetWidth;
                   x.classList.add("up3");
             });
 
             array2.forEach(function (x) {
-                  x.classList.remove("up2");
+                  x.classList.remove("down2");
                   void x.offsetWidth;
-                  x.classList.add("up2");
+                  x.classList.add("down2");
             });
 
 
