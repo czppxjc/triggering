@@ -30,6 +30,13 @@ length(unique(data$subjectId))
 #155
 
 
+data2 <- subset(data, group == "no training")
+data1 <- subset(data, group == "wug=red" | group == "wug=upward")
+
+length(unique(data1$subjectId))
+length(unique(data2$subjectId))
+
+
 head(data)
 
 
@@ -64,15 +71,30 @@ exp2$novelty <- ifelse((exp2$group == "wug=red" & (exp2$cond == "upward-from red
                          
                          
 
-is.numeric(exp2$CB)
 
 
 exp_qua <- subset(exp2, type == "quantificational")
 exp <- subset(exp2, type == "simple")
 
+length2 <- function (x, na.rm=FALSE) {
+  if (na.rm) sum(!is.na(x))
+  else       length(x)
+}
 
 
-results <- ddply(exp, .(cond, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE) )
+CB_results <- ddply(exp6, .(quantifier, projection), summarize, 
+                    CB = mean(button_response == "CB", na.rm = T)
+                    , N = length2(button_response)
+                    , SD = sd(button_response == "CB", na.rm=T)
+                    , SE = SD/sqrt(N))
+
+
+results <- ddply(exp, .(cond, negation, group), 
+                 summarize, M = mean(button_pressed==1, na.rm =TRUE), 
+                 N = length2(button_pressed),
+                 SD = sd(button_pressed == 1, na.rm=T),
+                 SE = SD/sqrt(N),
+                 RT = mean(rt, na.rm =TRUE) )
 
 results_qua <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
 
@@ -100,14 +122,28 @@ plot +   labs(title="Predictions under H1a and H2a",
 
 plot_m1 <- ggplot(data=subset(results, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
   geom_bar(stat="identity", position=position_dodge())+
-theme_classic(base_size = 20)  # facet_wrap(~group)+
-#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
-#               position=position_dodge(.9))+
+theme_classic(base_size = 20)+
+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+              position=position_dodge(.9))
 
 
 plot_m1 +   labs(title="'training: wug=upward'-group",
-              x="animation", y = "mean visible picture choices")
+              x="animation type", y = "rate CB choices")
 
+
+plot_m1a <- ggplot(data=subset(results, group == "no training"), aes(x=cond, y=M, fill=negation)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  theme_classic(base_size = 20)+
+  geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+                position=position_dodge(.9))
+
+
+plot_m1a +   labs(title="'no training'-group",
+                 x="animation type", y = "rate CB choices")
+
+
+
+## novelty
 results2 <- ddply(exp, .(cond, novelty, negation, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE) )
 
 
@@ -202,7 +238,7 @@ anova(model_0a, model_0c)
 
 model_1a <- glmer(button_pressed ~ cond*negation*group + (1| subjectId), 
                   family = "binomial", 
-                  data =  subset(exp, critical == "critical"),
+                  data =  subset(exp, (group == "wug=red" | group == "wug=upward") & critical == "critical"),
                   control=glmerControl(optimizer="bobyqa",
                                        optCtrl=list(maxfun=2e5)))
 
@@ -211,7 +247,7 @@ summary(model_1a)
 
 model_1b <- glmer(button_pressed ~ cond+negation+group + (1| subjectId), 
                   family = "binomial", 
-                  data =  subset(exp, critical == "critical"),
+                  data =  subset(exp, (group == "wug=red" | group == "wug=upward") & critical == "critical"),
                   control=glmerControl(optimizer="bobyqa",
                                        optCtrl=list(maxfun=2e5)))
 
@@ -227,6 +263,59 @@ texreg(list(model_1a, model_1b), use.packages = FALSE, label = "Table 1", captio
 
 contrasts_1a <- emmeans(model_1a, ~cond*negation*group)
 sum <- summary(contrast(contrasts_1a, "tukey", simple = "each", combine = TRUE, adjust="none"))
+
+
+model_i <- glmer(button_pressed ~ negation*cond + (1+negation | subjectId), 
+                  family = "binomial", 
+                  data =  subset(exp, group == "wug=red" & critical == "critical"),
+                  control=glmerControl(optimizer="bobyqa",
+                                       optCtrl=list(maxfun=2e5)))
+
+
+summary(model_i)
+
+
+model_ii <- glmer(button_pressed ~ negation+cond + (1+negation| subjectId), 
+                  family = "binomial", 
+                  data =  subset(exp, group == "wug=red" & critical == "critical"),
+                  control=glmerControl(optimizer="bobyqa",
+                                       optCtrl=list(maxfun=2e5)))
+
+
+summary(model_ii)
+
+anova(model_i, model_ii)
+
+contrasts_i <- emmeans(model_i, ~negation*cond)
+summary(contrast(contrasts_i, "tukey", simple = "each", combine = TRUE, adjust="none"))
+
+
+
+
+model_iii <- glmer(button_pressed ~ negation*cond + (1+negation | subjectId), 
+                 family = "binomial", 
+                 data =  subset(exp, group == "wug=upward" & critical == "critical"),
+                 control=glmerControl(optimizer="bobyqa",
+                                      optCtrl=list(maxfun=2e5)))
+
+
+summary(model_iii)
+
+
+model_iv <- glmer(button_pressed ~ negation+cond + (1+negation| subjectId), 
+                  family = "binomial", 
+                  data =  subset(exp, group == "wug=upward" & critical == "critical"),
+                  control=glmerControl(optimizer="bobyqa",
+                                       optCtrl=list(maxfun=2e5)))
+
+
+summary(model_iv)
+
+anova(model_iii, model_iv)
+
+contrasts_ii <- emmeans(model_iii, ~negation*cond)
+summary(contrast(contrasts_ii, "tukey", simple = "each", combine = TRUE, adjust="none"))
+
 
 
 
@@ -261,6 +350,9 @@ texreg(list(model_2a, model_2b), use.packages = FALSE, label = "Table 1", captio
 contrasts_2a <- emmeans(model_2a, ~negation*cond)
 summary(contrast(contrasts_2a, "tukey", simple = "each", combine = TRUE, adjust="none"))
 
+
+
+# group negation interaction per animation
 
 model_3a <- glmer(button_pressed ~ group*negation + (1| subjectId), 
                   family = "binomial", 
