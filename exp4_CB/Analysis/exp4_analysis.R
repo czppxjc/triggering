@@ -131,15 +131,15 @@ plot_m1 +   labs(title="'training: wug=upward'-group",
               x="animation type", y = "rate CB choices")
 
 
-plot_m1a <- ggplot(data=subset(results, group == "no training"), aes(x=cond, y=M, fill=negation)) +
+plot_m1a <- ggplot(data=subset(results, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
   geom_bar(stat="identity", position=position_dodge())+
   theme_classic(base_size = 20)+
   geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
                 position=position_dodge(.9))
 
 
-plot_m1a +   labs(title="'no training'-group",
-                 x="animation type", y = "rate CB choices")
+plot_m1a +   labs(title="training group `wug' = upward", fill="polarity",
+                 x="animation type", y = "rate of CB choices")
 
 
 
