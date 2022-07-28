@@ -151,7 +151,11 @@ CB_results <- ddply(exp6, .(quantifier, projection), summarize,
                  , SD = sd(button_response == "CB", na.rm=T)
                  , SE = SD/sqrt(N))
 
-confidence_results <- ddply(exp6, .(quantifier, projection), summarize, 
+is.numeric(exp6$responses)
+
+exp6$responses <- as.numeric(exp6$responses)
+
+confidence_results <- ddply(exp6, .(quantifier, projection, button_response), summarize, 
                             M = mean(responses, na.rm = T)
                             , N = length2(responses)
                             , SD = sd(responses, na.rm=T)
@@ -256,9 +260,9 @@ plot_m2b +   labs(title="confidence by response",
                  x="projection", y = "confidence")
 
 
-## confidence
+## confidence response target
 
-plot_m2b <- ggplot(data=confidence_results, aes(x=projection, y=M, fill = quantifier)) +
+plot_m2b <- ggplot(data=subset(confidence_results, button_response == "target" & projection != "false"), aes(x=projection, y=M, fill = quantifier)) +
   coord_cartesian(ylim = c(5, 10))+
   geom_bar(stat="identity", position=position_dodge())+
   geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,

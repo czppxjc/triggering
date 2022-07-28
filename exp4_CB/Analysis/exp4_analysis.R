@@ -98,27 +98,27 @@ results <- ddply(exp, .(cond, negation, group),
 
 results_qua <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
 
-results_pred = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
+#results_pred = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
 
 results$cond <- as.factor(results$cond) 
 levels(results$cond)
 results$cond <- factor(results$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
-results_pred$cond <- factor(results_pred$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
+#results_pred$cond <- factor(results_pred$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
 
 
 
 ### plotting
 ##write.table(results, file = "results.txt", sep = ",", quote = FALSE, row.names = F)
 
-plot <- ggplot(data=subset(results_pred, exp == "predicted")) +
-  geom_bar(aes(x=group, y=M, fill = negation), stat="identity", position="dodge", width = 0.8, color = "black")+
-facet_wrap(~cond)+
+#plot <- ggplot(data=subset(results_pred, exp == "predicted")) +
+ # geom_bar(aes(x=group, y=M, fill = negation), stat="identity", position="dodge", width = 0.8, color = "black")+
+#facet_wrap(~cond)+
 #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
  #               position=position_dodge(.9))+
-  theme_classic(base_size = 20) 
+ # theme_classic(base_size = 20) 
 
-plot +   labs(title="Predictions under H1a and H2a",
-                           x="", y = "predicted rate of visible picture choices")
+#plot +   labs(title="Predictions under H1a and H2a",
+         #                  x="", y = "predicted rate of visible picture choices")
 
 plot_m1 <- ggplot(data=subset(results, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
   geom_bar(stat="identity", position=position_dodge())+
