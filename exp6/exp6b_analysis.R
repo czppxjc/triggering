@@ -9,14 +9,12 @@ library(lme4)
 library(lmerTest)
 #library(simr)
 library(emmeans)
-library(exactRankTests)
 library(pwr)
 library(psych)
 library(boot)
 library(rcompanion)
 library(rsq)
 library(tidyr)
-library(naniar)
 library(RColorBrewer)
 
 
@@ -114,9 +112,9 @@ critical$responses <- as.numeric(critical$responses)
 
 critical$trial_index <- as.numeric(critical$trial_index)
 
-exp6$responses <- as.numeric(critical$responses)
+exp6$responses <- as.numeric(exp6$responses)
 
-exp6$trial_index <- as.numeric(critical$trial_index)
+exp6$trial_index <- as.numeric(exp6$trial_index)
 
 exp7$responses <- as.numeric(exp7$responses)
 
@@ -262,7 +260,7 @@ plot_m2b +   labs(title="confidence by response",
 
 ## confidence response target
 
-plot_m2b <- ggplot(data=subset(confidence_results, button_response == "target" & projection != "false"), aes(x=projection, y=M, fill = quantifier)) +
+plot_m2b <- ggplot(data=subset(confidence_results, button_response == "target"), aes(x=projection, y=M, fill = quantifier)) +
   coord_cartesian(ylim = c(5, 10))+
   geom_bar(stat="identity", position=position_dodge())+
   geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
@@ -323,14 +321,21 @@ exp6$clicks <- as.numeric(exp6$clicks)
 
 #### STATS
 
+critical$button_response <- as.factor(critical$button_response)
+critical$projection <- as.factor(critical$projection)
+critical$projection <- relevel(critical$projection, ref = "existential")
 
-exp6$projection <- relevel(exp6$projection, ref = "universal")
+levels(critical$projection)
+
+#####################
+#### Covered Box ####
+#####################
 
 ### interaction 
 
 model_ia <- glmer(button_response ~ projection*quantifier + (1 | subjectId) + (1| id), 
                  family = "binomial", 
-                 data =  exp6,
+                 data =  critical,
                  control=glmerControl(optimizer="bobyqa",
                                       optCtrl=list(maxfun=2e5)))
 
@@ -339,7 +344,7 @@ summary(model_ia)
 
 model_ib <- glmer(button_response ~ projection+quantifier + (1 | subjectId) + (1| id), 
                   family = "binomial", 
-                  data =  exp6,
+                  data =  critical,
                   control=glmerControl(optimizer="bobyqa",
                                        optCtrl=list(maxfun=2e5)))
 
@@ -357,38 +362,32 @@ summary(contrast(contrasts_ia, "tukey", simple = "each", combine = TRUE, adjust=
 
 model_0 <- glmer(button_response ~ projection + (1 | subjectId) + (1| id), 
                  family = "binomial", 
-                 data =  subset(exp6, quantifier == "every"),
+                 data =  subset(critical, quantifier == "every"),
                  control=glmerControl(optimizer="bobyqa",
                                       optCtrl=list(maxfun=2e5)))
 
 
 summary(model_0)
 
-# Fixed effects:
-#   Estimate Std. Error z value Pr(>|z|)    
-# (Intercept)               8.8114     1.1504   7.659 1.87e-14 ***
-#   projectionfalse         -15.8422     1.5376 -10.304  < 2e-16 ***
-#   projectionno projection  -4.1980     0.8114  -5.174 2.30e-07 ***
-#   projectionexistential    -5.0767     0.8330  -6.095 1.10e-09 ***
-#   ---
-#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# (Intercept)               7.0150     1.1999   5.846 5.02e-09 ***
+#   projectionuniversal       5.8867     1.0276   5.729 1.01e-08 ***
+#   projectionno projection   1.0722     0.6379   1.681   0.0928 .  
+
 
 contrasts_1 <- emmeans(model_0, ~projection)
 sum <- summary(contrast(contrasts_1, "tukey", simple = "each", combine = TRUE, adjust="none"))
 
 
-# universal - false             15.842 1.538 Inf  10.304  <.0001
-# universal - no projection      4.198 0.811 Inf   5.174  <.0001
-# universal - existential        5.077 0.833 Inf   6.095  <.0001
-# false - no projection        -11.644 1.262 Inf  -9.225  <.0001
-# false - existential          -10.766 1.218 Inf  -8.835  <.0001
-# no projection - existential    0.879 0.491 Inf   1.791  0.0733
-# 
+# contrast                    estimate    SE  df z.ratio p.value
+# universal - existential         5.89 1.027 Inf   5.730  <.0001
+# universal - no projection       4.81 0.995 Inf   4.840  <.0001
+# existential - no projection    -1.07 0.638 Inf  -1.681  0.0928
 
 
 model_1 <- glmer(button_response ~ projection + (1| subjectId) + (1 | id), 
                  family = "binomial", 
-                 data =  subset(exp6, quantifier == "none"),
+                 data =  subset(critical, quantifier == "none"),
                  control=glmerControl(optimizer="bobyqa",
                                       optCtrl=list(maxfun=2e5)))
 
@@ -397,52 +396,56 @@ summary(model_1)
 
 # Fixed effects:
 #   Estimate Std. Error z value Pr(>|z|)    
-# (Intercept)               5.2610     0.5814   9.050  < 2e-16 ***
-#   projectionfalse         -12.0421     1.1929 -10.095  < 2e-16 ***
-#   projectionno projection  -2.6194     0.4754  -5.510 3.59e-08 ***
-#   projectionexistential    -1.8918     0.4767  -3.969 7.22e-05 ***
+# (Intercept)               3.2332     0.3755    8.61  < 2e-16 ***
+#   projectionuniversal       1.8631     0.4728    3.94 8.14e-05 ***
+#   projectionno projection  -0.7126     0.2731   -2.61  0.00906 ** 
 
 contrasts_2 <- emmeans(model_1, ~projection)
 sum <- summary(contrast(contrasts_2, "tukey", simple = "each", combine = TRUE, adjust="none"))
 
 
-# universal - false             12.042 1.193 Inf  10.095  <.0001
-# universal - no projection      2.619 0.475 Inf   5.510  <.0001
-# universal - existential        1.892 0.477 Inf   3.969  0.0001
-# false - no projection         -9.423 1.076 Inf  -8.761  <.0001
-# false - existential          -10.150 1.099 Inf  -9.237  <.0001
-# no projection - existential   -0.728 0.276 Inf  -2.636  0.0084
+#contrast                    estimate    SE  df z.ratio p.value
+# universal - existential        1.863 0.473 Inf   3.940  0.0001
+# universal - no projection      2.576 0.471 Inf   5.467  <.0001
+# existential - no projection    0.713 0.273 Inf   2.610  0.0091
 
-### confidence
+
+
+##################
+### confidence ###
+##################
+
+
+critical$responses <- as.factor(critical$responses)
+
+levels(critical$projection)
 
 model_0a <- clmm(responses ~ projection + (1|id)+(1|subjectId), 
-                 data =  subset(exp6, quantifier == "every"))
+                 data =  subset(critical, quantifier == "every" & button_response == "target"))
 
 summary(model_0a)
 
 # Coefficients:
 #   Estimate Std. Error z value Pr(>|z|)    
-# projectionfalse          -1.7114     0.3307  -5.175 2.28e-07 ***
-#   projectionno projection  -2.5677     0.3088  -8.314  < 2e-16 ***
-#   projectionexistential    -3.0388     0.3104  -9.789  < 2e-16 ***
+# projectionuniversal       3.2859     0.4331   7.587 3.27e-14 ***
+#   projectionno projection   0.7288     0.4102   1.777   0.0756 .
+
 
 contrasts_3 <- emmeans(model_0a, ~projection)
 summary(contrast(contrasts_3, "tukey", simple = "each", combine = TRUE, adjust="none"))
 
 
-# contrast                    estimate    SE  df z.ratio p.value
-# universal - false              1.711 0.331 Inf   5.175  <.0001
-# universal - no projection      2.568 0.309 Inf   8.314  <.0001
-# universal - existential        3.039 0.310 Inf   9.789  <.0001
-# false - no projection          0.856 0.319 Inf   2.686  0.0072
-# false - existential            1.327 0.319 Inf   4.162  <.0001
-# no projection - existential    0.471 0.289 Inf   1.632  0.1027
-
 
 model_1b <- clmm(responses ~ projection + (1|id)+(1|subjectId), 
-                 data =  subset(exp6, quantifier == "none"))
+                 data =  subset(critical, quantifier == "none" & button_response == "target"))
 
 summary(model_1b)
+
+
+# Coefficients:
+#   Estimate Std. Error z value Pr(>|z|)    
+# projectionuniversal       2.8890     0.3275   8.820   <2e-16 ***
+#   projectionno projection  -0.3024     0.2639  -1.146    0.252
 
 contrasts_4 <- emmeans(model_1b, ~projection)
 summary(contrast(contrasts_4, "tukey", simple = "each", combine = TRUE, adjust="none"))
@@ -454,11 +457,13 @@ summary(contrast(contrasts_4, "tukey", simple = "each", combine = TRUE, adjust="
 #   projectionno projection  -2.8147     0.2286 -12.313  < 2e-16 ***
 #   projectionexistential    -2.4475     0.2265 -10.807  < 2e-16 ***
 
-##clicks
 
+##########
+##clicks##
+#########ä
 
 model_0c <- lmer(clicks ~ projection + (1|id)+(1|subjectId), 
-                 data =  subset(exp6, quantifier == "every"))
+                 data =  subset(critical, quantifier == "every"))
 
 summary(model_0c)
 
@@ -466,35 +471,18 @@ contrasts_5 <- emmeans(model_0c, ~projection)
 summary(contrast(contrasts_5, "tukey", simple = "each", combine = TRUE, adjust="none"))
 
 
-# 
-# Fixed effects:
-#   Estimate Std. Error       df t value Pr(>|t|)    
-# (Intercept)              1.12059    0.03203 35.03294  34.986   <2e-16 ***
-#   projectionfalse         -0.02647    0.03519 10.99997  -0.752   0.4678    
-# projectionno projection  0.06176    0.03258 10.99997   1.896   0.0846 .  
-# projectionexistential    0.08529    0.03258 10.99997   2.618   0.0239 * 
-# 
-
-# contrast                    estimate     SE df t.ratio p.value
-# universal - false             0.0265 0.0352 11   0.752  0.4678
-# universal - no projection    -0.0618 0.0326 11  -1.896  0.0846
-# universal - existential      -0.0853 0.0326 11  -2.618  0.0239
-# false - no projection        -0.0882 0.0352 11  -2.507  0.0291
-# false - existential          -0.1118 0.0352 11  -3.176  0.0088
-# no projection - existential  -0.0235 0.0326 11  -0.722  0.4853
 
 
 model_1c <- lmer(clicks ~ projection + (1|id)+(1|subjectId), 
-                 data =  subset(exp6, quantifier == "none"))
+                 data =  subset(critical, quantifier == "none"))
 
 summary(model_1c)
 
 # Fixed effects:
 #   Estimate Std. Error       df t value Pr(>|t|)    
-# (Intercept)              1.20392    0.04055 26.85753  29.688   <2e-16 ***
-#   projectionfalse         -0.05686    0.04201 11.00534  -1.354   0.2030    
-# projectionno projection  0.06667    0.04201 11.00534   1.587   0.1408    
-# projectionexistential    0.09314    0.04201 11.00534   2.217   0.0486 *  
+# (Intercept)              1.29706    0.04369 23.95861   29.69   <2e-16 ***
+#   projectionuniversal     -0.08529    0.04929  8.00000   -1.73    0.122    
+# projectionno projection -0.02647    0.04564  8.00000   -0.58    0.578   
 
 contrasts_6 <- emmeans(model_1c, ~projection)
 summary(contrast(contrasts_6, "tukey", simple = "each", combine = TRUE, adjust="none"))

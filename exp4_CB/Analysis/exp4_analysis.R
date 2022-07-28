@@ -160,28 +160,28 @@ plot_m2 +   labs(title="",
 
 
 
-results_pred_qua = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
+#results_pred_qua = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
 
-plot <- ggplot(data=subset(results_pred_qua, sentence == "none wugged "), aes(x=exp, y=M, fill = group)) +
-  geom_bar(stat="identity", position=position_dodge(),width = 0.8, color = "black")+
-  facet_wrap(~condition)+
-#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
-#               position=position_dodge(.9))+
- theme_classic(base_size = 20) 
-
-plot +   labs(title="Quantifier 'none'",
-              x="", y = "rate of visible picture choices")
-
-levels(results_pred_qua$condition)
-
-plot_rt_qua <- ggplot(data=results_qua, aes(x=condition, y=RT)) +
-  geom_bar(stat="identity", position=position_dodge())
-#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
-#               position=position_dodge(.9))+
+# plot <- ggplot(data=subset(results_pred_qua, sentence == "none wugged "), aes(x=exp, y=M, fill = group)) +
+#   geom_bar(stat="identity", position=position_dodge(),width = 0.8, color = "black")+
+#   facet_wrap(~condition)+
+# #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+# #               position=position_dodge(.9))+
 #  theme_classic(base_size = 20) 
-
-plot_rt_qua +   labs(title="",
-              x="", y = "RTs")
+# 
+# plot +   labs(title="Quantifier 'none'",
+#               x="", y = "rate of visible picture choices")
+# 
+# levels(results_pred_qua$condition)
+# 
+# plot_rt_qua <- ggplot(data=results_qua, aes(x=condition, y=RT)) +
+#   geom_bar(stat="identity", position=position_dodge())
+# #+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
+# #               position=position_dodge(.9))+
+# #  theme_classic(base_size = 20) 
+# 
+# plot_rt_qua +   labs(title="",
+#               x="", y = "RTs")
 
 
 
