@@ -171,25 +171,16 @@ clicks_results <- ddply(exp6, .(quantifier, projection), summarize,
 
 ## CB rates 
 
-plot_m1 <- ggplot(data=results, aes(x=quantifier, y=CB, fill = projection)) +
-  geom_bar(stat="identity", position=position_dodge())+
-#  facet_wrap(~group)
-#+geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
-#               position=position_dodge(.9))+
- theme_classic(base_size = 20) 
-
-plot_m1 +   labs(title="covered box choices",
-                 x="quantifier", y = "CB choices", fill = "projection type")
 
 plot_m6 <- ggplot(data=CB_results, aes(x=quantifier, y=CB, fill = projection)) +
   geom_bar(stat="identity", position=position_dodge())+
   #  facet_wrap(~group)
   geom_errorbar(aes(ymin=CB-SE, ymax=CB+SE), width=.2,
                position=position_dodge(.9))+
-  theme_classic(base_size = 20) 
+  theme_classic(base_size = 25) 
 
-plot_m6 +   labs(title="covered box choices",
-                 x="quantifier", y = "CB choices", fill = "projection type")
+plot_m6 +   labs(title="",
+                 x="quantifier", y = "rate CB choices", fill = "projection type")
 
 
 plot_m6d <- ggplot(data=weird_results, aes(x=condition, y=CB)) +
@@ -260,14 +251,14 @@ plot_m2b +   labs(title="confidence by response",
 
 ## confidence response target
 
-plot_m2b <- ggplot(data=subset(confidence_results, button_response == "target"), aes(x=projection, y=M, fill = quantifier)) +
-  coord_cartesian(ylim = c(5, 10))+
+plot_m2b <- ggplot(data=subset(confidence_results, button_response == "target"), aes(x=quantifier, y=M, fill = projection)) +
+  coord_cartesian(ylim = c(1, 10))+
   geom_bar(stat="identity", position=position_dodge())+
   geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
                 position=position_dodge(.9))+
-  theme_classic(base_size = 20) 
+  theme_classic(base_size = 25) 
 
-plot_m2b +   labs(title="confidence by quantifier and projection type",
+plot_m2b +   labs(title="",
                   x="projection", y = "confidence")
 
 
@@ -288,16 +279,17 @@ plot_m2c +   labs(title="clicks by response",
                   x="projection", y = "average number of clicks")
 
 
-plot_m6c <- ggplot(data=clicks_results, aes(x=projection, y=M, fill = quantifier)) +
+plot_m6c <- ggplot(data=clicks_results, aes(x=quantifier, y=M, fill = projection)) +
   coord_cartesian(ylim = c(1, 1.4))+
   geom_bar(stat="identity", position=position_dodge())+
   #facet_wrap(~quantifier)+
   geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
                position=position_dodge(.9))+
-  theme_classic(base_size = 20) 
+  theme_classic(base_size = 25)+
+  theme(legend.position="top")
 
-plot_m6c +   labs(title="clicks by quantifier and projection type",
-                  x="projection", y = "average number of clicks", fill = "quantifier")
+plot_m6c +   labs(title="",
+                  x="quantifier", y = "", fill = "projection")
 
 
 ## RT

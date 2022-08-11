@@ -82,11 +82,11 @@ length2 <- function (x, na.rm=FALSE) {
 }
 
 
-CB_results <- ddply(exp6, .(quantifier, projection), summarize, 
-                    CB = mean(button_response == "CB", na.rm = T)
-                    , N = length2(button_response)
-                    , SD = sd(button_response == "CB", na.rm=T)
-                    , SE = SD/sqrt(N))
+#CB_results <- ddply(exp6, .(quantifier, projection), summarize, 
+ #                   CB = mean(button_response == "CB", na.rm = T)
+  #                  , N = length2(button_response)
+   #                 , SD = sd(button_response == "CB", na.rm=T)
+    #                , SE = SD/sqrt(N))
 
 
 results <- ddply(exp, .(cond, negation, group), 
@@ -131,15 +131,20 @@ plot_m1 +   labs(title="'training: wug=upward'-group",
               x="animation type", y = "rate CB choices")
 
 
-plot_m1a <- ggplot(data=subset(results, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
+plot_m1a <- ggplot(data=subset(results, group == "wug=red"), aes(x=cond, y=M, fill=negation)) +
+  coord_cartesian(ylim = c(0, 1))+
   geom_bar(stat="identity", position=position_dodge())+
-  theme_classic(base_size = 20)+
+  theme_classic(base_size = 25)+
+  scale_x_discrete(name = "animation type", 
+                     breaks = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"), 
+                     labels = c("upward\nfrom red", "not upward\nfrom red", "upward\nnot from red", "not upward\nnot from red"))+
   geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
-                position=position_dodge(.9))
+                position=position_dodge(.9))+
+theme(legend.position="top")
 
 
-plot_m1a +   labs(title="training group `wug' = upward", fill="polarity",
-                 x="animation type", y = "rate of CB choices")
+plot_m1a +   labs(title="", fill="sentence polarity",
+                 x="", y = "rate of CB choices")
 
 
 
