@@ -1,22 +1,20 @@
 ### LOAD PACKAGES
-library(dplyr)
-library(plyr)
 library(ggplot2)
 library(stringr)
-library(lsr)
+#library(lsr)
 library(lme4)
 #library(lmTest)
 library(lmerTest)
 #library(simr)
 library(emmeans)
-library(exactRankTests)
+#library(exactRankTests)
 library(pwr)
-library(psych)
-library(boot)
-library(rcompanion)
+#library(psych)
+#library(boot)
+#library(rcompanion)
 library(rsq)
-library(tidyr)
-library(naniar)
+library(tidyverse)
+#library(naniar)
 library(RColorBrewer)
 
 
@@ -30,8 +28,9 @@ length(unique(data$subjectId))
 #155
 
 
-data2 <- subset(data, group == "no training")
-data1 <- subset(data, group == "wug=red" | group == "wug=upward")
+# data1 is experiment 1, data2 is experiment 2
+data1 <- subset(data, group == "no training")
+data2 <- subset(data, group == "wug=red" | group == "wug=upward")
 
 length(unique(data1$subjectId))
 length(unique(data2$subjectId))
@@ -39,42 +38,77 @@ length(unique(data2$subjectId))
 
 head(data)
 
-
+# subsetting to critical cases
 exp3 <- subset(data, type == "testing")
 
 is.numeric(exp3$button_pressed)
 
-levels(exp3$condition)
-levels(exp3$phrase)
-levels(exp3$group)
 
 exp3$negation <- ifelse((exp3$phrase == "does not wug." | exp3$phrase == "does not move from red upward.") , "negative", "positive")
 
 exp2 <- subset(exp3, group != "control")
 
-length(unique(exp2$subjectId))
 
 exp2$cond <- ifelse(exp2$condition == "AB", "upward-from red", 
                   ifelse(exp2$condition == "notAB", "not upward-from red", 
                           ifelse(exp2$condition == "AnotB", "upward-not from red",
                               ifelse(exp2$condition == "notAnotB", "not upward-not from red", "blubb"))))
 
+### removing participants
+
+exp2b <- subset(exp2, condition == "AB")
+
+
+exp2b$correct <- ifelse((exp2b$condition == "AB" & exp2b$phrase == "wugs." & exp2b$button_pressed == 0) | 
+                         (exp2b$condition == "AB" & exp2b$phrase == "does not wug." & exp2b$button_pressed == 1), 1, 0 )
+
+correct_resp <- ddply(exp2b, .(subjectId), summarize, 
+                      M = mean(correct, na.rm = T))
+
+
+
+unattentive = correct_resp$subjectId[which(correct_resp$M < 0.50 )]
+length(unattentive)
+#3
+
+exp2 <- subset(exp2, !(subjectId %in% unattentive))
+
+
+length(unique(exp2$subjectId))
+
+
+
+#### conditioning
+
 exp2$type <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB" | exp2$condition == "notAnotB" | exp2$condition == "notAB", "simple", "quantificational")
-
-exp2$target <- ifelse(exp2$cond == "upward-from red" | exp2$cond == "not upward-not from red", "baseline", "target")
-
-exp2$critical <- ifelse(exp2$cond == "upward-not from red" | exp2$cond == "not upward-not from red" | exp2$cond == "not upward-from red", "critical", "learned")
 
 exp2$novelty <- ifelse((exp2$group == "wug=red" & (exp2$cond == "upward-from red" | exp2$cond == "upward-not from red")) |
                          (exp2$group == "wug=upward" & (exp2$cond == "upward-from red" | exp2$cond == "not upward-from red")) | 
                          (exp2$group == "no training" & exp2$cond == "upward-from red"),"given", "novel")
                          
                          
+exp2$animA <- ifelse(exp2$condition == "AB" | exp2$condition == "AnotB", "A", "not A")
+
+exp2$animB <- ifelse(exp2$condition == "AB" | exp2$condition == "notAB", "B", "not B")
 
 
 
 exp_qua <- subset(exp2, type == "quantificational")
 exp <- subset(exp2, type == "simple")
+
+exp$cond <- as.factor(exp$cond) 
+levels(exp$cond)
+
+exp$animA <- as.factor(exp$animA) 
+levels(exp$animA)
+
+exp$animB <- as.factor(exp$animB) 
+levels(exp$animB)
+
+
+exp$cond <- factor(exp$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
+#results_pred$cond <- factor(results_pred$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
+
 
 length2 <- function (x, na.rm=FALSE) {
   if (na.rm) sum(!is.na(x))
@@ -82,28 +116,28 @@ length2 <- function (x, na.rm=FALSE) {
 }
 
 
-#CB_results <- ddply(exp6, .(quantifier, projection), summarize, 
- #                   CB = mean(button_response == "CB", na.rm = T)
-  #                  , N = length2(button_response)
-   #                 , SD = sd(button_response == "CB", na.rm=T)
-    #                , SE = SD/sqrt(N))
-
-
-results <- ddply(exp, .(cond, negation, group), 
+results <- ddply(exp, .(cond, negation, group, subjectId), 
                  summarize, M = mean(button_pressed==1, na.rm =TRUE), 
                  N = length2(button_pressed),
                  SD = sd(button_pressed == 1, na.rm=T),
                  SE = SD/sqrt(N),
                  RT = mean(rt, na.rm =TRUE) )
 
-results_qua <- ddply(exp_qua, .(condition, group), summarize, M = mean(button_pressed==0, na.rm =TRUE), RT = mean(rt, na.rm =TRUE))
+results2 <- ddply(exp, .(cond, negation, group), 
+                 summarize, M = mean(button_pressed==1, na.rm =TRUE), 
+                 N = length2(button_pressed),
+                 SD = sd(button_pressed == 1, na.rm=T),
+                 SE = SD/sqrt(N),
+                 RT = mean(rt, na.rm =TRUE) )
 
-#results_pred = read.csv(file=file.choose(),sep = ';',header = T,na.strings=c("","NA"))
+results3 <- ddply(exp, .(animA, animB, negation, group), 
+                  summarize, M = mean(button_pressed==1, na.rm =TRUE), 
+                  N = length2(button_pressed),
+                  SD = sd(button_pressed == 1, na.rm=T),
+                  SE = SD/sqrt(N),
+                  RT = mean(rt, na.rm =TRUE) )
 
-results$cond <- as.factor(results$cond) 
-levels(results$cond)
-results$cond <- factor(results$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
-#results_pred$cond <- factor(results_pred$cond, levels = c("upward-from red", "not upward-from red", "upward-not from red", "not upward-not from red"))
+
 
 
 
@@ -120,7 +154,23 @@ results$cond <- factor(results$cond, levels = c("upward-from red", "not upward-f
 #plot +   labs(title="Predictions under H1a and H2a",
          #                  x="", y = "predicted rate of visible picture choices")
 
-plot_m1 <- ggplot(data=subset(results, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
+
+plot_m1 <- ggplot(data=subset(results, group == "no training"), aes(x=cond, y=M, fill=negation)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  theme_classic(base_size = 12)+
+  facet_wrap(~subjectId)
+
+
+plot_m1 +   labs(title="neutral training group",
+                 x="animation type", y = "rate CB choices")
+
+
+
+
+
+
+
+plot_m1 <- ggplot(data=subset(results2, group == "wug=upward"), aes(x=cond, y=M, fill=negation)) +
   geom_bar(stat="identity", position=position_dodge())+
 theme_classic(base_size = 20)+
 geom_errorbar(aes(ymin=M-SE, ymax=M+SE), width=.2,
