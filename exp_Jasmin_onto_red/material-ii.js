@@ -77,7 +77,7 @@ var test_first = [
     shape: "The green circle",
     //adjective: "small",
     phrase: "does not wug.",
-    condition: "AB"
+    condition: "ABC"
   },
 
   {
@@ -86,7 +86,7 @@ var test_first = [
     shape: "The green circle",
     //adjective: "small",
     phrase: "wugs.",
-    condition: "AB"
+    condition: "ABC"
   },
 
   {
@@ -95,7 +95,7 @@ var test_first = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "does not wug.",
-    condition: "AnotB"
+    condition: "notABC"
   },
 
   {
@@ -104,7 +104,7 @@ var test_first = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "wugs.",
-    condition: "AnotB"
+    condition: "notABC"
   },
 ];
 
@@ -116,7 +116,7 @@ var test = [
     shape: "The green circle",
     //adjective: "small",
     phrase: "does not wug.",
-    condition: "notAB"
+    condition: "notABnotC"
   },
 
   {
@@ -125,7 +125,7 @@ var test = [
     shape: "The green circle",
     //adjective: "small",
     phrase: "wugs.",
-    condition: "notAB"
+    condition: "notABnotC"
   },
 
   {
@@ -134,7 +134,7 @@ var test = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "does not wug.",
-    condition: "AnotB"
+    condition: "notAnotBC"
   },
 
   {
@@ -143,7 +143,7 @@ var test = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "wugs.",
-    condition: "AnotB",
+    condition: "notAnotBC",
   },
 
   {
@@ -152,7 +152,7 @@ var test = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "does not wug.",
-    condition: "notAnotB"
+    condition: "AnotBnotC"
   },
 
   {
@@ -161,7 +161,7 @@ var test = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "wugs.",
-    condition: "notAnotB"
+    condition: "AnotBnotC"
   },
 
   {
@@ -170,7 +170,7 @@ var test = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "does not wug.",
-    condition: "notAnotB"
+    condition: "notAnotBnotC"
   },
 
   {
@@ -179,7 +179,7 @@ var test = [
     shape: "The green circle",
     // adjective: "small",
     phrase: "wugs.",
-    condition: "notAnotB"
+    condition: "notAnotBnotC"
   },
 ];
 
